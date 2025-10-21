@@ -2,18 +2,21 @@ part of 'app_theme.dart';
 
 ThemeData get _dark {
   return ThemeData(
-    // brightness: Brightness.dark,
     primarySwatch: ColorHelper.primaryGreen.toMaterialColor(),
     primaryColor: ColorHelper.primaryGreen,
     useMaterial3: true,
-    canvasColor: ColorHelper.backgroundBlack,
+    canvasColor: ColorHelper.grey100,
+    brightness: Brightness.light,
     appBarTheme: AppBarTheme(
+      toolbarHeight: 0,
       backgroundColor: ColorHelper.backgroundBlack,
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.light,
-        systemNavigationBarColor: ColorHelper.backgroundBlack,
+        statusBarBrightness: Brightness.dark,
+        statusBarColor: ColorHelper.backgroundBlack,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: ColorHelper.grey100,
       ),
     ),
-    scaffoldBackgroundColor: ColorHelper.backgroundBlack, // scaffold background
+    scaffoldBackgroundColor: ColorHelper.backgroundBlack,
   );
 }

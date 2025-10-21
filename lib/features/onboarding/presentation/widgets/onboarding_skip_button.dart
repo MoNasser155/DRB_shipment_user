@@ -21,7 +21,7 @@ class OnboardingSkipButton extends StatelessWidget {
             },
             child: Text(
               LocaleKeys.skip,
-              style: AppTextTheme.underlineText12White,
+              style: AppTextTheme.underlineText14White,
             ),
           ),
         );

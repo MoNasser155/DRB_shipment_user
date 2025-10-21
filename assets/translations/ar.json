@@ -9,5 +9,14 @@
   "pay_securely_and_effortlessly_with_multiple_flexible_options": "ادفع بكل سهولة وأمان عبر وسائل دفع متعددة ومريحة",
   "skip": "تخطي",
   "next": "التالي",
-  "previous": "السابق"
+  "previous": "السابق",
+  "welcome_back": "مرحبا بعودتك",
+  "login_to_access_your_account": "قم بتسجيل الدخول للوصول الى حسابك",
+  "phone_number": "رقم الهاتف",
+  "dont_have_an_account": "لا يوجد لديك حساب؟",
+  "register_account": "إنشاء حساب",
+  "email": "البريد الالكتروني",
+  "password": "الرقم السري",
+  "forget_password": "نسيت كلمة المرور",
+  "sign_in": "تسجيل الدخول"
 }

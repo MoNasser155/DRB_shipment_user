@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants.dart';
 import '../../../../../core/enums/state_status.dart';
+import '../../../../../core/utils/navigator_helper.dart';
 import '../../../../../core/utils/shared_pref_sengelton.dart';
+import '../../../../auth/presentation/screens/login_screen.dart';
 
 part 'onboarding_state.dart';
 
@@ -81,7 +83,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     Prefs.setBool(Constants.kIsOnboardingViewed, true);
     emit(state.copyWith(status: StateStatus.success));
     log(Prefs.getBool(Constants.kIsOnboardingViewed).toString());
-    // AppNavigator.pushAndRemoveAll(screen: LoginScreen());
+    AppNavigator.pushAndRemoveAll(screen: LoginScreen());
   }
 
   void skipOnboarding() {

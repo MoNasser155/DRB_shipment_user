@@ -12,7 +12,7 @@ abstract class AppTextTheme {
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
-  static const TextStyle underlineText12White = TextStyle(
+  static const TextStyle underlineText14White = TextStyle(
     color: Colors.white,
     decoration: TextDecoration.underline,
     decorationColor: Colors.white,
@@ -21,9 +21,51 @@ abstract class AppTextTheme {
     fontSize: 14,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle nonlineText14White = TextStyle(
+    color: Colors.white,
+    decorationColor: Colors.white,
+    decorationThickness: 2,
+    height: 1.5,
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle underlineText14Primary = TextStyle(
+    color: ColorHelper.primaryGreen,
+    decoration: TextDecoration.underline,
+    decorationColor: ColorHelper.primaryGreen,
+    decorationThickness: 2,
+    height: 1.5,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
   static const TextStyle buttonTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 16,
     fontWeight: FontWeight.w600,
+  );
+  static const TextStyle text14W500grey400 = TextStyle(
+    color: ColorHelper.grey400,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle text14W600grey600 = TextStyle(
+    color: ColorHelper.grey600,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static const TextStyle text10W500grey300 = TextStyle(
+    color: ColorHelper.grey300,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle text20W600grey100 = TextStyle(
+    color: ColorHelper.grey100,
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+  );
+  static const TextStyle text14W500grey300 = TextStyle(
+    color: ColorHelper.grey300,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
   );
 }
