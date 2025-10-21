@@ -34,4 +34,31 @@ abstract class LocaleKeys {
   static const String _previous = 'previous';
   static String get previous => _previous.tr();
 
+  static const String _welcomeBack = 'welcome_back';
+  static String get welcomeBack => _welcomeBack.tr();
+
+  static const String _loginToAccessYourAccount = 'login_to_access_your_account';
+  static String get loginToAccessYourAccount => _loginToAccessYourAccount.tr();
+
+  static const String _phoneNumber = 'phone_number';
+  static String get phoneNumber => _phoneNumber.tr();
+
+  static const String _dontHaveAnAccount = 'dont_have_an_account';
+  static String get dontHaveAnAccount => _dontHaveAnAccount.tr();
+
+  static const String _registerAccount = 'register_account';
+  static String get registerAccount => _registerAccount.tr();
+
+  static const String _email = 'email';
+  static String get email => _email.tr();
+
+  static const String _password = 'password';
+  static String get password => _password.tr();
+
+  static const String _forgetPassword = 'forget_password';
+  static String get forgetPassword => _forgetPassword.tr();
+
+  static const String _signIn = 'sign_in';
+  static String get signIn => _signIn.tr();
+
 }
