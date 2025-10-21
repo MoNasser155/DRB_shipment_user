@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/navigator_helper.dart';
 
-
 enum Languages {
   english(Locale('en'), 'English', 'en', 1),
   arabic(Locale('ar'), 'Arabic', 'ar', 0);
@@ -27,7 +26,7 @@ enum Languages {
       Languages.values.map((e) => e.title).toList();
 
   static void setLocaleWithContext(BuildContext context, Languages lang) {
-    context.setLocale(lang.locale);
+    context.setLocale(Locale(lang.languageCode));
   }
 
   static String getLanguageCode(Languages language) {
@@ -37,8 +36,9 @@ enum Languages {
   static Languages get currentLanguage {
     final currentLocale =
         EasyLocalization.of(AppNavigator.navigatorKey.currentContext!)!.locale;
-    return Languages.values
-        .firstWhere((element) => element.locale == currentLocale);
+    return Languages.values.firstWhere(
+      (element) => element.locale == currentLocale,
+    );
   }
 
   static int get currentLanguageIndex {

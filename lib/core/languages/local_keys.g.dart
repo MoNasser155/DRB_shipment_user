@@ -28,4 +28,10 @@ abstract class LocaleKeys {
   static const String _skip = 'skip';
   static String get skip => _skip.tr();
 
+  static const String _next = 'next';
+  static String get next => _next.tr();
+
+  static const String _previous = 'previous';
+  static String get previous => _previous.tr();
+
 }

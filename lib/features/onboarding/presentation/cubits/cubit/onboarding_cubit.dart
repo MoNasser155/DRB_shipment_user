@@ -19,7 +19,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
 
   late PageController pageController = PageController(initialPage: 0);
 
-  final List<OnbaorgingModel> onBoardingList = [
+  List<OnbaorgingModel> get onBoardingList => [
     OnbaorgingModel(
       title: LocaleKeys.smartDeliveryTracking,
       body:
@@ -86,6 +86,14 @@ class OnboardingCubit extends Cubit<OnboardingState> {
 
   void skipOnboarding() {
     completeOnboarding();
+  }
+
+  void refreshForLanguageChange() {
+    if (state.status == StateStatus.success) {
+      emit(state.copyWith(status: StateStatus.loading));
+    } else {
+      emit(state.copyWith(status: StateStatus.success));
+    }
   }
 
   @override
