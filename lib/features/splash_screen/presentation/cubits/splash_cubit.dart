@@ -1,3 +1,4 @@
+import 'package:drb_shipment_user/features/onboarding/presentation/cubits/cubit/onboarding_cubit.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -23,7 +24,10 @@ class SplashCubit extends Cubit<SplashState> {
     Future.delayed(Duration(seconds: 2)).then(
       (val) => AppNavigator.pushReplacement(
         transitionBuilder: AppNavigator.cupertinoTransition,
-        screen: OnboardingScreen(),
+        screen: BlocProvider(
+          create: (context) => OnboardingCubit(),
+          child: OnboardingScreen(),
+        ),
       ),
     );
     emit(StartAppState());
