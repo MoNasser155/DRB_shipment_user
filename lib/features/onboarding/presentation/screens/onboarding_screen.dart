@@ -1,10 +1,13 @@
+import 'package:drb_shipment_user/core/helpers/spaceing_helper.dart';
 import 'package:drb_shipment_user/core/widgets/custom_dot_indicator.dart';
+import 'package:drb_shipment_user/core/widgets/switch_lang_button.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/cubits/cubit/onboarding_cubit.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/widgets/onbaording_page_view_item.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/widgets/onboarding_navigation_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gap/gap.dart';
+
+import '../widgets/onboarding_skip_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -13,44 +16,69 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            Expanded(
-              child: BlocBuilder<OnboardingCubit, OnboardingState>(
-                builder: (context, state) {
-                  final cubit = OnboardingCubit.get(context);
-                  return PageView.builder(
-                    allowImplicitScrolling: false,
-                    physics: const AlwaysScrollableScrollPhysics(
-                      parent: BouncingScrollPhysics(),
-                    ),
-                    controller: cubit.pageController,
-                    onPageChanged: cubit.onPageChanged,
-                    itemBuilder: (context, index) {
-                      final onbaordingData = cubit.onBoardingList[index];
-                      return OnboardingPageViewItem(
-                        onbaordingData: onbaordingData,
+            Column(
+              spacing: SpacingHelper.kVertical16,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: BlocBuilder<OnboardingCubit, OnboardingState>(
+                    buildWhen:
+                        (previous, current) =>
+                            previous.currentPage != current.currentPage ||
+                            previous.status != current.status,
+                    builder: (context, state) {
+                      final cubit = OnboardingCubit.get(context);
+                      return PageView.builder(
+                        allowImplicitScrolling: false,
+                        physics: const AlwaysScrollableScrollPhysics(
+                          parent: BouncingScrollPhysics(),
+                        ),
+                        controller: cubit.pageController,
+                        onPageChanged: cubit.onPageChanged,
+                        itemBuilder: (context, index) {
+                          final onbaordingData = cubit.onBoardingList[index];
+                          return OnboardingPageViewItem(
+                            onbaordingData: onbaordingData,
+                          );
+                        },
+                        itemCount: cubit.onBoardingList.length,
                       );
                     },
-                    itemCount: cubit.onBoardingList.length,
-                  );
-                },
+                  ),
+                ),
+
+                BlocBuilder<OnboardingCubit, OnboardingState>(
+                  buildWhen:
+                      (previous, current) =>
+                          previous.currentPage != current.currentPage ||
+                          previous.status != current.status,
+                  builder: (context, state) {
+                    final cubit = OnboardingCubit.get(context);
+                    return CustomDotIndicator(
+                      currentIndex: state.currentPage,
+                      count: cubit.onBoardingList.length,
+                    );
+                  },
+                ),
+
+                OnboardingNavigationButtons(),
+                const SizedBox(),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: SpacingHelper.kHorizontalPadding,
+              ),
+              child: Row(
+                children: [
+                  SwitchLangButton(),
+                  const Spacer(),
+                  OnboardingSkipButton(),
+                ],
               ),
             ),
-            Gap(16),
-            BlocBuilder<OnboardingCubit, OnboardingState>(
-              builder: (context, state) {
-                final cubit = OnboardingCubit.get(context);
-                return CustomDotIndicator(
-                  currentIndex: state.currentPage,
-                  count: cubit.onBoardingList.length,
-                );
-              },
-            ),
-            Gap(16),
-            OnboardingNavigationButtons(),
-            Gap(16),
           ],
         ),
       ),

@@ -21,4 +21,9 @@ abstract class AppTextTheme {
     fontSize: 14,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle buttonTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
 }

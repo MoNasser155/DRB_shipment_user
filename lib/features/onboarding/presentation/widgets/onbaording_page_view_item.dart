@@ -1,12 +1,8 @@
 import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/extensions/extensions.dart';
-import 'package:drb_shipment_user/core/languages/languages.dart';
-import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
 import 'package:drb_shipment_user/features/onboarding/data/models/onbaorging_model.dart';
-import 'package:drb_shipment_user/features/onboarding/presentation/cubits/cubit/onboarding_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -20,34 +16,6 @@ class OnboardingPageViewItem extends StatelessWidget {
       children: [
         Stack(
           children: [
-            BlocBuilder<OnboardingCubit, OnboardingState>(
-              builder: (context, state) {
-                final cubit = OnboardingCubit.get(context);
-                return Visibility(
-                  visible: state.currentPage == 2,
-                  child: Positioned(
-                    top: 20,
-                    left:
-                        Languages.currentLanguage.languageCode == 'ar'
-                            ? 20
-                            : null,
-                    right:
-                        Languages.currentLanguage.languageCode == 'en'
-                            ? 20
-                            : null,
-                    child: InkWell( 
-                      onTap:() {
-                        cubit. skipOnboarding();
-                      },
-                      child: Text(
-                        LocaleKeys.skip,
-                        style: AppTextTheme.underlineText12White,
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: SizedBox(
