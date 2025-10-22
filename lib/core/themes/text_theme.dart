@@ -23,9 +23,6 @@ abstract class AppTextTheme {
   );
   static const TextStyle nonlineText14White = TextStyle(
     color: Colors.white,
-    decorationColor: Colors.white,
-    decorationThickness: 2,
-    height: 1.5,
     fontSize: 14,
     fontWeight: FontWeight.bold,
   );
@@ -35,6 +32,11 @@ abstract class AppTextTheme {
     decorationColor: ColorHelper.primaryGreen,
     decorationThickness: 2,
     height: 1.5,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle nonlineText14Primary = TextStyle(
+    color: ColorHelper.primaryGreen,
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
@@ -48,8 +50,8 @@ abstract class AppTextTheme {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
-  static const TextStyle text14W600grey600 = TextStyle(
-    color: ColorHelper.grey600,
+  static const TextStyle text14W600grey300 = TextStyle(
+    color: ColorHelper.grey300,
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );
@@ -67,5 +69,10 @@ abstract class AppTextTheme {
     color: ColorHelper.grey300,
     fontSize: 14,
     fontWeight: FontWeight.w500,
+  );
+  static const TextStyle appBarTitle = TextStyle(
+    color: ColorHelper.grey100,
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
   );
 }

@@ -11,6 +11,7 @@ import '../../../../../core/app_assets/images.dart';
 import '../../../../../core/utils/navigator_helper.dart';
 import '../../../../../core/widgets/cutsom_button.dart';
 import '../../../../../core/widgets/switch_lang_button.dart';
+import '../../screens/forget_password_screen.dart';
 import '../../screens/signup_screen.dart';
 
 class LoginBody extends StatelessWidget {
@@ -77,7 +78,12 @@ class LoginBody extends StatelessWidget {
                       vertical: VisualDensity.minimumDensity,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: ForgetPasswordScreen(),
+                    );
+                  },
                   child: Text(
                     LocaleKeys.forgetPassword,
                     style: AppTextTheme.underlineText14Primary,

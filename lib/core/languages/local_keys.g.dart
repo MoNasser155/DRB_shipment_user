@@ -88,4 +88,31 @@ abstract class LocaleKeys {
   static const String _lastName = 'last_name';
   static String get lastName => _lastName.tr();
 
+  static const String _verifyEmail = 'verify_email';
+  static String get verifyEmail => _verifyEmail.tr();
+
+  static const String _pinEmail = 'pin_email';
+  static String get pinEmail => _pinEmail.tr();
+
+  static const String _verfiyOtp = 'verfiy_otp';
+  static String get verfiyOtp => _verfiyOtp.tr();
+
+  static const String _didntReceiveTheCode = 'didnt_receive_the_code';
+  static String get didntReceiveTheCode => _didntReceiveTheCode.tr();
+
+  static const String _resend = 'resend';
+  static String get resend => _resend.tr();
+
+  static const String _changePassword = 'change_password';
+  static String get changePassword => _changePassword.tr();
+
+  static const String _newPassword = 'new_password';
+  static String get newPassword => _newPassword.tr();
+
+  static const String _confirmNewPassword = 'confirm_new_password';
+  static String get confirmNewPassword => _confirmNewPassword.tr();
+
+  static const String _diffirentPass = 'diffirent_pass';
+  static String get diffirentPass => _diffirentPass.tr();
+
 }
