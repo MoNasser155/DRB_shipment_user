@@ -4,7 +4,6 @@ import 'package:drb_shipment_user/features/onboarding/presentation/cubits/cubit/
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class SwitchLangButton extends StatefulWidget {
   const SwitchLangButton({super.key});
 
@@ -44,7 +43,7 @@ class _SwitchLangButtonState extends State<SwitchLangButton> {
                 final cubit = context.read<OnboardingCubit>();
                 cubit.refreshForLanguageChange();
               } catch (e) {
-                // If not on onboarding screen, ignore
+                rethrow;
               }
             }
           });
