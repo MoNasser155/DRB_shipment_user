@@ -18,5 +18,9 @@ ThemeData get _dark {
       ),
     ),
     scaffoldBackgroundColor: ColorHelper.backgroundBlack,
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: ColorHelper.backgroundBlack,
+      shape: BeveledRectangleBorder(borderRadius: BorderRadius.zero),
+    ),
   );
 }

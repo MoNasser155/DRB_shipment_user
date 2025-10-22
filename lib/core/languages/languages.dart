@@ -26,7 +26,7 @@ enum Languages {
       Languages.values.map((e) => e.title).toList();
 
   static void setLocaleWithContext(BuildContext context, Languages lang) {
-    context.setLocale(Locale(lang.languageCode));
+    context.setLocale(lang.locale);
   }
 
   static String getLanguageCode(Languages language) {

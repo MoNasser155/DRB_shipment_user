@@ -14,7 +14,7 @@ class OnboardingSkipButton extends StatelessWidget {
       builder: (context, state) {
         final cubit = OnboardingCubit.get(context);
         return Visibility(
-          visible: state.currentPage == 2,
+          visible: state.currentPage != 2,
           child: InkWell(
             onTap: () {
               cubit.skipOnboarding();

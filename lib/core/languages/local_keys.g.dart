@@ -61,4 +61,31 @@ abstract class LocaleKeys {
   static const String _signIn = 'sign_in';
   static String get signIn => _signIn.tr();
 
+  static const String _alreadyHaveAnAccount = 'already_have_an_account';
+  static String get alreadyHaveAnAccount => _alreadyHaveAnAccount.tr();
+
+  static const String _confirmPassword = 'confirm_password';
+  static String get confirmPassword => _confirmPassword.tr();
+
+  static const String _adress = 'adress';
+  static String get adress => _adress.tr();
+
+  static const String _city = 'city';
+  static String get city => _city.tr();
+
+  static const String _government = 'government';
+  static String get government => _government.tr();
+
+  static const String _username = 'username';
+  static String get username => _username.tr();
+
+  static const String _createNewAccount = 'create_new_account';
+  static String get createNewAccount => _createNewAccount.tr();
+
+  static const String _firstName = 'first_name';
+  static String get firstName => _firstName.tr();
+
+  static const String _lastName = 'last_name';
+  static String get lastName => _lastName.tr();
+
 }
