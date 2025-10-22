@@ -27,5 +27,14 @@
   "username": "Username",
   "create_new_account": "Create new account",
   "first_name": "First name",
-  "last_name": "Last name"
+  "last_name": "Last name",
+  "verify_email": "Verify email",
+  "pin_email": "Check your messages we've sent you the pin",
+  "verfiy_otp": "Verfiy OTP",
+  "didnt_receive_the_code": "Didn't receive the code",
+  "resend": "Resend",
+  "change_password": "Change Password",
+  "new_password": "New password",
+  "confirm_new_password": "Confirm New Password",
+  "diffirent_pass": "Your new password must be different from your old password"
 }

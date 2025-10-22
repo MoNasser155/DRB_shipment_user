@@ -27,5 +27,14 @@
   "username": "اسم المستخدم",
   "create_new_account": "إنشاء حساب جديد",
   "first_name": "الاسم الاول",
-  "last_name": "الاسم الاخير"
+  "last_name": "الاسم الاخير",
+  "verify_email": "تاكيد البريد الالكتروني",
+  "pin_email": "تحقق من رسائلك, لقد أرسلنا لك الرقم السري",
+  "verfiy_otp": "تاكيد OTP",
+  "didnt_receive_the_code": "لم تستلم الرمز",
+  "resend": "اعادة الارسال",
+  "change_password": "تغيير كلمة المرور",
+  "new_password": "كلمة المرور الجديدة",
+  "confirm_new_password": "تاكيد كلمة المرور الجديدة",
+  "diffirent_pass": "يجب ان تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة"
 }

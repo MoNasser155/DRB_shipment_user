@@ -9,7 +9,7 @@ class PassFieldWithLabel extends StatefulWidget {
     this.hint,
     this.validate,
     this.controller,
-    required this.removeInit,
+     this.removeInit = false,
   });
   final String label;
   final String? hint;

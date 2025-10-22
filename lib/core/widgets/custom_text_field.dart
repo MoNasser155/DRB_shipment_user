@@ -45,7 +45,7 @@ class CustomTextField extends StatelessWidget {
       validator: validate,
       controller: controller,
       initialValue: initial,
-      style: AppTextTheme.text14W600grey600,
+      style: AppTextTheme.text14W600grey300,
       onChanged: onChange,
       readOnly: readonly,
       maxLines: maxlines,
