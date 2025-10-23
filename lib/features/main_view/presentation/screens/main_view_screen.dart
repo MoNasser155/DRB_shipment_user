@@ -14,7 +14,11 @@ class MainViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => sl<MainViewCubit>(),
-      child: Scaffold(bottomSheet: MainViewBottomSheet(), body: MainViewBody()),
+      child: Scaffold(
+        appBar: AppBar(),
+        bottomSheet: MainViewBottomSheet(),
+        body: MainViewBody(),
+      ),
     );
   }
 }

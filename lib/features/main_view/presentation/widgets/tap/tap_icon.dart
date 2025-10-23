@@ -12,9 +12,11 @@ class TabIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
-      scale: isSelected ? 1.1 : 0.9,
+      scale: isSelected ? 1.2 : 0.9,
       child: SvgPicture.asset(
         icon,
+        height: 24,
+        width: 24,
         colorFilter: ColorFilter.mode(
           isSelected ? ColorHelper.primaryGreen : ColorHelper.grey100,
           BlendMode.srcIn,

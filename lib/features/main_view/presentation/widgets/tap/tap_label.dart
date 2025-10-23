@@ -13,9 +13,7 @@ class TabLabel extends StatelessWidget {
     return Text(
       label,
       style:
-          isSelected
-              ? AppTextTheme.text14W500grey300
-              : AppTextTheme.text10W500grey300,
+          isSelected ? AppTextTheme.selectedTap : AppTextTheme.nonSelectedTap,
     );
   }
 }
