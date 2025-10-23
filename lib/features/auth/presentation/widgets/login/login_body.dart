@@ -5,6 +5,7 @@ import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
 import 'package:drb_shipment_user/core/widgets/textfield_withlabel.dart';
 import 'package:drb_shipment_user/features/auth/presentation/widgets/custom_passfiled.dart';
+import 'package:drb_shipment_user/features/main_view/presentation/screens/main_view_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/app_assets/images.dart';
@@ -97,7 +98,12 @@ class LoginBody extends StatelessWidget {
                   LocaleKeys.signIn,
                   style: AppTextTheme.buttonTextStyle,
                 ),
-                onTap: () {},
+                onTap: () {
+                  AppNavigator.pushReplacement(
+                    transitionBuilder: AppNavigator.cupertinoTransition,
+                    screen: MainViewScreen(),
+                  );
+                },
               ),
               Gap(SpacingHelper.kVertical8),
               Center(

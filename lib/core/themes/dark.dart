@@ -19,7 +19,7 @@ ThemeData get _dark {
     ),
     scaffoldBackgroundColor: ColorHelper.backgroundBlack,
     bottomSheetTheme: const BottomSheetThemeData(
-      backgroundColor: ColorHelper.backgroundBlack,
+      backgroundColor: Colors.transparent,
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.zero),
     ),
   );

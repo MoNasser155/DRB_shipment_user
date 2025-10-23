@@ -130,4 +130,19 @@ abstract class LocaleKeys {
   static const String _privacyPolicy = 'privacy_policy';
   static String get privacyPolicy => _privacyPolicy.tr();
 
+  static const String _home = 'home';
+  static String get home => _home.tr();
+
+  static const String _packages = 'packages';
+  static String get packages => _packages.tr();
+
+  static const String _newPackage = 'new_package';
+  static String get newPackage => _newPackage.tr();
+
+  static const String _couriers = 'couriers';
+  static String get couriers => _couriers.tr();
+
+  static const String _account = 'account';
+  static String get account => _account.tr();
+
 }

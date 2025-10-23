@@ -75,4 +75,14 @@ abstract class AppTextTheme {
     fontSize: 18,
     fontWeight: FontWeight.w700,
   );
+  static const TextStyle selectedTap = TextStyle(
+    color: ColorHelper.primaryGreen,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle nonSelectedTap = TextStyle(
+    color: ColorHelper.grey100,
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+  );
 }

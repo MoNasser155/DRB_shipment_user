@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/languages/languages.dart';
+import 'core/shared/di.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setupAppDebendencies();
   await Future.wait([
     EasyLocalization.ensureInitialized(),
     ScreenUtil.ensureScreenSize(),

@@ -44,6 +44,7 @@ dependencies:
   equatable: ^2.0.7
   shared_preferences: ^2.5.3
   otp_pin_field: ^1.4.1
+  get_it: ^8.2.0
 
 dev_dependencies:
   flutter_test:

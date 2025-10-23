@@ -8,6 +8,7 @@ import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
 import '../../../../../core/widgets/cutsom_button.dart';
+import '../../../../main_view/presentation/screens/main_view_screen.dart';
 
 class SignupBottomSheet extends StatelessWidget {
   const SignupBottomSheet({super.key});
@@ -28,7 +29,12 @@ class SignupBottomSheet extends StatelessWidget {
               LocaleKeys.signIn,
               style: AppTextTheme.buttonTextStyle,
             ),
-            onTap: () {},
+            onTap: () {
+              AppNavigator.pushReplacement(
+                transitionBuilder: AppNavigator.cupertinoTransition,
+                screen: MainViewScreen(),
+              );
+            },
           ),
           Gap(SpacingHelper.kVertical8),
           Center(
