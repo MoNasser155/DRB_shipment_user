@@ -115,4 +115,19 @@ abstract class LocaleKeys {
   static const String _diffirentPass = 'diffirent_pass';
   static String get diffirentPass => _diffirentPass.tr();
 
+  static const String _byCreatingAnAccount = 'by_creating_an_account';
+  static String get byCreatingAnAccount => _byCreatingAnAccount.tr();
+
+  static const String _youAgreeToOur = 'you_agree_to_our';
+  static String get youAgreeToOur => _youAgreeToOur.tr();
+
+  static const String _termsAndConditions = 'terms_and_conditions';
+  static String get termsAndConditions => _termsAndConditions.tr();
+
+  static const String _and = 'and';
+  static String get and => _and.tr();
+
+  static const String _privacyPolicy = 'privacy_policy';
+  static String get privacyPolicy => _privacyPolicy.tr();
+
 }

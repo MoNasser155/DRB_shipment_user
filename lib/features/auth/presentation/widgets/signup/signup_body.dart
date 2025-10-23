@@ -1,13 +1,13 @@
-import 'package:drb_shipment_user/core/extensions/extensions.dart';
+import 'package:drb_shipment_user/core/extensions/buildcontext_extensions.dart';
 import 'package:drb_shipment_user/core/widgets/switch_lang_button.dart';
+import 'package:drb_shipment_user/features/auth/presentation/widgets/signup/signup_info_containers.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/app_assets/images.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
-import '../../../../../core/widgets/textfield_withlabel.dart';
-import '../custom_passfiled.dart';
+import '../terms_cond_checkbox.dart';
 
 class SignupBody extends StatelessWidget {
   const SignupBody({super.key});
@@ -51,52 +51,9 @@ class SignupBody extends StatelessWidget {
                       ),
                     ),
                     Gap(SpacingHelper.kVertical20),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFieldWithLabel(
-                            label: LocaleKeys.firstName,
-                            removeInit: true,
-                            hint: LocaleKeys.firstName,
-                          ),
-                        ),
-                        Gap(SpacingHelper.horizontal4),
-                        Expanded(
-                          child: TextFieldWithLabel(
-                            label: LocaleKeys.lastName,
-                            removeInit: true,
-                            hint: LocaleKeys.lastName,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Gap(SpacingHelper.kVertical8),
-
-                    TextFieldWithLabel(
-                      label: LocaleKeys.email,
-                      removeInit: true,
-                      hint: 'username@example.com',
-                    ),
-                    Gap(SpacingHelper.kVertical8),
-                    TextFieldWithLabel(
-                      label: LocaleKeys.username,
-                      removeInit: true,
-                      hint:
-                          'username@example.com', //yellow with controller to generate a random name
-                    ),
-                    Gap(SpacingHelper.kVertical8),
-                    PassFieldWithLabel(
-                      label: LocaleKeys.password,
-                      removeInit: true,
-                      hint: '**********',
-                    ),
-                    Gap(SpacingHelper.kVertical8),
-                    PassFieldWithLabel(
-                      label: LocaleKeys.confirmPassword,
-                      removeInit: true,
-                      hint: '**********',
-                    ),
+                    SignupInfoContainers(),
                     Gap(SpacingHelper.kVertical4),
+                    TermsCondCheckBox(onChanged: (val) {}),
                   ],
                 ),
                 Padding(

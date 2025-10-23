@@ -36,5 +36,10 @@
   "change_password": "Change Password",
   "new_password": "New password",
   "confirm_new_password": "Confirm New Password",
-  "diffirent_pass": "Your new password must be different from your old password"
+  "diffirent_pass": "Your new password must be different from your old password",
+  "by_creating_an_account": "By creating an account",
+  "you_agree_to_our": "you agree to our",
+  "terms_and_conditions": "Terms and Conditions",
+  "and": "and",
+  "privacy_policy": "Privacy Policy"
 }

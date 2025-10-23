@@ -36,5 +36,10 @@
   "change_password": "تغيير كلمة المرور",
   "new_password": "كلمة المرور الجديدة",
   "confirm_new_password": "تاكيد كلمة المرور الجديدة",
-  "diffirent_pass": "يجب ان تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة"
+  "diffirent_pass": "يجب ان تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة",
+  "by_creating_an_account": "عن طريق إنشاء حساب",
+  "you_agree_to_our": "أنت توافق على",
+  "terms_and_conditions": "الشروط والاحكام",
+  "and": "و",
+  "privacy_policy": "سياسة الخصوصية"
 }

@@ -36,7 +36,12 @@
     "Change Password":"تغيير كلمة المرور",
     "New password":"كلمة المرور الجديدة",
     "Confirm New Password":"تاكيد كلمة المرور الجديدة",
-    "diffirentPass #$ Your new password must be different from your old password":"يجب ان تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة"
+    "diffirentPass #$ Your new password must be different from your old password":"يجب ان تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة",
+    "By creating an account":"عن طريق إنشاء حساب",
+    "you agree to our":"أنت توافق على",
+    "Terms and Conditions":"الشروط والاحكام",
+    "and":"و",
+    "Privacy Policy":"سياسة الخصوصية"
    
     
 }
