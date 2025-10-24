@@ -65,6 +65,11 @@ abstract class AppTextTheme {
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle text18W600grey100 = TextStyle(
+    color: ColorHelper.grey100,
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
   static const TextStyle text14W500grey300 = TextStyle(
     color: ColorHelper.grey300,
     fontSize: 14,

@@ -46,5 +46,13 @@
   "packages": "Packages",
   "new_package": "New Package",
   "couriers": "Couriers",
-  "account": "Account"
+  "account": "Account",
+  "view_all": "View All",
+  "get_discount": "Get Discount",
+  "incoming_packages": "Incoming Packages",
+  "order_number": "Order Number",
+  "order_date": "Order Date",
+  "order_status": "Order Status",
+  "courier_name": "Courier Name",
+  "courier_phone": "Courier Phone"
 }

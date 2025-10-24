@@ -46,5 +46,13 @@
   "packages": "الطرود",
   "new_package": "إضافة طرد",
   "couriers": "المناديب",
-  "account": "الحساب"
+  "account": "الحساب",
+  "view_all": "عرض الكل",
+  "get_discount": "احصل على الخصم",
+  "incoming_packages": "الطرود الواردة",
+  "order_number": "رقم الطلب",
+  "order_date": "تاريخ الطلب",
+  "order_status": "حالة الطلب",
+  "courier_name": "اسم المندوب",
+  "courier_phone": "رقم هاتف المندوب"
 }
