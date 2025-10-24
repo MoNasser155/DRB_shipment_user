@@ -45,6 +45,7 @@ dependencies:
   shared_preferences: ^2.5.3
   otp_pin_field: ^1.4.1
   get_it: ^8.2.0
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:
@@ -100,3 +101,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+# native splash & 

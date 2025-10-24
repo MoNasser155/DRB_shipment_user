@@ -46,5 +46,16 @@
     "Packages":"الطرود",
     "New Package":"إضافة طرد",
     "Couriers":"المناديب",
-    "Account":"الحساب"
+    "Account":"الحساب",
+    "View All":"عرض الكل",
+    "Get Discount":"احصل على الخصم",
+    "Incoming Packages":"الطرود الواردة",
+    "Order Number":"رقم الطلب",
+    "Order Date":"تاريخ الطلب",
+    "Order Status":"حالة الطلب",
+    "Courier Name":"اسم المندوب",
+    "Courier Phone":"رقم هاتف المندوب",
+    "Popular Couriers":"المناديب المعروفين"
+  
+    
 }

@@ -145,4 +145,31 @@ abstract class LocaleKeys {
   static const String _account = 'account';
   static String get account => _account.tr();
 
+  static const String _viewAll = 'view_all';
+  static String get viewAll => _viewAll.tr();
+
+  static const String _getDiscount = 'get_discount';
+  static String get getDiscount => _getDiscount.tr();
+
+  static const String _incomingPackages = 'incoming_packages';
+  static String get incomingPackages => _incomingPackages.tr();
+
+  static const String _orderNumber = 'order_number';
+  static String get orderNumber => _orderNumber.tr();
+
+  static const String _orderDate = 'order_date';
+  static String get orderDate => _orderDate.tr();
+
+  static const String _orderStatus = 'order_status';
+  static String get orderStatus => _orderStatus.tr();
+
+  static const String _courierName = 'courier_name';
+  static String get courierName => _courierName.tr();
+
+  static const String _courierPhone = 'courier_phone';
+  static String get courierPhone => _courierPhone.tr();
+
+  static const String _popularCouriers = 'popular_couriers';
+  static String get popularCouriers => _popularCouriers.tr();
+
 }

@@ -65,10 +65,16 @@ abstract class AppTextTheme {
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle text18W600grey100 = TextStyle(
+    color: ColorHelper.grey100,
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
   static const TextStyle text14W500grey300 = TextStyle(
     color: ColorHelper.grey300,
     fontSize: 14,
     fontWeight: FontWeight.w500,
+    height: 0.9,
   );
   static const TextStyle appBarTitle = TextStyle(
     color: ColorHelper.grey100,
@@ -83,6 +89,11 @@ abstract class AppTextTheme {
   static const TextStyle nonSelectedTap = TextStyle(
     color: ColorHelper.grey100,
     fontSize: 10,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle text12W500grey500 = TextStyle(
+    color: ColorHelper.grey500,
+    fontSize: 12,
     fontWeight: FontWeight.w500,
   );
 }

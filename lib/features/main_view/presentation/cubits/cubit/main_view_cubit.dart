@@ -6,6 +6,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../home/presentation/screens/home_screen.dart';
+
 part 'main_view_state.dart';
 
 class MainViewCubit extends Cubit<MainViewState> {
@@ -14,7 +16,7 @@ class MainViewCubit extends Cubit<MainViewState> {
   static MainViewCubit get(context) => BlocProvider.of(context);
 
   final List<Widget> screens = [
-    Container(width: 200, height: 200, color: Colors.green),
+    HomeScreen(),
     Container(width: 200, height: 200, color: Colors.red),
     Container(width: 200, height: 200, color: Colors.blue),
     Container(width: 200, height: 200, color: Colors.yellow),

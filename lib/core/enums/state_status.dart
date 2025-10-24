@@ -7,7 +7,5 @@ enum StateStatus {
 
   success,
 
-  getDataSuccess,
-
   error,
 }
