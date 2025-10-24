@@ -169,4 +169,7 @@ abstract class LocaleKeys {
   static const String _courierPhone = 'courier_phone';
   static String get courierPhone => _courierPhone.tr();
 
+  static const String _popularCouriers = 'popular_couriers';
+  static String get popularCouriers => _popularCouriers.tr();
+
 }

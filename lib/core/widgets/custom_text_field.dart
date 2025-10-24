@@ -22,6 +22,7 @@ class CustomTextField extends StatelessWidget {
     this.action,
     this.borderRadius,
     this.scrollPhysics,
+    this.enabeledBorder,
   });
   final Function(String)? onChange;
   final TextInputAction? action;
@@ -35,6 +36,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? inputType;
   final BorderRadius? borderRadius;
   final ScrollPhysics? scrollPhysics;
+  final Color? enabeledBorder;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -66,6 +68,13 @@ class CustomTextField extends StatelessWidget {
         prefixIcon: prefix,
         prefixIconConstraints: const BoxConstraints(minWidth: 40, maxWidth: 40),
         suffixIcon: suffix,
+        prefixIconColor: ColorHelper.grey300,
+        suffixIconConstraints: const BoxConstraints(
+          minWidth: 44,
+          maxWidth: 44,
+          minHeight: 44,
+          maxHeight: 44,
+        ),
         errorBorder: OutlineInputBorder(
           borderRadius: borderRadius ?? BorderRadius.circular(8),
           borderSide: const BorderSide(
@@ -79,7 +88,7 @@ class CustomTextField extends StatelessWidget {
           borderSide: BorderSide(
             style: BorderStyle.solid,
             width: 1,
-            color: ColorHelper.grey400,
+            color: enabeledBorder ?? ColorHelper.grey400,
           ),
         ),
         focusedBorder: OutlineInputBorder(

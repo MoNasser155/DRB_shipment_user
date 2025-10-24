@@ -39,7 +39,7 @@ class SplashCubit extends Cubit<SplashState> {
   }
 
   void _handleNavigation() {
-    if (isViewingOnboarding()) {
+    if (!isViewingOnboarding()) {
       AppNavigator.pushReplacement(
         transitionBuilder: AppNavigator.cupertinoTransition,
         screen: BlocProvider(

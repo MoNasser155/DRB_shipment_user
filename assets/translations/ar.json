@@ -54,5 +54,6 @@
   "order_date": "تاريخ الطلب",
   "order_status": "حالة الطلب",
   "courier_name": "اسم المندوب",
-  "courier_phone": "رقم هاتف المندوب"
+  "courier_phone": "رقم هاتف المندوب",
+  "popular_couriers": "المناديب المعروفين"
 }

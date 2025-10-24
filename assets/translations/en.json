@@ -54,5 +54,6 @@
   "order_date": "Order Date",
   "order_status": "Order Status",
   "courier_name": "Courier Name",
-  "courier_phone": "Courier Phone"
+  "courier_phone": "Courier Phone",
+  "popular_couriers": "Popular Couriers"
 }
