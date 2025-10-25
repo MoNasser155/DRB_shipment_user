@@ -172,4 +172,13 @@ abstract class LocaleKeys {
   static const String _popularCouriers = 'popular_couriers';
   static String get popularCouriers => _popularCouriers.tr();
 
+  static const String _inProgress = 'in_progress';
+  static String get inProgress => _inProgress.tr();
+
+  static const String _completed = 'completed';
+  static String get completed => _completed.tr();
+
+  static const String _canceled = 'canceled';
+  static String get canceled => _canceled.tr();
+
 }

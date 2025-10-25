@@ -55,5 +55,8 @@
   "order_status": "حالة الطلب",
   "courier_name": "اسم المندوب",
   "courier_phone": "رقم هاتف المندوب",
-  "popular_couriers": "المناديب المعروفين"
+  "popular_couriers": "المناديب المعروفين",
+  "in_progress": "قيد التنفيذ",
+  "completed": "مكتملة",
+  "canceled": "ملغية"
 }
