@@ -25,7 +25,7 @@ class PackagesCustomAppbar extends StatelessWidget {
         automaticallyImplyLeading: false,
         toolbarHeight: 48.h,
         surfaceTintColor: Colors.transparent,
-        backgroundColor: Colors.transparent,
+        backgroundColor: ColorHelper.backgroundBlack,
         flexibleSpace: BlocBuilder<PackagesCubit, PackagesState>(
           buildWhen:
               (previous, current) =>

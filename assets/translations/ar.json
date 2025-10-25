@@ -58,5 +58,6 @@
   "popular_couriers": "المناديب المعروفين",
   "in_progress": "قيد التنفيذ",
   "completed": "مكتملة",
-  "canceled": "ملغية"
+  "canceled": "ملغية",
+  "order_id": "رقم الطلب"
 }

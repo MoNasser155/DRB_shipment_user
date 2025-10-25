@@ -2,7 +2,9 @@ import 'package:drb_shipment_user/core/helpers/spaceing_helper.dart';
 import 'package:drb_shipment_user/core/widgets/custom_image_carusel.dart';
 import 'package:drb_shipment_user/features/home/presentation/widgets/home_custom_appbar.dart';
 import 'package:drb_shipment_user/features/home/presentation/widgets/popular_courier_item.dart';
+import 'package:drb_shipment_user/features/main_view/presentation/cubits/cubit/main_view_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import '../../../../core/helpers/redius_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
@@ -51,7 +53,9 @@ class HomeBody extends StatelessWidget {
           sliver: SliverToBoxAdapter(
             child: CustomViewAllRow(
               title: LocaleKeys.incomingPackages,
-              onTap: () {},
+              onTap: () {
+                context.read<MainViewCubit>().setInitialTab(1);
+              },
             ),
           ),
         ),

@@ -76,6 +76,11 @@ abstract class AppTextTheme {
     fontWeight: FontWeight.w500,
     height: 0.9,
   );
+  static const TextStyle text16W500grey100 = TextStyle(
+    color: ColorHelper.grey100,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
   static const TextStyle appBarTitle = TextStyle(
     color: ColorHelper.grey100,
     fontSize: 18,

@@ -58,5 +58,6 @@
   "popular_couriers": "Popular Couriers",
   "in_progress": "In progress",
   "completed": "Completed",
-  "canceled": "Canceled"
+  "canceled": "Canceled",
+  "order_id": "Order ID"
 }

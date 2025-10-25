@@ -181,4 +181,7 @@ abstract class LocaleKeys {
   static const String _canceled = 'canceled';
   static String get canceled => _canceled.tr();
 
+  static const String _orderId = 'order_id';
+  static String get orderId => _orderId.tr();
+
 }
