@@ -82,7 +82,9 @@ class HomeBody extends StatelessWidget {
           sliver: SliverToBoxAdapter(
             child: CustomViewAllRow(
               title: LocaleKeys.popularCouriers,
-              onTap: () {},
+              onTap: () {
+                context.read<MainViewCubit>().setInitialTab(3);
+              },
             ),
           ),
         ),
