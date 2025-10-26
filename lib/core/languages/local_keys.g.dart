@@ -184,4 +184,70 @@ abstract class LocaleKeys {
   static const String _orderId = 'order_id';
   static String get orderId => _orderId.tr();
 
+  static const String _packageDetails = 'package_details';
+  static String get packageDetails => _packageDetails.tr();
+
+  static const String _location = 'location';
+  static String get location => _location.tr();
+
+  static const String _locationInfo = 'location_info';
+  static String get locationInfo => _locationInfo.tr();
+
+  static const String _senderInfo = 'sender_info';
+  static String get senderInfo => _senderInfo.tr();
+
+  static const String _receiverInfo = 'receiver_info';
+  static String get receiverInfo => _receiverInfo.tr();
+
+  static const String _name = 'name';
+  static String get name => _name.tr();
+
+  static const String _phone = 'phone';
+  static String get phone => _phone.tr();
+
+  static const String _pickupLocation = 'pickup_location';
+  static String get pickupLocation => _pickupLocation.tr();
+
+  static const String _fragile = 'fragile';
+  static String get fragile => _fragile.tr();
+
+  static const String _weight = 'weight';
+  static String get weight => _weight.tr();
+
+  static const String _packageContents = 'package_contents';
+  static String get packageContents => _packageContents.tr();
+
+  static const String _dropoffLocation = 'dropoff_location';
+  static String get dropoffLocation => _dropoffLocation.tr();
+
+  static const String _courierInfo = 'courier_info';
+  static String get courierInfo => _courierInfo.tr();
+
+  static const String _packageInfo = 'package_info';
+  static String get packageInfo => _packageInfo.tr();
+
+  static const String _status = 'status';
+  static String get status => _status.tr();
+
+  static const String _price = 'price';
+  static String get price => _price.tr();
+
+  static const String _payment = 'payment';
+  static String get payment => _payment.tr();
+
+  static const String _paymentMethod = 'payment_method';
+  static String get paymentMethod => _paymentMethod.tr();
+
+  static const String _cash = 'cash';
+  static String get cash => _cash.tr();
+
+  static const String _visa = 'visa';
+  static String get visa => _visa.tr();
+
+  static const String _onDelivery = 'on_delivery';
+  static String get onDelivery => _onDelivery.tr();
+
+  static const String _totalPrice = 'total_price';
+  static String get totalPrice => _totalPrice.tr();
+
 }

@@ -59,7 +59,30 @@
     "In progress":"قيد التنفيذ",
     "Completed":"مكتملة",
     "Canceled":"ملغية",
-    "Order ID":"رقم الطلب"
+    "Order ID":"رقم الطلب",
+    "Package Details":"تفاصيل الطرد", 
+    "Location":"",
+    "Location Info":"",
+    "Sender Info":"",
+    "Receiver Info":"",
+    "Name":"", 
+    "Phone":"",
+    "pickup Location":"",
+    "Fragile":"",
+    "Weight":"",
+    "Package contents":"", 
+    "Dropoff Location":"",
+    "Courier Info":"",
+    "Package Info":"",
+    "Status":"",
+    "Price":"",
+    "Payment":"",
+    "Payment Method":"",
+    "Cash":"",
+    "Visa":"",
+    "On Delivery":"",
+    "Total Price":""
+    
   
    
   

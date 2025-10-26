@@ -1,5 +1,5 @@
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
-import 'package:drb_shipment_user/features/auth/presentation/widgets/forget_password/forget_password_custom_appbar.dart';
+import 'package:drb_shipment_user/core/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
@@ -17,7 +17,7 @@ class ChangePasswordBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ForgetPasswordCustomAppbar(title: LocaleKeys.changePassword),
+          CustomAppbar(title: LocaleKeys.changePassword),
           Text(
             textAlign: TextAlign.start,
             LocaleKeys.diffirentPass,
