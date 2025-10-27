@@ -295,4 +295,52 @@ abstract class LocaleKeys {
   static const String _motorcycle = 'motorcycle';
   static String get motorcycle => _motorcycle.tr();
 
+  static const String _logout = 'logout';
+  static String get logout => _logout.tr();
+
+  static const String _yes = 'yes';
+  static String get yes => _yes.tr();
+
+  static const String _no = 'no';
+  static String get no => _no.tr();
+
+  static const String _cancel = 'cancel';
+  static String get cancel => _cancel.tr();
+
+  static const String _delete = 'delete';
+  static String get delete => _delete.tr();
+
+  static const String _edit = 'edit';
+  static String get edit => _edit.tr();
+
+  static const String _update = 'update';
+  static String get update => _update.tr();
+
+  static const String _add = 'add';
+  static String get add => _add.tr();
+
+  static const String _save = 'save';
+  static String get save => _save.tr();
+
+  static const String _areYouSureYouWantToLogout = 'are_you_sure_you_want_to_logout';
+  static String get areYouSureYouWantToLogout => _areYouSureYouWantToLogout.tr();
+
+  static const String _profile = 'profile';
+  static String get profile => _profile.tr();
+
+  static const String _settings = 'settings';
+  static String get settings => _settings.tr();
+
+  static const String _language = 'language';
+  static String get language => _language.tr();
+
+  static const String _helpCenter = 'help_center';
+  static String get helpCenter => _helpCenter.tr();
+
+  static const String _pickImage = 'pick_image';
+  static String get pickImage => _pickImage.tr();
+
+  static const String _takePhoto = 'take_photo';
+  static String get takePhoto => _takePhoto.tr();
+
 }

@@ -12,6 +12,8 @@ class ColorHelper {
 
   static const Color yellow = Color(0xffffcc00);
 
+  static const Color transparent = Colors.transparent;
+
   static const Color grey50 = Color(0xffF9FAFB);
   static const Color grey100 = Color(0xffF3F4F6);
   static const Color grey200 = Color(0xffE5E7EB);
