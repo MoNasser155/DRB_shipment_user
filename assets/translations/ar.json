@@ -81,5 +81,20 @@
   "cash": "",
   "visa": "",
   "on_delivery": "",
-  "total_price": ""
+  "total_price": "",
+  "vehicle_info": "",
+  "type": "",
+  "model": "",
+  "plate_number": "",
+  "color": "",
+  "driver_info": "",
+  "driver_name": "",
+  "driver_phone": "",
+  "driver_license": "",
+  "truck": "",
+  "van": "",
+  "car": "",
+  "bike": "",
+  "bus": "",
+  "motorcycle": ""
 }

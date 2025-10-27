@@ -250,4 +250,49 @@ abstract class LocaleKeys {
   static const String _totalPrice = 'total_price';
   static String get totalPrice => _totalPrice.tr();
 
+  static const String _vehicleInfo = 'vehicle_info';
+  static String get vehicleInfo => _vehicleInfo.tr();
+
+  static const String _type = 'type';
+  static String get type => _type.tr();
+
+  static const String _model = 'model';
+  static String get model => _model.tr();
+
+  static const String _plateNumber = 'plate_number';
+  static String get plateNumber => _plateNumber.tr();
+
+  static const String _color = 'color';
+  static String get color => _color.tr();
+
+  static const String _driverInfo = 'driver_info';
+  static String get driverInfo => _driverInfo.tr();
+
+  static const String _driverName = 'driver_name';
+  static String get driverName => _driverName.tr();
+
+  static const String _driverPhone = 'driver_phone';
+  static String get driverPhone => _driverPhone.tr();
+
+  static const String _driverLicense = 'driver_license';
+  static String get driverLicense => _driverLicense.tr();
+
+  static const String _truck = 'truck';
+  static String get truck => _truck.tr();
+
+  static const String _van = 'van';
+  static String get van => _van.tr();
+
+  static const String _car = 'car';
+  static String get car => _car.tr();
+
+  static const String _bike = 'bike';
+  static String get bike => _bike.tr();
+
+  static const String _bus = 'bus';
+  static String get bus => _bus.tr();
+
+  static const String _motorcycle = 'motorcycle';
+  static String get motorcycle => _motorcycle.tr();
+
 }

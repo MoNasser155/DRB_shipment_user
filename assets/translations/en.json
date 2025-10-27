@@ -81,5 +81,20 @@
   "cash": "Cash",
   "visa": "Visa",
   "on_delivery": "On Delivery",
-  "total_price": "Total Price"
+  "total_price": "Total Price",
+  "vehicle_info": "Vehicle Info",
+  "type": "Type",
+  "model": "Model",
+  "plate_number": "Plate Number",
+  "color": "Color",
+  "driver_info": "Driver Info",
+  "driver_name": "Driver Name",
+  "driver_phone": "Driver Phone",
+  "driver_license": "Driver License",
+  "truck": "Truck",
+  "van": "Van",
+  "car": "Car",
+  "bike": "Bike",
+  "bus": "Bus",
+  "motorcycle": "Motorcycle"
 }

@@ -81,7 +81,26 @@
     "Cash":"",
     "Visa":"",
     "On Delivery":"",
-    "Total Price":""
+    "Total Price":"",
+    "Vehicle Info":"",
+    "Type":"",
+    "Model":"",
+    "Plate Number":"",
+    "Color":"",
+    "Driver Info":"",
+    "Driver Name":"",
+    "Driver Phone":"",
+    "Driver License":"",
+    "Truck":"",
+    "Van":"",
+    "Car":"",
+    "Bike":"",
+    "Bus":"",
+    "Motorcycle":""
+   
+    
+    
+   
     
   
    
