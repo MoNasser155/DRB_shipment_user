@@ -172,4 +172,127 @@ abstract class LocaleKeys {
   static const String _popularCouriers = 'popular_couriers';
   static String get popularCouriers => _popularCouriers.tr();
 
+  static const String _inProgress = 'in_progress';
+  static String get inProgress => _inProgress.tr();
+
+  static const String _completed = 'completed';
+  static String get completed => _completed.tr();
+
+  static const String _canceled = 'canceled';
+  static String get canceled => _canceled.tr();
+
+  static const String _orderId = 'order_id';
+  static String get orderId => _orderId.tr();
+
+  static const String _packageDetails = 'package_details';
+  static String get packageDetails => _packageDetails.tr();
+
+  static const String _location = 'location';
+  static String get location => _location.tr();
+
+  static const String _locationInfo = 'location_info';
+  static String get locationInfo => _locationInfo.tr();
+
+  static const String _senderInfo = 'sender_info';
+  static String get senderInfo => _senderInfo.tr();
+
+  static const String _receiverInfo = 'receiver_info';
+  static String get receiverInfo => _receiverInfo.tr();
+
+  static const String _name = 'name';
+  static String get name => _name.tr();
+
+  static const String _phone = 'phone';
+  static String get phone => _phone.tr();
+
+  static const String _pickupLocation = 'pickup_location';
+  static String get pickupLocation => _pickupLocation.tr();
+
+  static const String _fragile = 'fragile';
+  static String get fragile => _fragile.tr();
+
+  static const String _weight = 'weight';
+  static String get weight => _weight.tr();
+
+  static const String _packageContents = 'package_contents';
+  static String get packageContents => _packageContents.tr();
+
+  static const String _dropoffLocation = 'dropoff_location';
+  static String get dropoffLocation => _dropoffLocation.tr();
+
+  static const String _courierInfo = 'courier_info';
+  static String get courierInfo => _courierInfo.tr();
+
+  static const String _packageInfo = 'package_info';
+  static String get packageInfo => _packageInfo.tr();
+
+  static const String _status = 'status';
+  static String get status => _status.tr();
+
+  static const String _price = 'price';
+  static String get price => _price.tr();
+
+  static const String _payment = 'payment';
+  static String get payment => _payment.tr();
+
+  static const String _paymentMethod = 'payment_method';
+  static String get paymentMethod => _paymentMethod.tr();
+
+  static const String _cash = 'cash';
+  static String get cash => _cash.tr();
+
+  static const String _visa = 'visa';
+  static String get visa => _visa.tr();
+
+  static const String _onDelivery = 'on_delivery';
+  static String get onDelivery => _onDelivery.tr();
+
+  static const String _totalPrice = 'total_price';
+  static String get totalPrice => _totalPrice.tr();
+
+  static const String _vehicleInfo = 'vehicle_info';
+  static String get vehicleInfo => _vehicleInfo.tr();
+
+  static const String _type = 'type';
+  static String get type => _type.tr();
+
+  static const String _model = 'model';
+  static String get model => _model.tr();
+
+  static const String _plateNumber = 'plate_number';
+  static String get plateNumber => _plateNumber.tr();
+
+  static const String _color = 'color';
+  static String get color => _color.tr();
+
+  static const String _driverInfo = 'driver_info';
+  static String get driverInfo => _driverInfo.tr();
+
+  static const String _driverName = 'driver_name';
+  static String get driverName => _driverName.tr();
+
+  static const String _driverPhone = 'driver_phone';
+  static String get driverPhone => _driverPhone.tr();
+
+  static const String _driverLicense = 'driver_license';
+  static String get driverLicense => _driverLicense.tr();
+
+  static const String _truck = 'truck';
+  static String get truck => _truck.tr();
+
+  static const String _van = 'van';
+  static String get van => _van.tr();
+
+  static const String _car = 'car';
+  static String get car => _car.tr();
+
+  static const String _bike = 'bike';
+  static String get bike => _bike.tr();
+
+  static const String _bus = 'bus';
+  static String get bus => _bus.tr();
+
+  static const String _motorcycle = 'motorcycle';
+  static String get motorcycle => _motorcycle.tr();
+
 }

@@ -55,7 +55,55 @@
     "Order Status":"حالة الطلب",
     "Courier Name":"اسم المندوب",
     "Courier Phone":"رقم هاتف المندوب",
-    "Popular Couriers":"المناديب المعروفين"
+    "Popular Couriers":"المناديب المعروفين",
+    "In progress":"قيد التنفيذ",
+    "Completed":"مكتملة",
+    "Canceled":"ملغية",
+    "Order ID":"رقم الطلب",
+    "Package Details":"تفاصيل الطرد", 
+    "Location":"",
+    "Location Info":"",
+    "Sender Info":"",
+    "Receiver Info":"",
+    "Name":"", 
+    "Phone":"",
+    "pickup Location":"",
+    "Fragile":"",
+    "Weight":"",
+    "Package contents":"", 
+    "Dropoff Location":"",
+    "Courier Info":"",
+    "Package Info":"",
+    "Status":"",
+    "Price":"",
+    "Payment":"",
+    "Payment Method":"",
+    "Cash":"",
+    "Visa":"",
+    "On Delivery":"",
+    "Total Price":"",
+    "Vehicle Info":"",
+    "Type":"",
+    "Model":"",
+    "Plate Number":"",
+    "Color":"",
+    "Driver Info":"",
+    "Driver Name":"",
+    "Driver Phone":"",
+    "Driver License":"",
+    "Truck":"",
+    "Van":"",
+    "Car":"",
+    "Bike":"",
+    "Bus":"",
+    "Motorcycle":""
+   
+    
+    
+   
+    
+  
+   
   
     
 }

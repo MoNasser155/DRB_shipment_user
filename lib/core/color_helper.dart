@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 class ColorHelper {
   static const Color primaryGreen = Color(0xff38bd55);
-  static const Color backgroundBlack = Color(0xff171717);
   static const Color secondryOrange = Color(0xffe07c34);
+  static const Color backgroundBlack = Color(0xff171717);
+
+  static const Color white = Color(0xffffffff);
+  static const Color black = Color(0xff000000);
+
+  static const Color red = Color(0xffff0000);
+
+  static const Color yellow = Color(0xffffcc00);
 
   static const Color grey50 = Color(0xffF9FAFB);
   static const Color grey100 = Color(0xffF3F4F6);

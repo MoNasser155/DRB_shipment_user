@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
-import 'forget_password_custom_appbar.dart';
+import '../../../../../core/widgets/custom_appbar.dart';
 
 class ForgetPasswordBody extends StatelessWidget {
   const ForgetPasswordBody({super.key});
@@ -16,7 +16,7 @@ class ForgetPasswordBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ForgetPasswordCustomAppbar(title: LocaleKeys.verifyEmail),
+          CustomAppbar(title: LocaleKeys.verifyEmail),
           Gap(SpacingHelper.kVertical12),
           CustomTextField(hint: LocaleKeys.email),
         ],

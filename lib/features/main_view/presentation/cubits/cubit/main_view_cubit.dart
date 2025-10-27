@@ -1,12 +1,14 @@
 import 'package:drb_shipment_user/core/app_assets/icons.dart';
 import 'package:drb_shipment_user/core/enums/state_status.dart';
 import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
+import 'package:drb_shipment_user/features/couriers/presentation/screens/couriers_screen.dart';
 import 'package:drb_shipment_user/features/main_view/data/models/bottom_sheet_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../home/presentation/screens/home_screen.dart';
+import '../../../../packages/presentation/screens/packages_screen.dart';
 
 part 'main_view_state.dart';
 
@@ -17,9 +19,9 @@ class MainViewCubit extends Cubit<MainViewState> {
 
   final List<Widget> screens = [
     HomeScreen(),
-    Container(width: 200, height: 200, color: Colors.red),
+    PackagesScreen(),
     Container(width: 200, height: 200, color: Colors.blue),
-    Container(width: 200, height: 200, color: Colors.yellow),
+    CouriersScreen(),
     Container(width: 200, height: 200, color: Colors.purple),
   ];
 

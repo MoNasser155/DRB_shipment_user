@@ -4,7 +4,7 @@ import '../../../../../core/constants.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
-import 'forget_password_custom_appbar.dart';
+import '../../../../../core/widgets/custom_appbar.dart';
 import 'otp_counter.dart';
 import 'otp_field.dart';
 
@@ -19,7 +19,7 @@ class ForgetPasswordOTPBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ForgetPasswordCustomAppbar(title: LocaleKeys.verfiyOtp),
+          CustomAppbar(title: LocaleKeys.verfiyOtp),
           Text(LocaleKeys.pinEmail, style: AppTextTheme.text14W600grey300),
           Gap(SpacingHelper.kVertical20),
           OtpField(onSubmit: (val) {}, onChange: (val) {}),
