@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249547916455",
+    "project_id": "drb-shipment-training",
+    "storage_bucket": "drb-shipment-training.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249547916455:android:40972fde40703d0d7dc782",
+        "android_client_info": {
+          "package_name": "com.example.drb_shipment_user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD70OTr_Yz5aAHRufPxgAwE25mdQ7vPt1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
