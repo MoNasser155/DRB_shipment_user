@@ -3,6 +3,7 @@ import 'package:drb_shipment_user/core/enums/state_status.dart';
 import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
 import 'package:drb_shipment_user/features/couriers/presentation/screens/couriers_screen.dart';
 import 'package:drb_shipment_user/features/main_view/data/models/bottom_sheet_model.dart';
+import 'package:drb_shipment_user/features/user_account/presentation/imports/user_account_imports.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +23,7 @@ class MainViewCubit extends Cubit<MainViewState> {
     PackagesScreen(),
     Container(width: 200, height: 200, color: Colors.blue),
     CouriersScreen(),
-    Container(width: 200, height: 200, color: Colors.purple),
+    UserAccountScreen(),
   ];
 
   final List<BottomSheetModel> tabs = [

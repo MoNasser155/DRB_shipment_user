@@ -7,4 +7,7 @@ class AppIcons {
   static const String account = 'assets/icons/profile.svg';
   static const String notifications = 'assets/icons/notification-bing.svg';
   static const String scanner = 'assets/icons/scanner.svg';
+  static const String settings = 'assets/icons/settings.svg';
+  static const String language = 'assets/icons/language.svg';
+  static const String helpCenter = 'assets/icons/help_center.svg';
 }

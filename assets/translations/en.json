@@ -96,5 +96,21 @@
   "car": "Car",
   "bike": "Bike",
   "bus": "Bus",
-  "motorcycle": "Motorcycle"
+  "motorcycle": "Motorcycle",
+  "logout": "Logout",
+  "yes": "Yes",
+  "no": "No",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "update": "Update",
+  "add": "Add",
+  "save": "Save",
+  "are_you_sure_you_want_to_logout": "Are you sure you want to Logout",
+  "profile": "Profile",
+  "settings": "Settings",
+  "language": "Language",
+  "help_center": "Help Center",
+  "pick_image": "Pick Image",
+  "take_photo": "Take Photo"
 }
