@@ -112,5 +112,11 @@
   "language": "اللغة",
   "help_center": "مركز المساعدة",
   "pick_image": "اختر صورة",
-  "take_photo": "التقط صورة"
+  "take_photo": "التقط صورة",
+  "the_password_provided_is_too_weak": "كلمة المرور المقدمة ضعيفة جداً",
+  "the_email_address_is_already_in_use_by_another_account": "البريد الالكتروني مستخدم بالفعل من حساب اخر",
+  "an_error_has_occurred": "حدث خطأ ما",
+  "please_try_again_later": "يرجى المحاولة مرة اخرى في وقت لاحق",
+  "no_user_found_for_that_email": "لا يوجد مستخدم لهذا البريد الالكتروني",
+  "wrong_password": "كلمة المرور غير صحيحة"
 }

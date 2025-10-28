@@ -343,4 +343,22 @@ abstract class LocaleKeys {
   static const String _takePhoto = 'take_photo';
   static String get takePhoto => _takePhoto.tr();
 
+  static const String _thePasswordProvidedIsTooWeak = 'the_password_provided_is_too_weak';
+  static String get thePasswordProvidedIsTooWeak => _thePasswordProvidedIsTooWeak.tr();
+
+  static const String _theEmailAddressIsAlreadyInUseByAnotherAccount = 'the_email_address_is_already_in_use_by_another_account';
+  static String get theEmailAddressIsAlreadyInUseByAnotherAccount => _theEmailAddressIsAlreadyInUseByAnotherAccount.tr();
+
+  static const String _anErrorHasOccurred = 'an_error_has_occurred';
+  static String get anErrorHasOccurred => _anErrorHasOccurred.tr();
+
+  static const String _pleaseTryAgainLater = 'please_try_again_later';
+  static String get pleaseTryAgainLater => _pleaseTryAgainLater.tr();
+
+  static const String _noUserFoundForThatEmail = 'no_user_found_for_that_email';
+  static String get noUserFoundForThatEmail => _noUserFoundForThatEmail.tr();
+
+  static const String _wrongPassword = 'wrong_password';
+  static String get wrongPassword => _wrongPassword.tr();
+
 }

@@ -1,14 +1,15 @@
+import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/utils/navigator_helper.dart';
+import 'package:drb_shipment_user/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:drb_shipment_user/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-
 import '../../../../../core/constants.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
 import '../../../../../core/widgets/cutsom_button.dart';
-import '../../../../main_view/presentation/screens/main_view_screen.dart';
 
 class SignupBottomSheet extends StatelessWidget {
   const SignupBottomSheet({super.key});
@@ -19,20 +20,23 @@ class SignupBottomSheet extends StatelessWidget {
       padding: EdgeInsets.symmetric(
         horizontal: SpacingHelper.kHorizontalPadding,
       ),
+      decoration: BoxDecoration(color: ColorHelper.backgroundBlack),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
 
         children: [
-          CustomButton(
-            buttonChild: Text(
-              LocaleKeys.signIn,
-              style: AppTextTheme.buttonTextStyle,
-            ),
-            onTap: () {
-              AppNavigator.pushReplacement(
-                transitionBuilder: AppNavigator.cupertinoTransition,
-                screen: MainViewScreen(),
+          BlocBuilder<SignupCubit, SignupState>(
+            builder: (context, state) {
+              final cubit = SignupCubit.get(context);
+              return CustomButton(
+                buttonChild: Text(
+                  LocaleKeys.signIn,
+                  style: AppTextTheme.buttonTextStyle,
+                ),
+                onTap: () {
+                  cubit.signup();
+                },
               );
             },
           ),

@@ -1,6 +1,7 @@
+import 'package:drb_shipment_user/core/shared/validations.dart';
+import 'package:drb_shipment_user/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/widgets/textfield_withlabel.dart';
@@ -11,50 +12,66 @@ class SignupInfoContainers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: SpacingHelper.kVertical8,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: TextFieldWithLabel(
-                label: LocaleKeys.firstName,
+    return BlocBuilder<SignupCubit, SignupState>(
+      builder: (context, state) {
+        final cubit = SignupCubit.get(context);
+        return Form(
+          key: cubit.formKey,
+          child: Column(
+            spacing: SpacingHelper.kVertical8,
+            children: [
+              TextFieldWithLabel(
+                label: LocaleKeys.email,
                 removeInit: true,
-                hint: LocaleKeys.firstName,
+                hint: 'username@example.com',
+                controller: cubit.emailController,
+                validate: (val) {
+                  return Validations.validateEmail(val);
+                },
               ),
-            ),
-            Gap(SpacingHelper.horizontal8),
-            Expanded(
-              child: TextFieldWithLabel(
-                label: LocaleKeys.lastName,
+              TextFieldWithLabel(
+                label: LocaleKeys.username,
                 removeInit: true,
-                hint: LocaleKeys.lastName,
+                hint: 'exampleusername',
+                controller: cubit.userNameController,
+                validate: (val) {
+                  return Validations.validateEmpty(val);
+                },
               ),
-            ),
-          ],
-        ),
-        TextFieldWithLabel(
-          label: LocaleKeys.email,
-          removeInit: true,
-          hint: 'username@example.com',
-        ),
-        TextFieldWithLabel(
-          label: LocaleKeys.username,
-          removeInit: true,
-          hint:
-              'username@example.com', //yellow with controller to generate a random name
-        ),
-        PassFieldWithLabel(
-          label: LocaleKeys.password,
-          removeInit: true,
-          hint: '**********',
-        ),
-        PassFieldWithLabel(
-          label: LocaleKeys.confirmPassword,
-          removeInit: true,
-          hint: '**********',
-        ),
-      ],
+              TextFieldWithLabel(
+                label: LocaleKeys.phoneNumber,
+                removeInit: true,
+                hint: '+1 000 000 0000',
+                controller: cubit.phoneController,
+                validate: (val) {
+                  return Validations.validatePhone(val);
+                },
+              ),
+              PassFieldWithLabel(
+                label: LocaleKeys.password,
+                removeInit: true,
+                hint: '**********',
+                controller: cubit.passwordController,
+                validate: (val) {
+                  return Validations.validatePassword(val);
+                },
+              ),
+              PassFieldWithLabel(
+                label: LocaleKeys.confirmPassword,
+                removeInit: true,
+                hint: '**********',
+                controller: cubit.confirmPasswordController,
+                validate: (val) {
+                  return Validations.validateConfirmPassword(
+                    val,
+                    cubit.passwordController.text,
+                  );
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

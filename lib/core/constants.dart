@@ -7,4 +7,6 @@ class Constants {
   static const String kIsOnboardingViewed = 'isOnboardingViewed';
   static String question =
       Languages.currentLanguage.languageCode == 'ar' ? '؟' : '?';
+
+  static String userKey = 'user';    
 }

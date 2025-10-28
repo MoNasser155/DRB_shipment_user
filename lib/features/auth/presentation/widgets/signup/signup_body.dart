@@ -54,6 +54,7 @@ class SignupBody extends StatelessWidget {
                     SignupInfoContainers(),
                     Gap(SpacingHelper.kVertical4),
                     TermsCondCheckBox(onChanged: (val) {}),
+                    Gap(kBottomNavigationBarHeight * 1.9),
                   ],
                 ),
                 Padding(

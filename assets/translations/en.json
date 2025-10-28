@@ -112,5 +112,11 @@
   "language": "Language",
   "help_center": "Help Center",
   "pick_image": "Pick Image",
-  "take_photo": "Take Photo"
+  "take_photo": "Take Photo",
+  "the_password_provided_is_too_weak": "The password provided is too weak",
+  "the_email_address_is_already_in_use_by_another_account": "The email address is already in use by another account",
+  "an_error_has_occurred": "An error has occurred",
+  "please_try_again_later": "Please try again later",
+  "no_user_found_for_that_email": "No user found for that email",
+  "wrong_password": "Wrong password"
 }

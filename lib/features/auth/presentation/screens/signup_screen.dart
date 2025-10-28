@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/constants.dart';
+import '../cubits/signup_cubit/signup_cubit.dart';
 import '../widgets/signup/signup_body.dart';
 import '../widgets/signup/signup_bottom_sheet.dart';
 
@@ -7,11 +10,14 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: true,
-      appBar: AppBar(),
-      bottomSheet: SignupBottomSheet(),
-      body: SignupBody(),
+    return BlocProvider(
+      create: (context) => sl<SignupCubit>(),
+      child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        appBar: AppBar(),
+        bottomSheet: SignupBottomSheet(),
+        body: SignupBody(),
+      ),
     );
   }
 }

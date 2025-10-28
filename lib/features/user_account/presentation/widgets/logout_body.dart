@@ -47,7 +47,10 @@ class LogoutBody extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    // CacheStorage.delete(Constants.userKey);
+                    // AppNavigator.pushAndRemoveAll(screen: LoginScreen());
+                  },
                 ),
               ),
             ],

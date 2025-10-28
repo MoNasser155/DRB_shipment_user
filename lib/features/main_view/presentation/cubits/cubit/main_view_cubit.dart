@@ -1,6 +1,7 @@
 import 'package:drb_shipment_user/core/app_assets/icons.dart';
 import 'package:drb_shipment_user/core/enums/state_status.dart';
 import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
+import 'package:drb_shipment_user/features/auth/domain/entities/user_entity.dart';
 import 'package:drb_shipment_user/features/couriers/presentation/screens/couriers_screen.dart';
 import 'package:drb_shipment_user/features/main_view/data/models/bottom_sheet_model.dart';
 import 'package:drb_shipment_user/features/user_account/presentation/imports/user_account_imports.dart';
@@ -33,6 +34,10 @@ class MainViewCubit extends Cubit<MainViewState> {
     BottomSheetModel(icon: AppIcons.couriers, label: LocaleKeys.couriers),
     BottomSheetModel(icon: AppIcons.account, label: LocaleKeys.account),
   ];
+
+  void setUserData(UserEntity user) {
+    emit(state.copyWith(user: user, status: StateStatus.success));
+  }
 
   void onTabPressed(int index) {
     if (index != state.selectedTabIndex && index >= 0 && index < 5) {
