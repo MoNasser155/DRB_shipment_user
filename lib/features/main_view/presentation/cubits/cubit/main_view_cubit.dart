@@ -15,12 +15,17 @@ import '../../../../packages/presentation/screens/packages_screen.dart';
 part 'main_view_state.dart';
 
 class MainViewCubit extends Cubit<MainViewState> {
-  MainViewCubit() : super(MainViewState.initial());
+  MainViewCubit() : super(MainViewState.initial()) {
+    setInitialTab(0);
+  }
 
   static MainViewCubit get(context) => BlocProvider.of(context);
+  setUserData(UserEntity user) {
+    emit(state.copyWith(user: user, status: StateStatus.success));
+  }
 
-  final List<Widget> screens = [
-    HomeScreen(),
+  List<Widget> get screens => [
+    HomeScreen(user: state.user),
     PackagesScreen(),
     Container(width: 200, height: 200, color: Colors.blue),
     CouriersScreen(),
@@ -34,10 +39,6 @@ class MainViewCubit extends Cubit<MainViewState> {
     BottomSheetModel(icon: AppIcons.couriers, label: LocaleKeys.couriers),
     BottomSheetModel(icon: AppIcons.account, label: LocaleKeys.account),
   ];
-
-  void setUserData(UserEntity user) {
-    emit(state.copyWith(user: user, status: StateStatus.success));
-  }
 
   void onTabPressed(int index) {
     if (index != state.selectedTabIndex && index >= 0 && index < 5) {

@@ -14,4 +14,15 @@ class AdsBannerModel {
     this.fromDate,
     this.toDate,
   });
+
+  factory AdsBannerModel.fromMap(Map<String, dynamic> map) {
+    return AdsBannerModel(
+      id: map['id'],
+      title: map['title'],
+      subTitle: map['subTitle'],
+      imageUrl: map['imageUrl'],
+      fromDate: map['fromDate'].toDate(),
+      toDate: map['toDate'].toDate(),
+    );
+  }
 }

@@ -1,4 +1,6 @@
+import 'package:drb_shipment_user/features/home/presentation/cubits/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -14,74 +16,81 @@ class HomeCustomAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      pinned: true,
-      floating: true,
-      snap: true,
-      surfaceTintColor: Colors.transparent,
-      toolbarHeight: 48.h,
-      flexibleSpace: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: SpacingHelper.kHorizontalPadding,
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: SpacingHelper.horizontal4,
-                vertical: SpacingHelper.kVertical4,
-              ),
-              constraints: BoxConstraints(maxHeight: 40.h),
-              decoration: BoxDecoration(
-                color: ColorHelper.grey100.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(RadiusHelper.kRadius6),
-              ),
-              child: Row(
-                children: [
-                  CustomCachedImage(),
-                  Gap(SpacingHelper.horizontal8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
+    return BlocBuilder<HomeCubit, HomeState>(
+      buildWhen: (previous, current) {
+        return previous.user != current.user || previous.date != current.date;
+      },
+      builder: (context, state) {
+        return SliverAppBar(
+          pinned: true,
+          floating: true,
+          snap: true,
+          surfaceTintColor: Colors.transparent,
+          toolbarHeight: 48.h,
+          flexibleSpace: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: SpacingHelper.kHorizontalPadding,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: SpacingHelper.horizontal4,
+                    vertical: SpacingHelper.kVertical4,
+                  ),
+                  constraints: BoxConstraints(maxHeight: 40.h),
+                  decoration: BoxDecoration(
+                    color: ColorHelper.grey100.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(RadiusHelper.kRadius6),
+                  ),
+                  child: Row(
                     children: [
-                      const Text(
-                        'User name',
-                        style: AppTextTheme.text14W500grey300,
+                      CustomCachedImage(),
+                      Gap(SpacingHelper.horizontal8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            state.user.usreName,
+                            style: AppTextTheme.text14W500grey300,
+                          ),
+                          Text(
+                            state.date,
+                            style: AppTextTheme.text12W500grey500,
+                          ),
+                        ],
                       ),
-                      const Text(
-                        '17 Jun 2023',
-                        style: AppTextTheme.text12W500grey500,
-                      ),
+                      Gap(SpacingHelper.horizontal8),
                     ],
                   ),
-                  Gap(SpacingHelper.horizontal8),
-                ],
-              ),
-            ),
-            const Spacer(),
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: SpacingHelper.horizontal8,
-                vertical: SpacingHelper.kVertical8,
-              ),
-              height: 40.h,
-              width: 40.h,
-              decoration: BoxDecoration(
-                color: ColorHelper.grey100.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(RadiusHelper.kRadius6),
-              ),
-              child: SvgPicture.asset(
-                AppIcons.notifications,
-                colorFilter: ColorFilter.mode(
-                  ColorHelper.primaryGreen,
-                  BlendMode.srcIn,
                 ),
-              ),
+                const Spacer(),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: SpacingHelper.horizontal8,
+                    vertical: SpacingHelper.kVertical8,
+                  ),
+                  height: 40.h,
+                  width: 40.h,
+                  decoration: BoxDecoration(
+                    color: ColorHelper.grey100.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(RadiusHelper.kRadius6),
+                  ),
+                  child: SvgPicture.asset(
+                    AppIcons.notifications,
+                    colorFilter: ColorFilter.mode(
+                      ColorHelper.primaryGreen,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

@@ -10,20 +10,21 @@ class CustomCachedImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(radius??RadiusHelper.kRadius4),
+      borderRadius: BorderRadius.circular(radius ?? RadiusHelper.kRadius4),
       child: CachedNetworkImage(
         imageUrl:
             "https://i.pinimg.com/736x/d3/e7/0d/d3e70d89e5bfbe3b18c4ccdb6901d7df.jpg",
-        width:width?? 40,
-        height:height?? 40,
+        width: width ?? 40,
+        height: height ?? 40,
         fit: BoxFit.cover,
         placeholder:
-            (context, url) => SizedBox(
-              width: 24,
-              height: 24,
-              child: CircularProgressIndicator(color: ColorHelper.primaryGreen),
+            (context, url) => CircularProgressIndicator(
+              color: ColorHelper.primaryGreen,
+              constraints: const BoxConstraints(maxHeight: 24, maxWidth: 24),
             ),
-        errorWidget: (context, url, error) => Icon(Icons.error),
+        errorWidget:
+            (context, url, error) =>
+                Icon(Icons.error, color: Colors.red, size: 24),
       ),
     );
   }
