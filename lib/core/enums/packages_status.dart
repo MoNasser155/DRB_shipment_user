@@ -8,6 +8,17 @@ enum PackagesStatus {
   completed,
   canceled;
 
+  String get firebaseValue {
+    switch (this) {
+      case PackagesStatus.inProgress:
+        return 'inProgress';
+      case PackagesStatus.completed:
+        return 'completed';
+      case PackagesStatus.canceled:
+        return 'canceled';
+    }
+  }
+
   String get title {
     switch (this) {
       case PackagesStatus.inProgress:

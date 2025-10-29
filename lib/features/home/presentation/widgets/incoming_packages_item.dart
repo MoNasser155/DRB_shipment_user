@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:drb_shipment_user/features/packages/data/models/packages_model.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -9,8 +10,8 @@ import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/themes/text_theme.dart';
 
 class IncomingPackagesItem extends StatelessWidget {
-  const IncomingPackagesItem({super.key});
-
+  const IncomingPackagesItem({super.key, required this.packagesModel});
+  final PackagesModel packagesModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,7 +45,7 @@ class IncomingPackagesItem extends StatelessWidget {
                 style: AppTextTheme.text14W500grey400,
               ),
               Gap(SpacingHelper.kVertical4),
-              Text("#123456", style: AppTextTheme.text16W500grey300),
+              Text(packagesModel.id, style: AppTextTheme.text16W500grey300),
             ],
           ),
           Spacer(),
