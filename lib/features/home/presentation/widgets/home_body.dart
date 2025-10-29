@@ -1,18 +1,17 @@
-import 'package:drb_shipment_user/features/home/presentation/cubits/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import '../../../../core/enums/state_status.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
-import '../../../../core/widgets/custom_skeletonizer.dart';
 import '../../../../core/widgets/custom_view_all_row.dart';
 import '../../../main_view/presentation/cubits/cubit/main_view_cubit.dart';
-import '../../../packages/data/models/packages_model.dart';
+import '../cubits/cubit/home_cubit.dart';
 import 'custom_ads_panner.dart';
 import 'custom_home_search.dart';
+import 'empty_home_packages_body.dart';
 import 'home_custom_appbar.dart';
-import 'incoming_packages_item.dart';
+import 'home_packages_list.dart';
 import 'popular_courier_item.dart';
 
 class HomeBody extends StatelessWidget {
@@ -48,33 +47,15 @@ class HomeBody extends StatelessWidget {
         SliverGap(SpacingHelper.kVertical8),
         BlocBuilder<HomeCubit, HomeState>(
           buildWhen: (previous, current) {
-            return previous.packagesList != current.packagesList;
+            return previous.packagesList != current.packagesList ||
+                previous.status != current.status;
           },
           builder: (context, state) {
-            return SliverPadding(
-              padding: EdgeInsets.symmetric(
-                horizontal: SpacingHelper.kHorizontalPadding,
-              ),
-              sliver: SliverList.separated(
-                itemCount:
-                    state.status == StateStatus.loading
-                        ? 3
-                        : state.packagesList.length,
-                itemBuilder: (context, index) {
-                  final packagesModel =
-                      state.status == StateStatus.loading
-                          ? PackagesModel.skeleton()
-                          : state.packagesList[index];
-                  return CustomSkeletonizer(
-                    enabled: state.status == StateStatus.loading,
-                    child: IncomingPackagesItem(packagesModel: packagesModel),
-                  );
-                },
-                separatorBuilder: (context, index) {
-                  return Gap(SpacingHelper.kVertical8);
-                },
-              ),
-            );
+            if (state.status == StateStatus.success &&
+                state.packagesList.isEmpty) {
+              return EmptyHomePackagesBody();
+            }
+            return HomePackagesList();
           },
         ),
         SliverGap(SpacingHelper.kVertical12),

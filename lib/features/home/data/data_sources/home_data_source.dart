@@ -12,7 +12,11 @@ class HomeDataSourceImpl implements HomeDataSource {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   @override
   Future<List<AdsBannerModel>> getAds() async {
-    final adsList = await _firestore.collection('ads').get();
+    final adsList =
+        await _firestore
+            .collection('ads')
+            .where('toDate', isGreaterThanOrEqualTo: DateTime.now())
+            .get();
     return adsList.docs.map((e) => AdsBannerModel.fromMap(e.data())).toList();
   }
 

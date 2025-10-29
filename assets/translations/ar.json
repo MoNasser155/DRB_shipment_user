@@ -126,5 +126,6 @@
   "phone_number_must_be_at_least_10_digits": "رقم الهاتف يجب ان يكون على الاقل 10 ارقام",
   "password_must_be_at_least_6_characters": "كلمة المرور يجب ان تكون على الاقل 6 حروف",
   "password_dose_not_match": "كلمة المرور غير متطابقة",
-  "package_content": "محتويات الطرد"
+  "package_content": "محتويات الطرد",
+  "add_your_first_package": "اضف الطرد الاول"
 }

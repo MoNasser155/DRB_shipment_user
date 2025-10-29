@@ -385,4 +385,7 @@ abstract class LocaleKeys {
   static const String _packageContent = 'package_content';
   static String get packageContent => _packageContent.tr();
 
+  static const String _addYourFirstPackage = 'add_your_first_package';
+  static String get addYourFirstPackage => _addYourFirstPackage.tr();
+
 }
