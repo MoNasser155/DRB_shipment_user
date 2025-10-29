@@ -26,7 +26,7 @@ class MainViewCubit extends Cubit<MainViewState> {
 
   List<Widget> get screens => [
     HomeScreen(user: state.user),
-    PackagesScreen(),
+    PackagesScreen(user: state.user),
     Container(width: 200, height: 200, color: Colors.blue),
     CouriersScreen(),
     UserAccountScreen(),

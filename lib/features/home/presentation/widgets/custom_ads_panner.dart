@@ -1,7 +1,6 @@
+import 'package:drb_shipment_user/core/widgets/custom_skeletonizer.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-
 import '../../../../core/enums/state_status.dart';
 import '../../../../core/helpers/redius_helper.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
@@ -25,7 +24,7 @@ class CustomAdsPanner extends StatelessWidget {
             horizontal: SpacingHelper.kHorizontalPadding,
           ),
           sliver: SliverToBoxAdapter(
-            child: Skeletonizer(
+            child: CustomSkeletonizer(
               enabled: state.status == StateStatus.loading,
               child: CustomAdsCarouselViewer(
                 images: ads.map((e) => e.imageUrl ?? '').toList(),

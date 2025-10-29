@@ -44,6 +44,15 @@ class PackageDetailsPackageSection extends StatelessWidget {
                   title: LocaleKeys.status,
                   data: PackagesStatus.inProgress.title,
                 ),
+                Gap(SpacingHelper.kVertical4),
+                PackageDetailsRow(
+                  icon: Icons.dangerous,
+                  title: LocaleKeys.fragile,
+                  data:
+                      state.packagesModel.isFragile
+                          ? LocaleKeys.yes
+                          : LocaleKeys.no,
+                ),
               ],
             );
           },

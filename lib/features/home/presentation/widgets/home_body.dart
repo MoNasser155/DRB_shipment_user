@@ -2,11 +2,10 @@ import 'package:drb_shipment_user/features/home/presentation/cubits/cubit/home_c
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-import '../../../../core/color_helper.dart';
 import '../../../../core/enums/state_status.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
+import '../../../../core/widgets/custom_skeletonizer.dart';
 import '../../../../core/widgets/custom_view_all_row.dart';
 import '../../../main_view/presentation/cubits/cubit/main_view_cubit.dart';
 import '../../../packages/data/models/packages_model.dart';
@@ -66,8 +65,7 @@ class HomeBody extends StatelessWidget {
                       state.status == StateStatus.loading
                           ? PackagesModel.skeleton()
                           : state.packagesList[index];
-                  return Skeletonizer(
-                    containersColor: ColorHelper.grey800,
+                  return CustomSkeletonizer(
                     enabled: state.status == StateStatus.loading,
                     child: IncomingPackagesItem(packagesModel: packagesModel),
                   );

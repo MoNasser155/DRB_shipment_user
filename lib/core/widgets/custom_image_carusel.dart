@@ -97,7 +97,7 @@ class _CustomAdsCarouselViewerState extends State<CustomAdsCarouselViewer> {
         height: widget.height ?? 200,
         width: widget.width ?? double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: ColorHelper.grey100.withValues(alpha: 0.05),
           borderRadius: widget.borderRadius,
         ),
         child: const Center(
