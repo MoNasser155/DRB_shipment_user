@@ -1,11 +1,12 @@
-import 'package:drb_shipment_user/features/packages/data/models/packages_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import '../../../../core/enums/state_status.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/widgets/custom_skeletonizer.dart';
+import '../../data/models/packages_model.dart';
 import '../cubits/Packages/packages_cubit.dart';
+import 'empty_packages_body.dart';
 import 'packages_item.dart';
 
 class PackagesSliverList extends StatelessWidget {
@@ -20,6 +21,9 @@ class PackagesSliverList extends StatelessWidget {
       builder: (context, state) {
         final length =
             state.status == StateStatus.loading ? 15 : state.packages.length;
+        if (state.packages.isEmpty && state.status == StateStatus.success) {
+          return EmptyPcakagesBody();
+        }
         return SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: SpacingHelper.kHorizontalPadding,
