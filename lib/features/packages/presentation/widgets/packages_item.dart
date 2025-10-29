@@ -1,5 +1,6 @@
 import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/utils/navigator_helper.dart';
+import 'package:drb_shipment_user/features/packages/data/models/packages_model.dart';
 import 'package:drb_shipment_user/features/packages/presentation/screens/packages_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -18,7 +19,7 @@ class PackagesItem extends StatelessWidget {
       onTap: () {
         AppNavigator.push(
           transitionBuilder: AppNavigator.cupertinoTransition,
-          screen: PackagesDetailsScreen(),
+          screen: PackagesDetailsScreen(packageData: PackagesModel.skeleton()), //yellow need to be handeled 
         );
       },
       child: Container(

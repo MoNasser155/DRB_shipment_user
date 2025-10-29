@@ -67,9 +67,7 @@ class HomeBody extends StatelessWidget {
                           ? PackagesModel.skeleton()
                           : state.packagesList[index];
                   return Skeletonizer(
-                    containersColor: ColorHelper.grey100.withValues(
-                      alpha: 0.05,
-                    ),
+                    containersColor: ColorHelper.grey800,
                     enabled: state.status == StateStatus.loading,
                     child: IncomingPackagesItem(packagesModel: packagesModel),
                   );

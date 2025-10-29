@@ -1,4 +1,4 @@
-import 'package:drb_shipment_user/features/packages/presentation/cubits/cubit/packages_cubit.dart';
+import 'package:drb_shipment_user/features/packages/presentation/cubits/Packages/packages_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -30,6 +30,18 @@ enum PackagesStatus {
     }
   }
 
+  static String setPackageStatusTitle(String title) {
+    switch (title) {
+      case 'inProgress':
+        return PackagesStatus.inProgress.title;
+      case 'completed':
+        return PackagesStatus.completed.title;
+      case 'canceled':
+        return PackagesStatus.canceled.title;
+    }
+    return '';
+  }
+
   Color get color {
     switch (this) {
       case PackagesStatus.inProgress:

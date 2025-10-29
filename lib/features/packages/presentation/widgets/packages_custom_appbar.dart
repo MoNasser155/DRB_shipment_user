@@ -1,6 +1,6 @@
 import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
-import 'package:drb_shipment_user/features/packages/presentation/cubits/cubit/packages_cubit.dart';
+import 'package:drb_shipment_user/features/packages/presentation/cubits/Packages/packages_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

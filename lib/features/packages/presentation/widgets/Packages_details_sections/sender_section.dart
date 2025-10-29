@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
+import '../../../../../core/enums/state_status.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
-import '../../../../../core/themes/text_theme.dart';
+import '../../cubits/package_details/package_details_cubit.dart';
+import '../custom_package_expansion_tile.dart';
 import '../package_details_row.dart';
 
 class PackageDetailsSenderSection extends StatelessWidget {
@@ -13,21 +17,34 @@ class PackageDetailsSenderSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: SpacingHelper.kVertical8,
       children: [
-        Text(LocaleKeys.senderInfo, style: AppTextTheme.text18W600grey100),
-        PackageDetailsRow(
-          icon: Icons.person,
-          title: LocaleKeys.name,
-          data: 'Mohammed',
-        ),
-        PackageDetailsRow(
-          icon: Icons.phone_android,
-          title: LocaleKeys.phoneNumber,
-          data: '6549581818',
-        ),
-        PackageDetailsRow(
-          icon: Icons.location_on_outlined,
-          title: LocaleKeys.pickupLocation,
-          data: 'data',
+        BlocBuilder<PackageDetailsCubit, PackageDetailsState>(
+          builder: (context, state) {
+            return CustomPackageExpantionTile(
+              title: LocaleKeys.senderInfo,
+              isEnabled: state.status == StateStatus.success,
+              isExpanded: false,
+              children: [
+                PackageDetailsRow(
+                  icon: Icons.person,
+                  title: LocaleKeys.name,
+                  data: state.user.usreName,
+                ),
+                Gap(SpacingHelper.kVertical4),
+                PackageDetailsRow(
+                  icon: Icons.phone_android,
+                  title: LocaleKeys.phoneNumber,
+                  data: state.user.phoneNumber,
+                ),
+                Gap(SpacingHelper.kVertical4),
+
+                PackageDetailsRow(
+                  icon: Icons.email,
+                  title: LocaleKeys.email,
+                  data: state.user.email,
+                ),
+              ],
+            );
+          },
         ),
       ],
     );

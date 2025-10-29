@@ -23,11 +23,9 @@ class PackagesDetailsBody extends StatelessWidget {
         SliverAppBar(
           pinned: true,
           floating: true,
-
           surfaceTintColor: Colors.transparent,
           backgroundColor: ColorHelper.backgroundBlack,
           automaticallyImplyLeading: false,
-
           toolbarHeight: 56.h,
           flexibleSpace: CustomAppbar(
             title: LocaleKeys.packageDetails,
