@@ -361,4 +361,28 @@ abstract class LocaleKeys {
   static const String _wrongPassword = 'wrong_password';
   static String get wrongPassword => _wrongPassword.tr();
 
+  static const String _packageAddedSuccessfully = 'package_added_successfully';
+  static String get packageAddedSuccessfully => _packageAddedSuccessfully.tr();
+
+  static const String _pleaseEnterYourEmail = 'please_enter_your_email';
+  static String get pleaseEnterYourEmail => _pleaseEnterYourEmail.tr();
+
+  static const String _pleaseEnterAValidEmail = 'please_enter_a_valid_email';
+  static String get pleaseEnterAValidEmail => _pleaseEnterAValidEmail.tr();
+
+  static const String _thisFieldIsRequired = 'this_field_is_required';
+  static String get thisFieldIsRequired => _thisFieldIsRequired.tr();
+
+  static const String _phoneNumberMustBeAtLeast10Digits = 'phone_number_must_be_at_least_10_digits';
+  static String get phoneNumberMustBeAtLeast10Digits => _phoneNumberMustBeAtLeast10Digits.tr();
+
+  static const String _passwordMustBeAtLeast6Characters = 'password_must_be_at_least_6_characters';
+  static String get passwordMustBeAtLeast6Characters => _passwordMustBeAtLeast6Characters.tr();
+
+  static const String _passwordDoseNotMatch = 'password_dose_not_match';
+  static String get passwordDoseNotMatch => _passwordDoseNotMatch.tr();
+
+  static const String _packageContent = 'package_content';
+  static String get packageContent => _packageContent.tr();
+
 }

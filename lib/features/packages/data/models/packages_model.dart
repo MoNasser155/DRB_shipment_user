@@ -1,7 +1,7 @@
 import 'package:drb_shipment_user/core/enums/payment.dart';
 
 class PackagesModel {
-  final String id;
+  final String? id;
   final String senderId;
   final String receiverName;
   final String recieverPhone;
@@ -16,7 +16,7 @@ class PackagesModel {
   final num weight;
 
   PackagesModel({
-    required this.id,
+    this.id,
     required this.senderId,
     required this.receiverName,
     required this.recieverPhone,
@@ -49,17 +49,17 @@ class PackagesModel {
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
+
     data['senderId'] = senderId;
-    data['recieverName'] = receiverName;
-    data['recieverPhone'] = recieverPhone;
-    data['recieverEmail'] = receiverEmail;
     data['content'] = packageContent;
-    data['price'] = price;
-    data['paymentMethod'] = paymentMethod;
+    data['price'] = 0.0;
+    data['paymentMethod'] = paymentMethod.firebaseValue;
     data['status'] = status;
-    data['pickupLocation'] = pickupLocation;
-    data['dropoffLocation'] = dropoffLocation;
+    data['pickupLocation'] = '31.65498519,32.65498519';
+    data['dropoffLocation'] = '32.65498519,33.65498519';
+    data['recieverName'] = receiverName;
+    data['recieverPhone']= recieverPhone;
+    data['recieverEmail']= receiverEmail;
     data['isFragile'] = isFragile;
     data['weight'] = weight;
     return data;

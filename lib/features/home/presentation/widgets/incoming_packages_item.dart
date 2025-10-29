@@ -54,7 +54,7 @@ class IncomingPackagesItem extends StatelessWidget {
                   style: AppTextTheme.text14W500grey400,
                 ),
                 Gap(SpacingHelper.kVertical4),
-                Text(packagesModel.id, style: AppTextTheme.text16W500grey300),
+                Text(packagesModel.id??'', style: AppTextTheme.text16W500grey300),
               ],
             ),
             Spacer(),

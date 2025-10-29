@@ -9,6 +9,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../add_package/presentation/screens/add_new_package_screen.dart';
 import '../../../../home/presentation/screens/home_screen.dart';
 import '../../../../packages/presentation/screens/packages_screen.dart';
 
@@ -27,7 +28,7 @@ class MainViewCubit extends Cubit<MainViewState> {
   List<Widget> get screens => [
     HomeScreen(user: state.user),
     PackagesScreen(user: state.user),
-    Container(width: 200, height: 200, color: Colors.blue),
+    AddNewPackageScreen(user: state.user),
     CouriersScreen(),
     UserAccountScreen(),
   ];

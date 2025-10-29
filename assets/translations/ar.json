@@ -118,5 +118,13 @@
   "an_error_has_occurred": "حدث خطأ ما",
   "please_try_again_later": "يرجى المحاولة مرة اخرى في وقت لاحق",
   "no_user_found_for_that_email": "لا يوجد مستخدم لهذا البريد الالكتروني",
-  "wrong_password": "كلمة المرور غير صحيحة"
+  "wrong_password": "كلمة المرور غير صحيحة",
+  "package_added_successfully": "تم اضافة الطرد بنجاح",
+  "please_enter_your_email": "يرجى ادخال البريد الالكتروني",
+  "please_enter_a_valid_email": "يرجى ادخال بريد الكتروني صالح",
+  "this_field_is_required": "هذا الحقل مطلوب",
+  "phone_number_must_be_at_least_10_digits": "رقم الهاتف يجب ان يكون على الاقل 10 ارقام",
+  "password_must_be_at_least_6_characters": "كلمة المرور يجب ان تكون على الاقل 6 حروف",
+  "password_dose_not_match": "كلمة المرور غير متطابقة",
+  "package_content": "محتويات الطرد"
 }

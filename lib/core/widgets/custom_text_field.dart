@@ -1,6 +1,8 @@
 import 'dart:ui' as ui;
+import 'package:drb_shipment_user/core/helpers/redius_helper.dart';
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../color_helper.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -23,6 +25,7 @@ class CustomTextField extends StatelessWidget {
     this.borderRadius,
     this.scrollPhysics,
     this.enabeledBorder,
+    this.inputFormatters,
   });
   final Function(String)? onChange;
   final TextInputAction? action;
@@ -37,9 +40,11 @@ class CustomTextField extends StatelessWidget {
   final BorderRadius? borderRadius;
   final ScrollPhysics? scrollPhysics;
   final Color? enabeledBorder;
+  final List<TextInputFormatter>? inputFormatters;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      inputFormatters: inputFormatters,
       scrollPhysics: scrollPhysics ?? const NeverScrollableScrollPhysics(),
       textAlignVertical: TextAlignVertical.center,
       selectionHeightStyle: ui.BoxHeightStyle.max,
@@ -62,7 +67,8 @@ class CustomTextField extends StatelessWidget {
         filled: true,
         fillColor: fillColor ?? Colors.transparent,
         border: OutlineInputBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(8),
+          borderRadius:
+              borderRadius ?? BorderRadius.circular(RadiusHelper.kRadius8),
           borderSide: BorderSide(color: ColorHelper.grey50),
         ),
         prefixIcon: prefix,
@@ -76,7 +82,8 @@ class CustomTextField extends StatelessWidget {
           maxHeight: 44,
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(8),
+          borderRadius:
+              borderRadius ?? BorderRadius.circular(RadiusHelper.kRadius8),
           borderSide: const BorderSide(
             style: BorderStyle.solid,
             width: 1,
@@ -84,7 +91,8 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(8),
+          borderRadius:
+              borderRadius ?? BorderRadius.circular(RadiusHelper.kRadius8),
           borderSide: BorderSide(
             style: BorderStyle.solid,
             width: 1,
@@ -92,7 +100,8 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(8),
+          borderRadius:
+              borderRadius ?? BorderRadius.circular(RadiusHelper.kRadius8),
           borderSide: BorderSide(
             style: BorderStyle.solid,
             width: 1,
@@ -100,7 +109,9 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         hintText: hint,
-        hintStyle: AppTextTheme.text14W500grey400,
+        hintStyle: AppTextTheme.text14W600grey300.copyWith(
+          color: ColorHelper.grey500,
+        ),
       ),
     );
   }

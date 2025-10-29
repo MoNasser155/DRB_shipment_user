@@ -41,7 +41,7 @@ class PackagesItem extends StatelessWidget {
                 SizedBox(
                   width: context.width * 0.15,
                   child: Text(
-                    packageData.id,
+                    packageData.id ?? '',
                     style: AppTextTheme.text16W500grey100,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -50,7 +50,7 @@ class PackagesItem extends StatelessWidget {
             ),
             Container(
               width: 2,
-              height: 28,
+              height: 36,
               margin: EdgeInsets.symmetric(
                 horizontal: SpacingHelper.horizontal8,
               ),
@@ -63,7 +63,10 @@ class PackagesItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Order content', style: AppTextTheme.text14W500grey400),
+                  Text(
+                    LocaleKeys.packageContents,
+                    style: AppTextTheme.text14W500grey400,
+                  ),
                   Gap(SpacingHelper.kVertical4),
                   Text(
                     packageData.packageContent,
@@ -76,7 +79,7 @@ class PackagesItem extends StatelessWidget {
             ),
             Container(
               width: 2,
-              height: 28,
+              height: 36,
               margin: EdgeInsets.symmetric(
                 horizontal: SpacingHelper.horizontal8,
               ),

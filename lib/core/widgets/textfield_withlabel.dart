@@ -1,5 +1,6 @@
 import 'package:drb_shipment_user/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
@@ -18,9 +19,12 @@ class TextFieldWithLabel extends StatelessWidget {
     this.validate,
     this.inputType,
     this.onChange,
-    this.removeInit = false,
+    this.removeInit = true,
     this.action,
     this.maxLines = 1,
+    this.minLines = 1,
+    this.scrollPhysics,
+    this.inputFormatters,
   });
   final String? label, hint;
   final bool hidden, readOnly, removeInit;
@@ -32,6 +36,9 @@ class TextFieldWithLabel extends StatelessWidget {
   final Function(String)? onChange;
   final TextInputAction? action;
   final int? maxLines;
+  final int? minLines;
+  final ScrollPhysics? scrollPhysics;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +49,7 @@ class TextFieldWithLabel extends StatelessWidget {
         Text(label!, style: AppTextTheme.text10W500grey300),
         Gap(6.h),
         CustomTextField(
+          scrollPhysics: scrollPhysics,
           action: action,
           onChange: onChange,
           inputType: inputType,
@@ -54,6 +62,8 @@ class TextFieldWithLabel extends StatelessWidget {
           isHidden: hidden,
           fillColor: fillColor,
           maxlines: maxLines,
+          minlines: minLines,
+          inputFormatters: inputFormatters,
           
         ),
       ],

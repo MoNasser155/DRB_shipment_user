@@ -6,7 +6,7 @@ import '../models/packages_model.dart';
 abstract class PackagesDataSource {
   Future<List<PackagesModel>> getPackages(String uId, {String? status});
   Future<UserEntity> getSenderById(String uId);
-  Future<void> addPackage(PackagesModel packagesModel);
+  
 }
 
 class PackagesDataSourceImpl implements PackagesDataSource {
@@ -31,10 +31,5 @@ class PackagesDataSourceImpl implements PackagesDataSource {
   Future<UserEntity> getSenderById(String uId) async {
     final user = await _firestore.collection('users').doc(uId).get();
     return UserEntity.fromMap(user.data()!);
-  }
-
-  @override
-  Future<void> addPackage(PackagesModel packagesModel) async {
-    throw UnimplementedError();
   }
 }

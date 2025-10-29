@@ -39,7 +39,7 @@ class SignupCubit extends Cubit<SignupState> {
   void handleNavigation(UserEntity user) {
     AppNavigator.pushReplacement(
       transitionBuilder: AppNavigator.cupertinoTransition,
-      screen: MainViewScreen(user:user ),
+      screen: MainViewScreen(user: user),
     );
   }
 
@@ -66,5 +66,15 @@ class SignupCubit extends Cubit<SignupState> {
         handleNavigation(user);
       },
     );
+  }
+
+  @override
+  Future<void> close() {
+    userNameController.dispose();
+    emailController.dispose();
+    phoneController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    return super.close();
   }
 }

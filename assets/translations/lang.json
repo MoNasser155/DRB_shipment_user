@@ -118,6 +118,14 @@
     "An error has occurred":"حدث خطأ ما",
     "Please try again later":"يرجى المحاولة مرة اخرى في وقت لاحق",
     "No user found for that email":"لا يوجد مستخدم لهذا البريد الالكتروني",
-    "Wrong password":"كلمة المرور غير صحيحة"
-   
+    "Wrong password":"كلمة المرور غير صحيحة",
+    "Package added successfully":"تم اضافة الطرد بنجاح",
+    "Please enter your email":"يرجى ادخال البريد الالكتروني",
+    "Please enter a valid email":"يرجى ادخال بريد الكتروني صالح",
+    "This field is required":"هذا الحقل مطلوب",
+    "Phone number must be at least 10 digits":"رقم الهاتف يجب ان يكون على الاقل 10 ارقام",
+    "Password must be at least 6 characters":"كلمة المرور يجب ان تكون على الاقل 6 حروف",
+    "Password dose not match":"كلمة المرور غير متطابقة",
+    "Package Content":"محتويات الطرد"
+    
 }

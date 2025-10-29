@@ -118,5 +118,13 @@
   "an_error_has_occurred": "An error has occurred",
   "please_try_again_later": "Please try again later",
   "no_user_found_for_that_email": "No user found for that email",
-  "wrong_password": "Wrong password"
+  "wrong_password": "Wrong password",
+  "package_added_successfully": "Package added successfully",
+  "please_enter_your_email": "Please enter your email",
+  "please_enter_a_valid_email": "Please enter a valid email",
+  "this_field_is_required": "This field is required",
+  "phone_number_must_be_at_least_10_digits": "Phone number must be at least 10 digits",
+  "password_must_be_at_least_6_characters": "Password must be at least 6 characters",
+  "password_dose_not_match": "Password dose not match",
+  "package_content": "Package Content"
 }
