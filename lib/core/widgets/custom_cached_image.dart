@@ -4,15 +4,22 @@ import '../color_helper.dart';
 import '../helpers/redius_helper.dart';
 
 class CustomCachedImage extends StatelessWidget {
-  const CustomCachedImage({super.key, this.radius, this.width, this.height});
+  const CustomCachedImage({
+    super.key,
+    this.radius,
+    this.width,
+    this.height,
+    this.imageUrl,
+  });
   final double? radius, width, height;
-
+  final String? imageUrl;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(radius ?? RadiusHelper.kRadius4),
       child: CachedNetworkImage(
         imageUrl:
+            imageUrl ??
             "https://i.pinimg.com/736x/d3/e7/0d/d3e70d89e5bfbe3b18c4ccdb6901d7df.jpg",
         width: width ?? 40,
         height: height ?? 40,

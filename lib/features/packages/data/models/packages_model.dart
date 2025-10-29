@@ -49,7 +49,6 @@ class PackagesModel {
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> data = <String, dynamic>{};
-
     data['senderId'] = senderId;
     data['content'] = packageContent;
     data['price'] = 0.0;

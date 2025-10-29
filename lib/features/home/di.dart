@@ -4,6 +4,7 @@ import '../../core/constants.dart';
 import 'data/repo_impl/home_repository_impl.dart';
 import 'domain/repos/home_repository.dart';
 import 'domain/use_cases/get_ads_usecase.dart';
+import 'domain/use_cases/get_home_couriers_company_usecase.dart';
 import 'domain/use_cases/get_home_packages.dart';
 import 'presentation/cubits/cubit/home_cubit.dart';
 
@@ -17,6 +18,7 @@ initHomeDebendencies() {
   //usecases
   sl.registerLazySingleton(() => GetAdsUsecase());
   sl.registerLazySingleton(() => GetHomePackages());
+  sl.registerLazySingleton(() => GetHomeCouriersCompanyUsecase());
 
   //cubits 
   sl.registerFactory<HomeCubit>(() => HomeCubit());

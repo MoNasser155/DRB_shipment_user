@@ -1,16 +1,14 @@
-import 'dart:developer';
-
 import 'package:drb_shipment_user/core/constants.dart';
 import 'package:drb_shipment_user/features/home/data/models/ads_banner_model.dart';
 import 'package:drb_shipment_user/features/home/domain/use_cases/get_home_packages.dart';
 import 'package:equatable/equatable.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/enums/state_status.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
+import '../../../../couriers/data/models/couriers_company_model.dart';
 import '../../../../packages/data/models/packages_model.dart';
 import '../../../domain/use_cases/get_ads_usecase.dart';
+import '../../../domain/use_cases/get_home_couriers_company_usecase.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -20,11 +18,16 @@ class HomeCubit extends Cubit<HomeState> {
 
   final _getAdsUsecase = sl<GetAdsUsecase>();
   final _getHomePackages = sl<GetHomePackages>();
+  final _getHomeCouriersCompanyUsecase = sl<GetHomeCouriersCompanyUsecase>();
 
   Future<void> initHome(UserEntity user) async {
     emit(state.copyWith(status: StateStatus.loading));
     setUserData(user);
-    await Future.wait([_fetchAds(), _fetchHomePackages(user.uId!)]);
+    await Future.wait([
+      _fetchAds(),
+      _fetchHomePackages(user.uId!),
+      _fetchHomeCouriersCompany(),
+    ]);
     emit(state.copyWith(status: StateStatus.success));
   }
 
@@ -50,14 +53,30 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await _getHomePackages.call(uId);
     result.fold(
       (failure) {
-        log('from cubit ${failure.message}');
         emit(state.copyWith(status: StateStatus.error));
       },
       (packagesData) {
-        log('from cubit ${packagesData.length}');
         emit(
           state.copyWith(
             packagesList: packagesData,
+            status: StateStatus.success,
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _fetchHomeCouriersCompany() async {
+    emit(state.copyWith(status: StateStatus.loading));
+    final result = await _getHomeCouriersCompanyUsecase.call();
+    result.fold(
+      (failure) {
+        emit(state.copyWith(status: StateStatus.error));
+      },
+      (couriersCompany) {
+        emit(
+          state.copyWith(
+            couriersCompany: couriersCompany,
             status: StateStatus.success,
           ),
         );
