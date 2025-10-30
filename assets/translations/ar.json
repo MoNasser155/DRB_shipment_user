@@ -145,5 +145,8 @@
   "view_more": "عرض المزيد",
   "view_less": "عرض اقل",
   "available": "متاح",
-  "busy": "مشغول"
+  "busy": "مشغول",
+  "vehicle_type": "نوع المركبة",
+  "companies": "الشركات",
+  "popular_companies": "الشركات المشهورة"
 }

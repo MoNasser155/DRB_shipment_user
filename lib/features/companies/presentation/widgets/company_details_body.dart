@@ -17,6 +17,7 @@ import '../../../couriers/presentation/widgets/courier_card_item.dart';
 import 'sections/company_image_appbar.dart';
 import 'sections/company_info_section.dart';
 import 'sections/description_section.dart';
+import 'sections/location_section.dart';
 
 class CompanyDetailsBody extends StatelessWidget {
   const CompanyDetailsBody({super.key});
@@ -45,6 +46,8 @@ class CompanyDetailsBody extends StatelessWidget {
         CompanyInfoSection(),
         SliverGap(SpacingHelper.kVertical12),
         DescriptionSection(),
+        SliverGap(SpacingHelper.kVertical12),
+        CompanyLocationSection(),
         SliverGap(SpacingHelper.kVertical12),
         SliverPadding(
           padding: EdgeInsets.symmetric(

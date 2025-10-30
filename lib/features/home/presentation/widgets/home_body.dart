@@ -67,7 +67,7 @@ class HomeBody extends StatelessWidget {
           ),
           sliver: SliverToBoxAdapter(
             child: CustomViewAllRow(
-              title: LocaleKeys.popularCouriers,
+              title: LocaleKeys.popularCompanies,
               onTap: () {
                 context.read<MainViewCubit>().setInitialTab(3);
               },

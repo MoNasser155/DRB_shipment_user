@@ -1,3 +1,5 @@
+import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
+
 class CompanyModel {
   final String id;
   final String name;
@@ -6,7 +8,7 @@ class CompanyModel {
   final String email;
   final String phone;
   final num rating;
-  final String location;
+  final Coordinates location;
 
   CompanyModel({
     required this.id,
@@ -27,7 +29,7 @@ class CompanyModel {
     email: json['companyEmail'],
     phone: json['companyPhone'],
     rating: json['companyRate'],
-    location: json['location'],
+    location: stringToLocation(json['location']),
   );
 
   Map<String, dynamic> toJson() => {
@@ -50,6 +52,6 @@ class CompanyModel {
     phone: '',
     imageUrl: '',
     rating: 0,
-    location: '',
+    location: Coordinates(0, 0),
   );
 }

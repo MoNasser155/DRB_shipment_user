@@ -442,4 +442,13 @@ abstract class LocaleKeys {
   static const String _busy = 'busy';
   static String get busy => _busy.tr();
 
+  static const String _vehicleType = 'vehicle_type';
+  static String get vehicleType => _vehicleType.tr();
+
+  static const String _companies = 'companies';
+  static String get companies => _companies.tr();
+
+  static const String _popularCompanies = 'popular_companies';
+  static String get popularCompanies => _popularCompanies.tr();
+
 }

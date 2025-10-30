@@ -145,5 +145,8 @@
   "view_more": "View More",
   "view_less": "View Less",
   "available": "Available",
-  "busy": "Busy"
+  "busy": "Busy",
+  "vehicle_type": "Vehicle Type",
+  "companies": "Companies",
+  "popular_companies": "popular Companies"
 }

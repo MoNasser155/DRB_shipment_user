@@ -37,7 +37,7 @@ class MainViewCubit extends Cubit<MainViewState> {
     BottomSheetModel(icon: AppIcons.home, label: LocaleKeys.home),
     BottomSheetModel(icon: AppIcons.packages, label: LocaleKeys.packages),
     BottomSheetModel(icon: AppIcons.newPackages, label: LocaleKeys.newPackage),
-    BottomSheetModel(icon: AppIcons.couriers, label: LocaleKeys.couriers),
+    BottomSheetModel(icon: AppIcons.couriers, label: LocaleKeys.companies),
     BottomSheetModel(icon: AppIcons.account, label: LocaleKeys.account),
   ];
 

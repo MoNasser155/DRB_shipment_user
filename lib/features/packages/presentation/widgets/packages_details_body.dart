@@ -71,6 +71,7 @@ class PackagesDetailsBody extends StatelessWidget {
             ),
           ),
         ),
+        SliverGap(SpacingHelper.kVertical12),
       ],
     );
   }
