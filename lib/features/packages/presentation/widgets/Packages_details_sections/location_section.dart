@@ -14,26 +14,20 @@ class PackageDetailsLocationSection extends StatelessWidget {
       width: double.infinity,
       child: BlocBuilder<PackageDetailsCubit, PackageDetailsState>(
         builder: (context, state) {
+          final cubit = PackageDetailsCubit.get(context);
           return GoogleMap(
             zoomGesturesEnabled: false,
-            initialCameraPosition: CameraPosition(
-              target: LatLng(
-                state.packagesModel.dropoffLocation.latitude,
-                state.packagesModel.dropoffLocation.longitude,
-              ),
-
-              zoom: 15,
-            ),
-            markers: <Marker>{
-              Marker(
-                markerId: const MarkerId('dropoffLocation'),
-                position: LatLng(
-                  state.packagesModel.dropoffLocation.latitude,
-                  state.packagesModel.dropoffLocation.longitude,
-                ),
-              ),
+            zoomControlsEnabled: false,
+            myLocationButtonEnabled: false,
+            mapToolbarEnabled: false,
+            initialCameraPosition:
+                state.cameraPosition ??
+                const CameraPosition(target: LatLng(0, 0), zoom: 10),
+            markers: state.markers,
+            polylines: state.polylines,
+            onMapCreated: (controller) {
+              cubit.setMapController(controller);
             },
-            onMapCreated: (GoogleMapController controller) {},
           );
         },
       ),
