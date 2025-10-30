@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/core/enums/payment.dart';
+import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
 import 'package:drb_shipment_user/core/widgets/custom_snack_bar.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -68,8 +69,8 @@ class AddPackageCubit extends Cubit<AddPackageState> {
       price: 0.0,
       isFragile: state.isFragile,
       paymentMethod: Payment.cash,
-      pickupLocation: '',
-      dropoffLocation: '',
+      pickupLocation: Coordinates(0, 0),
+      dropoffLocation: Coordinates(0, 0),
     );
   }
 
@@ -136,7 +137,7 @@ class AddPackageCubit extends Cubit<AddPackageState> {
       },
       (success) {
         CustomSnackBar.top(
-          msg:LocaleKeys.packageAddedSuccessfully,
+          msg: LocaleKeys.packageAddedSuccessfully,
           color: ColorHelper.primaryGreen,
         );
         emit(state.copyWith(status: StateStatus.success));

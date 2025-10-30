@@ -1,4 +1,5 @@
 import 'package:drb_shipment_user/core/enums/payment.dart';
+import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
 
 class PackagesModel {
   final String? id;
@@ -10,8 +11,8 @@ class PackagesModel {
   final Payment paymentMethod;
   final num price;
   final String status;
-  final String pickupLocation;
-  final String dropoffLocation;
+  final Coordinates pickupLocation;
+  final Coordinates dropoffLocation;
   final bool isFragile;
   final num weight;
 
@@ -41,8 +42,8 @@ class PackagesModel {
     price: json['price'],
     paymentMethod: Payment.fromFirebaseValue(json['paymentMethod']),
     status: json['status'],
-    pickupLocation: json['pickupLocation'],
-    dropoffLocation: json['dropoffLocation'],
+    pickupLocation: stringToLocation(json['pickupLocation']),
+    dropoffLocation: stringToLocation(json['dropoffLocation']),
     isFragile: json['isFragile'],
     weight: json['weight'],
   );
@@ -57,8 +58,8 @@ class PackagesModel {
     data['pickupLocation'] = '31.65498519,32.65498519';
     data['dropoffLocation'] = '32.65498519,33.65498519';
     data['recieverName'] = receiverName;
-    data['recieverPhone']= recieverPhone;
-    data['recieverEmail']= receiverEmail;
+    data['recieverPhone'] = recieverPhone;
+    data['recieverEmail'] = receiverEmail;
     data['isFragile'] = isFragile;
     data['weight'] = weight;
     return data;
@@ -74,8 +75,8 @@ class PackagesModel {
     price: 0,
     paymentMethod: Payment.cash,
     status: '',
-    pickupLocation: '',
-    dropoffLocation: '',
+    pickupLocation: Coordinates(0, 0),
+    dropoffLocation: Coordinates(0, 0),
     isFragile: false,
     weight: 0,
   );

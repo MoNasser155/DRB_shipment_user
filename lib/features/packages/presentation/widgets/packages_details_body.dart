@@ -1,4 +1,5 @@
 import 'package:drb_shipment_user/core/widgets/custom_appbar.dart';
+import 'package:drb_shipment_user/features/packages/presentation/widgets/Packages_details_sections/location_section.dart';
 import 'package:drb_shipment_user/features/packages/presentation/widgets/Packages_details_sections/package_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,6 +42,7 @@ class PackagesDetailsBody extends StatelessWidget {
               spacing: SpacingHelper.kVertical12,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                PackageDetailsLocationSection(),
                 PackageDetailsPackageSection(),
                 PackageDetailsSenderSection(),
                 PackageDetailsRecieverSection(),
