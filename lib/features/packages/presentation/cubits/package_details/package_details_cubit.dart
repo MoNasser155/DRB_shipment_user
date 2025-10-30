@@ -4,6 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/color_helper.dart';
 import '../../../../../core/constants.dart';
 import '../../../../../core/enums/state_status.dart';
+import '../../../../../core/helpers/distance_calculator_helper.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
 import '../../../data/models/packages_model.dart';
 import '../../../domain/use_cases/get_sender_by_id_usecase.dart';
@@ -43,9 +44,17 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
     final centerLng = (pickup.longitude + dropoff.longitude) / 2;
     final cameraPosition = CameraPosition(
       target: LatLng(centerLat, centerLng),
-      zoom: 10,
+      zoom: calculateZoom(),
     );
     emit(state.copyWith(cameraPosition: cameraPosition));
+  }
+
+  double calculateZoom() {
+    final zoom = DistanceCalculatorHelper.calculateZoom(
+      state.packagesModel.pickupLocation,
+      state.packagesModel.dropoffLocation,
+    );
+    return zoom;
   }
 
   void _generatePolylinePoints(PackagesModel packagesModel) {
@@ -73,7 +82,7 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
           packagesModel.pickupLocation.latitude,
           packagesModel.pickupLocation.longitude,
         ),
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        icon: BitmapDescriptor.defaultMarker,
         infoWindow: const InfoWindow(title: 'Pickup Location'),
       ),
       Marker(
@@ -86,7 +95,6 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
         infoWindow: const InfoWindow(title: 'Dropoff Location'),
       ),
     };
-
     emit(state.copyWith(polylines: {polyline}, markers: markers));
   }
 

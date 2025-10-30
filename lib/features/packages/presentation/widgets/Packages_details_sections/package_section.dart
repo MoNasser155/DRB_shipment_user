@@ -28,6 +28,12 @@ class PackageDetailsPackageSection extends StatelessWidget {
               isExpanded: true,
               children: [
                 PackageDetailsRow(
+                  icon: Icons.perm_identity,
+                  title: LocaleKeys.orderId,
+                  data: state.packagesModel.id ?? '',
+                ),
+                Gap(SpacingHelper.kVertical4),
+                PackageDetailsRow(
                   icon: Icons.details_outlined,
                   title: LocaleKeys.packageContents,
                   data: state.packagesModel.packageContent,

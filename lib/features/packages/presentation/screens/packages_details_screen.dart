@@ -22,3 +22,4 @@ class PackagesDetailsScreen extends StatelessWidget {
     );
   }
 }
+
