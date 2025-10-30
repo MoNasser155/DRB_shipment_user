@@ -127,5 +127,11 @@
   "password_must_be_at_least_6_characters": "كلمة المرور يجب ان تكون على الاقل 6 حروف",
   "password_dose_not_match": "كلمة المرور غير متطابقة",
   "package_content": "محتويات الطرد",
-  "add_your_first_package": "اضف الطرد الاول"
+  "add_your_first_package": "اضف الطرد الاول",
+  "search": "بحث",
+  "no_ads_available_now": "لا يوجد اعلانات متاحة الان",
+  "no_packages_available_now": "لا يوجد طرود متاحة الان",
+  "no_couriers_available_now": "لا يوجد مناديب متاحة الان",
+  "no_users_available_now": "لا يوجد مستخدمين متاحين الان",
+  "no_drivers_available_now": "لا يوجد سائقين متاحين الان"
 }

@@ -127,5 +127,11 @@
   "password_must_be_at_least_6_characters": "Password must be at least 6 characters",
   "password_dose_not_match": "Password dose not match",
   "package_content": "Package Content",
-  "add_your_first_package": "Add your first package"
+  "add_your_first_package": "Add your first package",
+  "search": "Search",
+  "no_ads_available_now": "No Ads Available now",
+  "no_packages_available_now": "No Packages Available now",
+  "no_couriers_available_now": "No Couriers Available now",
+  "no_users_available_now": "No Users Available now",
+  "no_drivers_available_now": "No Drivers Available now"
 }

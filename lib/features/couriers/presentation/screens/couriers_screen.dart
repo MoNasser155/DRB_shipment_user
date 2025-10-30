@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/constants.dart';
+import '../cubits/couriers/couriers_cubit.dart';
 import '../widgets/couriers_body.dart';
 
 class CouriersScreen extends StatelessWidget {
@@ -7,9 +10,9 @@ class CouriersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
-      appBar: AppBar(),
-      body:CouriersBody(),
+    return BlocProvider(
+      create: (context) => sl<CouriersCubit>()..initCouriers(),
+      child: Scaffold(appBar: AppBar(), body: CouriersBody()),
     );
   }
 }

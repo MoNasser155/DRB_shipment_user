@@ -14,7 +14,7 @@ import 'custom_home_search.dart';
 import 'empty_home_packages_body.dart';
 import 'home_custom_appbar.dart';
 import 'home_packages_list.dart';
-import 'popular_courier_item.dart';
+import '../../../couriers/presentation/widgets/courier_company_item.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -81,7 +81,7 @@ class HomeBody extends StatelessWidget {
           ),
           sliver: SliverToBoxAdapter(
             child: AspectRatio(
-              aspectRatio: 2.8,
+              aspectRatio: 2.95,
               child: BlocBuilder<HomeCubit, HomeState>(
                 buildWhen: (previous, current) {
                   return previous.couriersCompany != current.couriersCompany;
@@ -101,7 +101,7 @@ class HomeBody extends StatelessWidget {
                               : state.couriersCompany[index];
                       return CustomSkeletonizer(
                         enabled: state.status == StateStatus.loading,
-                        child: PopularCourierItem(
+                        child: CourierCompanyItem(
                           couriersCompanyModel: courierModel,
                         ),
                       );

@@ -388,4 +388,22 @@ abstract class LocaleKeys {
   static const String _addYourFirstPackage = 'add_your_first_package';
   static String get addYourFirstPackage => _addYourFirstPackage.tr();
 
+  static const String _search = 'search';
+  static String get search => _search.tr();
+
+  static const String _noAdsAvailableNow = 'no_ads_available_now';
+  static String get noAdsAvailableNow => _noAdsAvailableNow.tr();
+
+  static const String _noPackagesAvailableNow = 'no_packages_available_now';
+  static String get noPackagesAvailableNow => _noPackagesAvailableNow.tr();
+
+  static const String _noCouriersAvailableNow = 'no_couriers_available_now';
+  static String get noCouriersAvailableNow => _noCouriersAvailableNow.tr();
+
+  static const String _noUsersAvailableNow = 'no_users_available_now';
+  static String get noUsersAvailableNow => _noUsersAvailableNow.tr();
+
+  static const String _noDriversAvailableNow = 'no_drivers_available_now';
+  static String get noDriversAvailableNow => _noDriversAvailableNow.tr();
+
 }

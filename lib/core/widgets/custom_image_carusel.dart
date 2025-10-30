@@ -100,8 +100,22 @@ class _CustomAdsCarouselViewerState extends State<CustomAdsCarouselViewer> {
           color: ColorHelper.grey100.withValues(alpha: 0.05),
           borderRadius: widget.borderRadius,
         ),
-        child: const Center(
-          child: Icon(Icons.image_not_supported, color: Colors.grey, size: 50),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.image_not_supported,
+                color: ColorHelper.grey500,
+                size: 50,
+              ),
+              Gap(SpacingHelper.kVertical12),
+              Text(
+                LocaleKeys.noAdsAvailableNow,
+                style: AppTextTheme.text16W500grey300,
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -134,7 +148,7 @@ class _CustomAdsCarouselViewerState extends State<CustomAdsCarouselViewer> {
             ),
           ),
         ),
-        const SizedBox(height: 12),
+        Gap(SpacingHelper.kVertical12),
         CustomDotIndicator(
           currentIndex: _currentIndex,
           count: widget.images.length,
@@ -172,12 +186,12 @@ class CustomCaruselContent extends StatelessWidget {
               borderRadius:
                   Languages.currentLanguage.isArabic
                       ? BorderRadius.only(
-                        topLeft: Radius.circular(RadiusHelper.kRadius16),
-                        bottomLeft: Radius.circular(RadiusHelper.kRadius16),
+                        topLeft: Radius.circular(RadiusHelper.kRadius12),
+                        bottomLeft: Radius.circular(RadiusHelper.kRadius12),
                       )
                       : BorderRadius.only(
-                        topRight: Radius.circular(RadiusHelper.kRadius16),
-                        bottomRight: Radius.circular(RadiusHelper.kRadius16),
+                        topRight: Radius.circular(RadiusHelper.kRadius12),
+                        bottomRight: Radius.circular(RadiusHelper.kRadius12),
                       ),
               child: CachedNetworkImage(
                 imageUrl: widget.images[index],

@@ -31,7 +31,7 @@ class CustomAdsPanner extends StatelessWidget {
                 title: ads.map((e) => e.title ?? '').toList(),
                 subtitle: ads.map((e) => e.subTitle ?? '').toList(),
                 autoPlay: true,
-                borderRadius: BorderRadius.circular(RadiusHelper.kRadius16),
+                borderRadius: BorderRadius.circular(RadiusHelper.kRadius12),
               ),
             ),
           ),

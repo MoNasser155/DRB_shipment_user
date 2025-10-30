@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/color_helper.dart';
 import '../../../../core/helpers/redius_helper.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
+import '../../../../core/languages/local_keys.g.dart';
 
 class CustomHomeSearch extends StatelessWidget {
   const CustomHomeSearch({super.key});
@@ -43,7 +44,7 @@ class CustomHomeSearch extends StatelessWidget {
                 ),
 
                 prefix: const Icon(Icons.search),
-                hint: "Search...",
+                hint: "${LocaleKeys.search}...",
               ),
             ),
           ],
