@@ -1,7 +1,7 @@
 import 'package:drb_shipment_user/core/enums/vehicle_type.dart';
 import '../../../../core/enums/courier_status.dart';
 
-class CouriersModel {
+class CourierModel {
   final String id;
   final String companyId;
   final String email;
@@ -14,7 +14,7 @@ class CouriersModel {
   final String vehicleNum;
   final String licenceNum;
 
-  CouriersModel({
+  CourierModel({
     required this.id,
     required this.name,
     required this.phone,
@@ -28,7 +28,7 @@ class CouriersModel {
     required this.licenceNum,
   });
 
-  factory CouriersModel.fromMap(Map<String, dynamic> map) => CouriersModel(
+  factory CourierModel.fromMap(Map<String, dynamic> map) => CourierModel(
     id: map['id'],
     companyId: map['companyId'],
     email: map['courierEmail'],
@@ -42,7 +42,7 @@ class CouriersModel {
     licenceNum: map['licenceNum'],
   );
 
-  factory CouriersModel.skeleton() => CouriersModel(
+  factory CourierModel.skeleton() => CourierModel(
     id: '',
     companyId: '',
     email: '',

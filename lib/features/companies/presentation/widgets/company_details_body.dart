@@ -9,8 +9,10 @@ import '../../../../core/color_helper.dart';
 import '../../../../core/enums/state_status.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
+import '../../../../core/utils/navigator_helper.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../../../core/widgets/custom_view_all_row.dart';
+import '../../../couriers/presentation/screens/couriers_screen.dart';
 import '../../../couriers/presentation/widgets/courier_card_item.dart';
 import 'sections/company_image_appbar.dart';
 import 'sections/company_info_section.dart';
@@ -51,12 +53,23 @@ class CompanyDetailsBody extends StatelessWidget {
           sliver: SliverToBoxAdapter(
             child: CustomViewAllRow(
               title: LocaleKeys.popularCouriers,
-              onTap: () {},
+              onTap: () {
+                AppNavigator.push(
+                  transitionBuilder: AppNavigator.cupertinoTransition,
+                  screen: CouriersScreen(
+                    companyId:
+                        context
+                            .read<CompanyDetailsCubit>()
+                            .state
+                            .companyModel
+                            .id,
+                  ),
+                );
+              },
             ),
           ),
         ),
         SliverGap(SpacingHelper.kVertical12),
-
         SliverPadding(
           padding: EdgeInsets.symmetric(
             horizontal: SpacingHelper.kHorizontalPadding,
@@ -75,7 +88,7 @@ class CompanyDetailsBody extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final courier =
                       state.status == StateStatus.loading
-                          ? CouriersModel.skeleton()
+                          ? CourierModel.skeleton()
                           : state.couriers[index];
                   return CustomSkeletonizer(
                     enabled: state.status == StateStatus.loading,

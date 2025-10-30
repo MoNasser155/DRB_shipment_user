@@ -8,7 +8,7 @@ import '../data_sources/couriers_data_source.dart';
 class CouriersRepositoryImpl extends CouriersRepository {
   final _couriersDataSource = sl<CouriersDataSource>();
   @override
-  Future<Either<Failure, List<CouriersModel>>> getAllCouriers(
+  Future<Either<Failure, List<CourierModel>>> getAllCouriers(
     String companyId,
   ) async {
     try {
@@ -20,7 +20,7 @@ class CouriersRepositoryImpl extends CouriersRepository {
   }
 
   @override
-  Future<Either<Failure, List<CouriersModel>>> getLimitedCouriers(
+  Future<Either<Failure, List<CourierModel>>> getLimitedCouriers(
     String companyId,
   ) async {
     try {

@@ -4,7 +4,7 @@ class CompanyDetailsState extends Equatable {
   final StateStatus status;
   final CompanyModel companyModel;
   final int? maxDescriptionLines;
-  final List<CouriersModel> couriers;
+  final List<CourierModel> couriers;
   final String? errorMessage;
 
   const CompanyDetailsState({
@@ -27,7 +27,7 @@ class CompanyDetailsState extends Equatable {
     StateStatus? status,
     CompanyModel? companyModel,
     int? maxDescriptionLines,
-    List<CouriersModel>? couriers,
+    List<CourierModel>? couriers,
     String? errorMessage,
   }) {
     return CompanyDetailsState(
@@ -40,5 +40,11 @@ class CompanyDetailsState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [status, companyModel, maxDescriptionLines, couriers, errorMessage];
+  List<Object?> get props => [
+    status,
+    companyModel,
+    maxDescriptionLines,
+    couriers,
+    errorMessage,
+  ];
 }

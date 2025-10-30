@@ -6,15 +6,15 @@ import '../../../../core/error/exceptions.dart';
 import '../models/couriers_model.dart';
 
 abstract class CouriersDataSource {
-  Future<List<CouriersModel>> getLimitedCouriers(String companyId);
-  Future<List<CouriersModel>> getAllCouriers(String companyId);
+  Future<List<CourierModel>> getLimitedCouriers(String companyId);
+  Future<List<CourierModel>> getAllCouriers(String companyId);
 }
 
 class CouriersDataSourceImpl implements CouriersDataSource {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
-  Future<List<CouriersModel>> getAllCouriers(String companyId) async {
+  Future<List<CourierModel>> getAllCouriers(String companyId) async {
     try {
       final allCouriers =
           await _firestore
@@ -25,7 +25,7 @@ class CouriersDataSourceImpl implements CouriersDataSource {
       return allCouriers.docs.map((doc) {
         final data = doc.data();
         data['id'] = doc.id;
-        return CouriersModel.fromMap(data);
+        return CourierModel.fromMap(data);
       }).toList();
     } catch (e) {
       throw CustomException(message: e.toString());
@@ -33,7 +33,7 @@ class CouriersDataSourceImpl implements CouriersDataSource {
   }
 
   @override
-  Future<List<CouriersModel>> getLimitedCouriers(String companyId) async {
+  Future<List<CourierModel>> getLimitedCouriers(String companyId) async {
     try {
       final allCouriers =
           await _firestore
@@ -44,7 +44,7 @@ class CouriersDataSourceImpl implements CouriersDataSource {
       return allCouriers.docs.map((doc) {
         final data = doc.data();
         data['id'] = doc.id;
-        return CouriersModel.fromMap(data);
+        return CourierModel.fromMap(data);
       }).toList();
     } catch (e) {
       throw CustomException(message: e.toString());

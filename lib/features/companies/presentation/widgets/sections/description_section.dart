@@ -44,7 +44,7 @@ class DescriptionSection extends StatelessWidget {
                       Gap(SpacingHelper.kVertical4),
                       Text(
                         state.companyModel.description,
-                        style: AppTextTheme.text14W500grey300,
+                        style: AppTextTheme.text14W500grey400,
                         overflow: TextOverflow.ellipsis,
                         maxLines: state.maxDescriptionLines,
                       ),
@@ -118,6 +118,7 @@ class DescriptionSection extends StatelessWidget {
                           ),
                           child: Text(
                             LocaleKeys.viewLess,
+
                             style: AppTextTheme.text12W500grey500.copyWith(
                               color: ColorHelper.primaryGreen,
                               decoration: TextDecoration.underline,

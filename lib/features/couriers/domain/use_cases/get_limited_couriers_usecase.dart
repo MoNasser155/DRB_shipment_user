@@ -8,6 +8,6 @@ import '../repository/couriers_repository.dart';
 class GetLimitedCouriersUsecase {
   final _repository = sl<CouriersRepository>();
 
-  Future<Either<Failure, List<CouriersModel>>> call(String companyId) async =>
+  Future<Either<Failure, List<CourierModel>>> call(String companyId) async =>
       await _repository.getLimitedCouriers(companyId);
 }
