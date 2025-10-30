@@ -3,21 +3,21 @@ import 'package:drb_shipment_user/core/helpers/spaceing_helper.dart';
 import 'package:drb_shipment_user/core/languages/languages.dart';
 import 'package:drb_shipment_user/core/utils/navigator_helper.dart';
 import 'package:drb_shipment_user/core/widgets/custom_cached_image.dart';
-import 'package:drb_shipment_user/features/couriers/presentation/screens/courier_details_screen.dart';
+import 'package:drb_shipment_user/features/companies/presentation/screens/company_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../core/color_helper.dart';
 import '../../../../core/themes/text_theme.dart';
-import '../../data/models/couriers_company_model.dart';
+import '../../data/models/company_model.dart';
 
-class CourierCompanyItem extends StatelessWidget {
-  const CourierCompanyItem({
+class CompanyItem extends StatelessWidget {
+  const CompanyItem({
     super.key,
-    required this.couriersCompanyModel,
+    required this.companyModel,
     this.height,
     this.width,
   });
-  final CouriersCompanyModel couriersCompanyModel;
+  final CompanyModel companyModel;
   final double? height, width;
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CourierCompanyItem extends StatelessWidget {
       onTap: () {
         AppNavigator.push(
           transitionBuilder: AppNavigator.cupertinoTransition,
-          screen: CourierDetailsScreen(),
+          screen: CompanyDetailsScreen(companyModel: companyModel),
         );
       },
       child: Container(
@@ -46,9 +46,9 @@ class CourierCompanyItem extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(RadiusHelper.kRadius6),
                     child: CustomCachedImage(
-                      imageUrl: couriersCompanyModel.imageUrl,
-                      width: width ?? 100,
-                      height: height ?? 80,
+                      imageUrl: companyModel.imageUrl,
+                      width: width ?? 120,
+                      height: height ?? double.infinity,
                     ),
                   ),
                   Positioned(
@@ -90,7 +90,7 @@ class CourierCompanyItem extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            couriersCompanyModel.rating.toString(),
+                            companyModel.rating.toString(),
                             style: AppTextTheme.text10W500grey300,
                           ),
                           Gap(4),
@@ -102,11 +102,8 @@ class CourierCompanyItem extends StatelessWidget {
                 ],
               ),
             ),
-            Gap(SpacingHelper.kVertical8),
-            Text(
-              couriersCompanyModel.name,
-              style: AppTextTheme.text14W500grey400,
-            ),
+            Gap(SpacingHelper.kVertical4),
+            Text(companyModel.name, style: AppTextTheme.text14W500grey400),
             Gap(SpacingHelper.kVertical4),
           ],
         ),

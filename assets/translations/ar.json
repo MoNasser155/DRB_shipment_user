@@ -133,5 +133,17 @@
   "no_packages_available_now": "لا يوجد طرود متاحة الان",
   "no_couriers_available_now": "لا يوجد مناديب متاحة الان",
   "no_users_available_now": "لا يوجد مستخدمين متاحين الان",
-  "no_drivers_available_now": "لا يوجد سائقين متاحين الان"
+  "no_drivers_available_now": "لا يوجد سائقين متاحين الان",
+  "company_info": "معلومات الشركة",
+  "company_name": "اسم الشركة",
+  "company_email": "البريد الالكتروني للشركة",
+  "company_phone": "هاتف الشركة",
+  "company_address": "عنوان الشركة",
+  "company_logo": "شعار الشركة",
+  "pick_company_logo": "اختر شعار الشركة",
+  "company_description": "وصف الشركة",
+  "view_more": "عرض المزيد",
+  "view_less": "عرض اقل",
+  "available": "متاح",
+  "busy": "مشغول"
 }

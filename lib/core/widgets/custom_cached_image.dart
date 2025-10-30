@@ -21,8 +21,9 @@ class CustomCachedImage extends StatelessWidget {
         imageUrl:
             imageUrl ??
             "https://i.pinimg.com/736x/d3/e7/0d/d3e70d89e5bfbe3b18c4ccdb6901d7df.jpg",
-        width: width ?? 40,
-        height: height ?? 40,
+        width: width,
+        height: height,
+        
         fit: BoxFit.cover,
         placeholder:
             (context, url) => CircularProgressIndicator(

@@ -1,25 +1,25 @@
 part of 'couriers_cubit.dart';
 
-class CouriersState extends Equatable {
+class CompaniesState extends Equatable {
   final StateStatus status;
   final String? errorMessage;
-  final List<CouriersCompanyModel> companies;
+  final List<CompanyModel> companies;
 
-  const CouriersState({
+  const CompaniesState({
     required this.status,
     this.errorMessage,
     required this.companies,
   });
 
-  factory CouriersState.initial() =>
-      CouriersState(status: StateStatus.initial, companies: []);
+  factory CompaniesState.initial() =>
+      CompaniesState(status: StateStatus.initial, companies: []);
 
-  CouriersState copyWith({
+  CompaniesState copyWith({
     StateStatus? status,
     String? errorMessage,
-    List<CouriersCompanyModel>? companies,
+    List<CompanyModel>? companies,
   }) {
-    return CouriersState(
+    return CompaniesState(
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
       companies: companies ?? this.companies,

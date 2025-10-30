@@ -21,4 +21,21 @@ enum VehicleType {
         return LocaleKeys.bus;
     }
   }
+
+  static VehicleType fromFirebaseValue(String value) {
+    switch (value) {
+      case 'truck':
+        return VehicleType.truck;
+      case 'van':
+        return VehicleType.van;
+      case 'car':
+        return VehicleType.car;
+      case 'motorcycle':
+        return VehicleType.motorcycle;
+      case 'bus':
+        return VehicleType.bus;
+      default:
+        return VehicleType.truck;
+    }
+  }
 }

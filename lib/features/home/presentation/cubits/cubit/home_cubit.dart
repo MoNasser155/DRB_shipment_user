@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/enums/state_status.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
-import '../../../../couriers/data/models/couriers_company_model.dart';
+import '../../../../companies/data/models/company_model.dart';
 import '../../../../packages/data/models/packages_model.dart';
 import '../../../domain/use_cases/get_ads_usecase.dart';
 import '../../../domain/use_cases/get_home_couriers_company_usecase.dart';

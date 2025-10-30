@@ -2,7 +2,7 @@ import 'package:drb_shipment_user/core/app_assets/icons.dart';
 import 'package:drb_shipment_user/core/enums/state_status.dart';
 import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
 import 'package:drb_shipment_user/features/auth/domain/entities/user_entity.dart';
-import 'package:drb_shipment_user/features/couriers/presentation/screens/couriers_screen.dart';
+import 'package:drb_shipment_user/features/companies/presentation/screens/companies_screen.dart';
 import 'package:drb_shipment_user/features/main_view/data/models/bottom_sheet_model.dart';
 import 'package:drb_shipment_user/features/user_account/presentation/imports/user_account_imports.dart';
 import 'package:equatable/equatable.dart';
@@ -29,7 +29,7 @@ class MainViewCubit extends Cubit<MainViewState> {
     HomeScreen(user: state.user),
     PackagesScreen(user: state.user),
     AddNewPackageScreen(user: state.user),
-    CouriersScreen(),
+    CompaniesScreen(),
     UserAccountScreen(),
   ];
 

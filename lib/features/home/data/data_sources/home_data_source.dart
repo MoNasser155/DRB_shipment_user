@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/features/home/data/models/ads_banner_model.dart';
-import '../../../couriers/data/models/couriers_company_model.dart';
+import '../../../companies/data/models/company_model.dart';
 import '../../../packages/data/models/packages_model.dart';
 
 abstract class HomeDataSource {
   Future<List<AdsBannerModel>> getAds();
   Future<List<PackagesModel>> getHomePackages(String uId);
-  Future<List<CouriersCompanyModel>> getHomeCouriersCompanies();
+  Future<List<CompanyModel>> getHomeCouriersCompanies();
 }
 
 class HomeDataSourceImpl implements HomeDataSource {
@@ -39,13 +39,13 @@ class HomeDataSourceImpl implements HomeDataSource {
   }
 
   @override
-  Future<List<CouriersCompanyModel>> getHomeCouriersCompanies() async {
+  Future<List<CompanyModel>> getHomeCouriersCompanies() async {
     final couriersList =
         await _firestore.collection('couriersCompany').limit(5).get();
     return couriersList.docs.map((doc) {
       final data = doc.data();
       data['id'] = doc.id;
-      return CouriersCompanyModel.fromJson(data);
+      return CompanyModel.fromJson(data);
     }).toList();
   }
 }

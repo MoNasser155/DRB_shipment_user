@@ -133,5 +133,17 @@
     "No Packages Available now":"لا يوجد طرود متاحة الان",
     "No Couriers Available now":"لا يوجد مناديب متاحة الان",
     "No Users Available now":"لا يوجد مستخدمين متاحين الان",
-    "No Drivers Available now":"لا يوجد سائقين متاحين الان"    
+    "No Drivers Available now":"لا يوجد سائقين متاحين الان"  ,
+    "Company Info":"معلومات الشركة",
+    "Company Name":"اسم الشركة",
+    "Company Email":"البريد الالكتروني للشركة",
+    "Company Phone":"هاتف الشركة",
+    "Company Address":"عنوان الشركة",
+    "Company Logo":"شعار الشركة",
+    "Pick Company Logo":"اختر شعار الشركة", 
+    "Company Description":"وصف الشركة",
+    "View More":"عرض المزيد",
+    "View Less":"عرض اقل",
+    "Available":"متاح",
+    "Busy":"مشغول"
 }

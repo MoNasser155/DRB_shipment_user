@@ -45,9 +45,7 @@ class PackagesDetailsBody extends StatelessWidget {
             ),
           ),
           shadowColor: ColorHelper.grey100,
-
           scrolledUnderElevation: 10,
-
           surfaceTintColor: Colors.transparent,
           backgroundColor: ColorHelper.backgroundBlack,
           automaticallyImplyLeading: false,

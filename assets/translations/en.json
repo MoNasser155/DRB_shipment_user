@@ -133,5 +133,17 @@
   "no_packages_available_now": "No Packages Available now",
   "no_couriers_available_now": "No Couriers Available now",
   "no_users_available_now": "No Users Available now",
-  "no_drivers_available_now": "No Drivers Available now"
+  "no_drivers_available_now": "No Drivers Available now",
+  "company_info": "Company Info",
+  "company_name": "Company Name",
+  "company_email": "Company Email",
+  "company_phone": "Company Phone",
+  "company_address": "Company Address",
+  "company_logo": "Company Logo",
+  "pick_company_logo": "Pick Company Logo",
+  "company_description": "Company Description",
+  "view_more": "View More",
+  "view_less": "View Less",
+  "available": "Available",
+  "busy": "Busy"
 }

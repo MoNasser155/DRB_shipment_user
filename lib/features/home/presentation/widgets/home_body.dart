@@ -6,7 +6,7 @@ import '../../../../core/enums/state_status.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/widgets/custom_view_all_row.dart';
-import '../../../couriers/data/models/couriers_company_model.dart';
+import '../../../companies/data/models/company_model.dart';
 import '../../../main_view/presentation/cubits/cubit/main_view_cubit.dart';
 import '../cubits/cubit/home_cubit.dart';
 import 'custom_ads_panner.dart';
@@ -14,7 +14,7 @@ import 'custom_home_search.dart';
 import 'empty_home_packages_body.dart';
 import 'home_custom_appbar.dart';
 import 'home_packages_list.dart';
-import '../../../couriers/presentation/widgets/courier_company_item.dart';
+import '../../../companies/presentation/widgets/company_item.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -93,17 +93,18 @@ class HomeBody extends StatelessWidget {
                           : state.couriersCompany.length;
                   return ListView.separated(
                     itemCount: length,
+                    physics: const AlwaysScrollableScrollPhysics(
+                      parent: BouncingScrollPhysics(),
+                    ),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final courierModel =
                           state.status == StateStatus.loading
-                              ? CouriersCompanyModel.skeleton()
+                              ? CompanyModel.skeleton()
                               : state.couriersCompany[index];
                       return CustomSkeletonizer(
                         enabled: state.status == StateStatus.loading,
-                        child: CourierCompanyItem(
-                          couriersCompanyModel: courierModel,
-                        ),
+                        child: CompanyItem(companyModel: courierModel),
                       );
                     },
                     separatorBuilder: (context, index) {

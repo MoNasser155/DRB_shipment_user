@@ -406,4 +406,40 @@ abstract class LocaleKeys {
   static const String _noDriversAvailableNow = 'no_drivers_available_now';
   static String get noDriversAvailableNow => _noDriversAvailableNow.tr();
 
+  static const String _companyInfo = 'company_info';
+  static String get companyInfo => _companyInfo.tr();
+
+  static const String _companyName = 'company_name';
+  static String get companyName => _companyName.tr();
+
+  static const String _companyEmail = 'company_email';
+  static String get companyEmail => _companyEmail.tr();
+
+  static const String _companyPhone = 'company_phone';
+  static String get companyPhone => _companyPhone.tr();
+
+  static const String _companyAddress = 'company_address';
+  static String get companyAddress => _companyAddress.tr();
+
+  static const String _companyLogo = 'company_logo';
+  static String get companyLogo => _companyLogo.tr();
+
+  static const String _pickCompanyLogo = 'pick_company_logo';
+  static String get pickCompanyLogo => _pickCompanyLogo.tr();
+
+  static const String _companyDescription = 'company_description';
+  static String get companyDescription => _companyDescription.tr();
+
+  static const String _viewMore = 'view_more';
+  static String get viewMore => _viewMore.tr();
+
+  static const String _viewLess = 'view_less';
+  static String get viewLess => _viewLess.tr();
+
+  static const String _available = 'available';
+  static String get available => _available.tr();
+
+  static const String _busy = 'busy';
+  static String get busy => _busy.tr();
+
 }

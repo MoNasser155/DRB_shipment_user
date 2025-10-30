@@ -6,7 +6,7 @@ class HomeState extends Equatable {
   final String date;
   final List<AdsBannerModel> adsList;
   final List<PackagesModel> packagesList;
-  final List<CouriersCompanyModel> couriersCompany;
+  final List<CompanyModel> couriersCompany;
   const HomeState({
     required this.status,
     required this.user,
@@ -30,7 +30,7 @@ class HomeState extends Equatable {
     String? date,
     List<AdsBannerModel>? adsList,
     List<PackagesModel>? packagesList,
-    List<CouriersCompanyModel>? couriersCompany,
+    List<CompanyModel>? couriersCompany,
   }) => HomeState(
     status: status ?? this.status,
     user: user ?? this.user,
