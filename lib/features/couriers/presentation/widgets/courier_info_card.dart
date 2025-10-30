@@ -6,7 +6,7 @@ import '../../../../core/helpers/redius_helper.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/themes/text_theme.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 import 'custom_courier_details_row.dart';
 
 class CourierInfoCard extends StatelessWidget {

@@ -8,6 +8,6 @@ import '../repos/home_repository.dart';
 class GetHomePackages {
   final _repository = sl<HomeRepository>();
 
-  Future<Either<Failure, List<PackagesModel>>> call(String uId) =>
+  Future<Either<Failure, List<PackageModel>>> call(String uId) =>
       _repository.getHomePackages(uId);
 }

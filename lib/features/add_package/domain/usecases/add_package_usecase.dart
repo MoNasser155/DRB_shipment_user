@@ -8,5 +8,6 @@ import '../repository/add_package_repository.dart';
 class AddPackageUsecase {
   final _repository = sl<AddPackageRepository>();
 
-  Future<Either<Failure, void>> call( PackagesModel packagesModel) => _repository.addPackage(packagesModel: packagesModel);
+  Future<Either<Failure, void>> call(PackageModel packagesModel) =>
+      _repository.addPackage(packagesModel: packagesModel);
 }

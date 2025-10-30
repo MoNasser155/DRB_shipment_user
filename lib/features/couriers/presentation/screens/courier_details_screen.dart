@@ -1,4 +1,4 @@
-import 'package:drb_shipment_user/features/couriers/data/models/couriers_model.dart';
+import 'package:drb_shipment_user/features/couriers/data/models/courier_model.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/courier_details_body.dart';

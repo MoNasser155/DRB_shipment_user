@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/constants.dart';
 import '../../../../../core/enums/state_status.dart';
-import '../../../../couriers/data/models/couriers_model.dart';
+import '../../../../couriers/data/models/courier_model.dart';
 import '../../../data/models/company_model.dart';
 
 part 'company_details_state.dart';

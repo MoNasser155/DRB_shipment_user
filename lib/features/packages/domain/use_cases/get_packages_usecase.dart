@@ -8,7 +8,7 @@ import '../repository/packages_repository.dart';
 class GetPackagesUsecase {
   final _repository = sl<PackagesRepository>();
 
-  Future<Either<Failure, List<PackagesModel>>> call(
+  Future<Either<Failure, List<PackageModel>>> call(
     String uId, {
     String? status,
   }) async => await _repository.getPackages(uId, status: status);

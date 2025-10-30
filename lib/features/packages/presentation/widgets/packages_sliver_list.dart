@@ -32,7 +32,7 @@ class PackagesSliverList extends StatelessWidget {
             itemBuilder: (context, index) {
               final package =
                   state.status == StateStatus.loading
-                      ? PackagesModel.skeleton()
+                      ? PackageModel.skeleton()
                       : state.packages[index];
               return CustomSkeletonizer(
                 enabled: state.status == StateStatus.loading,

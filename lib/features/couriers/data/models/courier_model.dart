@@ -55,4 +55,8 @@ class CourierModel {
     vehicleNum: '',
     licenceNum: '',
   );
+
+  @override
+  toString() =>
+      'CourierModel(id: $id, name: $name, phone: $phone, image: $image, rating: $rating, status: $status, vehicleType: $vehicleType, vehicleNum: $vehicleNum, licenceNum: $licenceNum)';
 }

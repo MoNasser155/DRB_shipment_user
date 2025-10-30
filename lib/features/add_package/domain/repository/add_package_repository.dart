@@ -5,6 +5,6 @@ import '../../../packages/data/models/packages_model.dart';
 
 abstract class AddPackageRepository {
   Future<Either<Failure, void>> addPackage({
-    required PackagesModel packagesModel,
+    required PackageModel packagesModel,
   });
 }

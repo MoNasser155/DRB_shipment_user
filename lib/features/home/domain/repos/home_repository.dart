@@ -7,6 +7,6 @@ import '../../data/models/ads_banner_model.dart';
 
 abstract class HomeRepository {
   Future<Either<Failure, List<AdsBannerModel>>> getAds();
-  Future<Either<Failure, List<PackagesModel>>> getHomePackages(String uId);
+  Future<Either<Failure, List<PackageModel>>> getHomePackages(String uId);
   Future<Either<Failure, List<CompanyModel>>> getHomeCouriersCompanies();
 }

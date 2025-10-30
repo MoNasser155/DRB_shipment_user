@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -33,7 +32,7 @@ class HomePackagesList extends StatelessWidget {
             itemBuilder: (context, index) {
               final packagesModel =
                   state.status == StateStatus.loading
-                      ? PackagesModel.skeleton()
+                      ? PackageModel.skeleton()
                       : state.packagesList[index];
 
               return CustomSkeletonizer(

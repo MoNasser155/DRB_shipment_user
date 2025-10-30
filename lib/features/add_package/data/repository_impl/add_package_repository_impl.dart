@@ -10,7 +10,7 @@ class AddPackageRepositoryImpl extends AddPackageRepository {
   final addPackageDataSource = sl<AddPackageDataSource>();
   @override
   Future<Either<Failure, void>> addPackage({
-    required PackagesModel packagesModel,
+    required PackageModel packagesModel,
   }) async {
     try {
       final package = await addPackageDataSource.addPackage(packagesModel);

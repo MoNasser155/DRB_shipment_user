@@ -2,7 +2,7 @@ part of 'packages_cubit.dart';
 
 class PackagesState extends Equatable {
   final StateStatus status;
-  final List<PackagesModel> packages;
+  final List<PackageModel> packages;
   final int selectedTabIndex;
   final UserEntity user;
   const PackagesState({
@@ -13,9 +13,9 @@ class PackagesState extends Equatable {
   });
 
   factory PackagesState.initial() {
-    return  PackagesState(
+    return PackagesState(
       status: StateStatus.initial,
-      packages:const  [],
+      packages: const [],
       selectedTabIndex: 0,
       user: UserEntity.initial(),
     );
@@ -23,8 +23,8 @@ class PackagesState extends Equatable {
 
   PackagesState copyWith({
     StateStatus? status,
-    List<PackagesModel>? packages,
-    UserEntity ? user,
+    List<PackageModel>? packages,
+    UserEntity? user,
     int? selectedTabIndex,
   }) {
     return PackagesState(

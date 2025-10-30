@@ -13,7 +13,7 @@ import '../../../../core/themes/text_theme.dart';
 
 class PackagesItem extends StatelessWidget {
   const PackagesItem({super.key, required this.packageData});
-  final PackagesModel packageData;
+  final PackageModel packageData;
   @override
   Widget build(BuildContext context) {
     return InkWell(

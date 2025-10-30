@@ -20,7 +20,7 @@ class HomeRepositoryImpl extends HomeRepository {
   }
 
   @override
-  Future<Either<Failure, List<PackagesModel>>> getHomePackages(
+  Future<Either<Failure, List<PackageModel>>> getHomePackages(
     String uId,
   ) async {
     try {

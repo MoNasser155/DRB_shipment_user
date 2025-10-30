@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:drb_shipment_user/core/constants.dart';
 import 'package:drb_shipment_user/features/home/data/models/ads_banner_model.dart';
@@ -58,7 +58,6 @@ class HomeCubit extends Cubit<HomeState> {
         emit(state.copyWith(status: StateStatus.error));
       },
       (packagesData) {
-        log(packagesData[0].dropoffLocation.toString());
         emit(
           state.copyWith(
             packagesList: packagesData,

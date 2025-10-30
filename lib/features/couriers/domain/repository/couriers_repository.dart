@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/failures.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 
 abstract class CouriersRepository {
   Future<Either<Failure, List<CourierModel>>> getAllCouriers(String companyId);

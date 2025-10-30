@@ -4,6 +4,8 @@ import 'package:drb_shipment_user/core/constants.dart';
 import 'data/data_source/packages_data_source.dart';
 import 'data/repository_impl/package_repository_impl.dart';
 import 'domain/repository/packages_repository.dart';
+import 'domain/use_cases/get_company_by_id_usecase.dart';
+import 'domain/use_cases/get_courier_by_id_usecase.dart';
 import 'domain/use_cases/get_packages_usecase.dart';
 import 'domain/use_cases/get_sender_by_id_usecase.dart';
 import 'presentation/cubits/Packages/packages_cubit.dart';
@@ -19,6 +21,8 @@ initPackagesDebendencies() {
   //usecases
   sl.registerLazySingleton(() => GetPackagesUsecase());
   sl.registerLazySingleton(() => GetSenderByIdUsecase());
+  sl.registerLazySingleton(() => GetCourierByIdUsecase());
+  sl.registerLazySingleton(() => GetCompanyByIdUsecase());
 
   // cubits
   sl.registerFactory<PackagesCubit>(() => PackagesCubit());

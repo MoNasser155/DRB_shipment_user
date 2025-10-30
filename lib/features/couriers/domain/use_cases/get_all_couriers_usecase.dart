@@ -3,7 +3,7 @@ import 'package:drb_shipment_user/features/couriers/domain/repository/couriers_r
 
 import '../../../../core/constants.dart';
 import '../../../../core/error/failures.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 
 class GetAllCouriersUsecase {
   final _repository = sl<CouriersRepository>();

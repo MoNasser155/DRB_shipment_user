@@ -8,7 +8,7 @@ import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/themes/text_theme.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 import 'courier_image_appbar.dart';
 import 'courier_info_card.dart';
 import 'vehicle_info_card.dart';

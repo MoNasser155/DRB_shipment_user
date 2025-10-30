@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:drb_shipment_user/core/app_assets/images.dart';
 import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
 import 'package:drb_shipment_user/features/onboarding/data/models/onbaorging_model.dart';
@@ -82,7 +80,6 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   void completeOnboarding() {
     Prefs.setBool(Constants.kIsOnboardingViewed, true);
     emit(state.copyWith(status: StateStatus.success));
-    log(Prefs.getBool(Constants.kIsOnboardingViewed).toString());
     AppNavigator.pushAndRemoveAll(screen: LoginScreen());
   }
 

@@ -13,7 +13,7 @@ import '../../../packages/presentation/screens/packages_details_screen.dart';
 
 class IncomingPackagesItem extends StatelessWidget {
   const IncomingPackagesItem({super.key, required this.packagesModel});
-  final PackagesModel packagesModel;
+  final PackageModel packagesModel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -54,7 +54,10 @@ class IncomingPackagesItem extends StatelessWidget {
                   style: AppTextTheme.text14W500grey400,
                 ),
                 Gap(SpacingHelper.kVertical4),
-                Text(packagesModel.id??'', style: AppTextTheme.text16W500grey300),
+                Text(
+                  packagesModel.id ?? '',
+                  style: AppTextTheme.text16W500grey300,
+                ),
               ],
             ),
             Spacer(),

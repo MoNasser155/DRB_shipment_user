@@ -4,13 +4,13 @@ import '../../../../core/error/exceptions.dart';
 import '../../../packages/data/models/packages_model.dart';
 
 abstract class AddPackageDataSource {
-  Future<void> addPackage(PackagesModel packagesModel);
+  Future<void> addPackage(PackageModel packagesModel);
 }
 
 class AddPackageDataSourceImpl implements AddPackageDataSource {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   @override
-  Future<void> addPackage(PackagesModel packagesModel) async {
+  Future<void> addPackage(PackageModel packagesModel) async {
     try {
       await _firestore.collection('packages').add(packagesModel.toJson());
     } on Exception catch (e) {

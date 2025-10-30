@@ -1,13 +1,12 @@
 import 'package:dartz/dartz.dart';
-
 import '../../../../core/constants.dart';
 import '../../../../core/error/failures.dart';
-import '../../../auth/domain/entities/user_entity.dart';
+import '../../../couriers/data/models/courier_model.dart';
 import '../repository/packages_repository.dart';
 
-class GetSenderByIdUsecase {
+class GetCourierByIdUsecase {
   final _repository = sl<PackagesRepository>();
 
-  Future<Either<Failure, UserEntity>> call(String senderId) async =>
-      await _repository.getSenderById(senderId);
+  Future<Either<Failure, CourierModel>> call(String courierId) async =>
+      await _repository.getCourierById(courierId);
 }

@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../../core/error/exceptions.dart';
-import '../models/couriers_model.dart';
+import '../models/courier_model.dart';
 
 abstract class CouriersDataSource {
   Future<List<CourierModel>> getLimitedCouriers(String companyId);

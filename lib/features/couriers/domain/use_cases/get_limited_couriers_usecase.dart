@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../core/error/failures.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 import '../repository/couriers_repository.dart';
 
 class GetLimitedCouriersUsecase {

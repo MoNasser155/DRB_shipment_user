@@ -8,12 +8,14 @@ import 'package:drb_shipment_user/features/packages/data/data_source/packages_da
 import 'package:drb_shipment_user/features/packages/data/models/packages_model.dart';
 
 import '../../../../core/constants.dart';
+import '../../../companies/data/models/company_model.dart';
+import '../../../couriers/data/models/courier_model.dart';
 import '../../domain/repository/packages_repository.dart';
 
 class PackageRepositoryImpl extends PackagesRepository {
   final _packagesDataSource = sl<PackagesDataSource>();
   @override
-  Future<Either<Failure, List<PackagesModel>>> getPackages(
+  Future<Either<Failure, List<PackageModel>>> getPackages(
     String uId, {
     String? status,
   }) async {
@@ -29,10 +31,30 @@ class PackageRepositoryImpl extends PackagesRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> getSenderById(String uId) async {
+  Future<Either<Failure, UserEntity>> getSenderById(String senderId) async {
     try {
-      final user = await _packagesDataSource.getSenderById(uId);
+      final user = await _packagesDataSource.getSenderById(senderId);
       return Right(user);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, CourierModel>> getCourierById(String courierId) async {
+    try {
+      final courier = await _packagesDataSource.getCourierById(courierId);
+      return Right(courier);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, CompanyModel>> getCompanyById(String companyId) async {
+    try {
+      final company = await _packagesDataSource.getCompanyById(companyId);
+      return Right(company);
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }

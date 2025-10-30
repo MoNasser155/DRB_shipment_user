@@ -3,7 +3,7 @@ import '../../../../core/color_helper.dart';
 import '../../../../core/helpers/redius_helper.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 import 'custom_courier_details_row.dart';
 
 class VehicleInfoCard extends StatelessWidget {

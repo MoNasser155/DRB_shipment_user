@@ -10,7 +10,7 @@ import '../../../../core/color_helper.dart';
 import '../../../../core/enums/state_status.dart';
 import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import '../../data/models/couriers_model.dart';
+import '../../data/models/courier_model.dart';
 
 class CouriersBody extends StatelessWidget {
   const CouriersBody({super.key});

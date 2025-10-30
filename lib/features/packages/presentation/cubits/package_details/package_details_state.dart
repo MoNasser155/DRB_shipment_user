@@ -3,7 +3,9 @@ part of 'package_details_cubit.dart';
 class PackageDetailsState extends Equatable {
   final StateStatus status;
   final UserEntity user;
-  final PackagesModel packagesModel;
+  final CourierModel courier;
+  final CompanyModel company;
+  final PackageModel packagesModel;
   final String? errorMessage;
   final CameraPosition? cameraPosition;
   final Set<Polyline> polylines;
@@ -12,6 +14,8 @@ class PackageDetailsState extends Equatable {
   const PackageDetailsState({
     required this.status,
     required this.user,
+    required this.courier,
+    required this.company,
     required this.packagesModel,
     this.errorMessage,
     this.cameraPosition,
@@ -22,7 +26,9 @@ class PackageDetailsState extends Equatable {
   factory PackageDetailsState.initial() => PackageDetailsState(
     status: StateStatus.initial,
     user: UserEntity.initial(),
-    packagesModel: PackagesModel.skeleton(),
+    courier: CourierModel.skeleton(),
+    company: CompanyModel.skeleton(),
+    packagesModel: PackageModel.skeleton(),
     errorMessage: '',
     cameraPosition: null,
     polylines: const {},
@@ -32,7 +38,9 @@ class PackageDetailsState extends Equatable {
   PackageDetailsState copyWith({
     StateStatus? status,
     UserEntity? user,
-    PackagesModel? packagesModel,
+    CourierModel? courier,
+    CompanyModel? company,
+    PackageModel? packagesModel,
     String? errorMessage,
     CameraPosition? cameraPosition,
     Set<Polyline>? polylines,
@@ -41,6 +49,8 @@ class PackageDetailsState extends Equatable {
     return PackageDetailsState(
       status: status ?? this.status,
       user: user ?? this.user,
+      courier: courier ?? this.courier,
+      company: company ?? this.company,
       packagesModel: packagesModel ?? this.packagesModel,
       errorMessage: errorMessage ?? this.errorMessage,
       cameraPosition: cameraPosition ?? this.cameraPosition,
@@ -53,6 +63,8 @@ class PackageDetailsState extends Equatable {
   List<Object?> get props => [
     status,
     user,
+    courier,
+    company,
     packagesModel,
     errorMessage,
     cameraPosition,

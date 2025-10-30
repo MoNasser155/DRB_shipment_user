@@ -1,9 +1,11 @@
 import 'package:drb_shipment_user/core/enums/payment.dart';
 import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
 
-class PackagesModel {
+class PackageModel {
   final String? id;
   final String senderId;
+  final String? courierId;
+  final String? companyId;
   final String receiverName;
   final String recieverPhone;
   final String receiverEmail;
@@ -16,9 +18,11 @@ class PackagesModel {
   final bool isFragile;
   final num weight;
 
-  PackagesModel({
+  PackageModel({
     this.id,
     required this.senderId,
+    this.courierId,
+    this.companyId,
     required this.receiverName,
     required this.recieverPhone,
     required this.receiverEmail,
@@ -32,9 +36,11 @@ class PackagesModel {
     required this.weight,
   });
 
-  factory PackagesModel.fromJson(Map<String, dynamic> json) => PackagesModel(
+  factory PackageModel.fromJson(Map<String, dynamic> json) => PackageModel(
     id: json['id'],
     senderId: json['senderId'],
+    courierId: json['courierId'] ?? '',
+    companyId: json['companyId'] ?? '',
     receiverName: json['recieverName'],
     recieverPhone: json['recieverPhone'],
     receiverEmail: json['recieverEmail'],
@@ -51,6 +57,8 @@ class PackagesModel {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> data = <String, dynamic>{};
     data['senderId'] = senderId;
+    data['courierId'] = courierId;
+    data['companyId'] = companyId;
     data['content'] = packageContent;
     data['price'] = 0.0;
     data['paymentMethod'] = paymentMethod.firebaseValue;
@@ -65,9 +73,11 @@ class PackagesModel {
     return data;
   }
 
-  factory PackagesModel.skeleton() => PackagesModel(
+  factory PackageModel.skeleton() => PackageModel(
     id: '',
     senderId: '',
+    courierId: '',
+    companyId: '',
     receiverName: '',
     recieverPhone: '',
     receiverEmail: '',

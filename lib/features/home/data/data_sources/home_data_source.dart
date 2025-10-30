@@ -6,7 +6,7 @@ import '../../../packages/data/models/packages_model.dart';
 
 abstract class HomeDataSource {
   Future<List<AdsBannerModel>> getAds();
-  Future<List<PackagesModel>> getHomePackages(String uId);
+  Future<List<PackageModel>> getHomePackages(String uId);
   Future<List<CompanyModel>> getHomeCouriersCompanies();
 }
 
@@ -23,7 +23,7 @@ class HomeDataSourceImpl implements HomeDataSource {
   }
 
   @override
-  Future<List<PackagesModel>> getHomePackages(String uId) async {
+  Future<List<PackageModel>> getHomePackages(String uId) async {
     final packagesList =
         await _firestore
             .collection('packages')
@@ -34,7 +34,7 @@ class HomeDataSourceImpl implements HomeDataSource {
     return packagesList.docs.map((doc) {
       final data = doc.data();
       data['id'] = doc.id;
-      return PackagesModel.fromJson(data);
+      return PackageModel.fromJson(data);
     }).toList();
   }
 

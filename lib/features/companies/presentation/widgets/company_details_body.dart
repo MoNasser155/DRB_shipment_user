@@ -1,6 +1,6 @@
 import 'package:drb_shipment_user/core/widgets/custom_skeletonizer.dart';
 import 'package:drb_shipment_user/features/companies/presentation/cubits/company_details/company_details_cubit.dart';
-import 'package:drb_shipment_user/features/couriers/data/models/couriers_model.dart';
+import 'package:drb_shipment_user/features/couriers/data/models/courier_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
