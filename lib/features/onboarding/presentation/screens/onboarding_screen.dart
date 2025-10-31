@@ -4,6 +4,7 @@ import 'package:drb_shipment_user/core/widgets/switch_lang_button.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/cubits/cubit/onboarding_cubit.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/widgets/onbaording_page_view_item.dart';
 import 'package:drb_shipment_user/features/onboarding/presentation/widgets/onboarding_navigation_buttons.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,6 +16,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: ValueKey(context.locale.toString()),
       appBar: AppBar(),
       body: SafeArea(
         child: Stack(

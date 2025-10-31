@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants.dart';
@@ -13,6 +14,7 @@ class SignupScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<SignupCubit>(),
       child: Scaffold(
+        key: ValueKey(context.locale.toString()),
         resizeToAvoidBottomInset: true,
         appBar: AppBar(),
         bottomSheet: SignupBottomSheet(),

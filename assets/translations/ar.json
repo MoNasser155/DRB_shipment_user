@@ -160,5 +160,6 @@
   "please_enter_your_card_number": "الرجاء ادخال رقم البطاقة",
   "please_enter_your_card_holder_name": "الرجاء ادخال اسم صاحب البطاقة",
   "please_enter_a_valid_card_number": "الرجاء ادخال رقم بطاقة صالح",
-  "please_enter_a_valid_cvv": "الرجاء ادخال CVV صالح"
+  "please_enter_a_valid_cvv": "الرجاء ادخال CVV صالح",
+  "please_accept_terms_and_conditions": "الرجاء قبول الشروط والاحكام"
 }

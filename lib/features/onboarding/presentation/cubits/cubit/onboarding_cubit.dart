@@ -87,14 +87,6 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     completeOnboarding();
   }
 
-  void refreshForLanguageChange() {
-    if (state.status == StateStatus.success) {
-      emit(state.copyWith(status: StateStatus.loading));
-    } else {
-      emit(state.copyWith(status: StateStatus.success));
-    }
-  }
-
   @override
   Future<void> close() {
     pageController.dispose();

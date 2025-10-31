@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/themes/text_theme.dart';
 
 class TabLabel extends StatelessWidget {

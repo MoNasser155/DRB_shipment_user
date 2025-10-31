@@ -1,8 +1,6 @@
 import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/languages/languages.dart';
-import 'package:drb_shipment_user/features/onboarding/presentation/cubits/cubit/onboarding_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SwitchLangButton extends StatefulWidget {
   const SwitchLangButton({super.key});
@@ -39,12 +37,6 @@ class _SwitchLangButtonState extends State<SwitchLangButton> {
             if (value != null) {
               _currentLanguage = value;
               Languages.setLocaleWithContext(context, value);
-              try {
-                final cubit = context.read<OnboardingCubit>();
-                cubit.refreshForLanguageChange();
-              } catch (e) {
-                rethrow;
-              }
             }
           });
         },

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/constants.dart';
+import '../../../../../core/enums/state_status.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
@@ -27,15 +28,19 @@ class SignupBottomSheet extends StatelessWidget {
 
         children: [
           BlocBuilder<SignupCubit, SignupState>(
+            buildWhen: (previous, current) => previous.status != current.status,
             builder: (context, state) {
               final cubit = SignupCubit.get(context);
               return CustomButton(
-                buttonChild: Text(
-                  LocaleKeys.signIn,
-                  style: AppTextTheme.buttonTextStyle,
-                ),
+                buttonChild:
+                    state.status == StateStatus.loading
+                        ? const CircularProgressIndicator(color: Colors.white)
+                        : Text(
+                          LocaleKeys.signIn,
+                          style: AppTextTheme.buttonTextStyle,
+                        ),
                 onTap: () {
-                  cubit.signup();
+                  state.status == StateStatus.loading ? null : cubit.signup();
                 },
               );
             },

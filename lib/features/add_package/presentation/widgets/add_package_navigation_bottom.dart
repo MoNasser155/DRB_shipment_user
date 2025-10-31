@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../core/enums/state_status.dart';
 import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/themes/text_theme.dart';
 import '../../../../core/widgets/cutsom_button.dart';
@@ -32,7 +33,10 @@ class AddPackageNavigationBottom extends StatelessWidget {
                 child: Expanded(
                   child: CustomButton(
                     onTap: () {
-                      cubit.previousPage();
+                      state.currentPageIndex == cubit.pages.length - 1 &&
+                              state.status == StateStatus.loading
+                          ? null
+                          : cubit.previousPage();
                     },
                     buttonChild: Text(
                       LocaleKeys.previous,
@@ -48,12 +52,19 @@ class AddPackageNavigationBottom extends StatelessWidget {
               Expanded(
                 child: CustomButton(
                   onTap: () {
-                    cubit.nextPage();
+                    state.currentPageIndex == cubit.pages.length - 1 &&
+                            state.status == StateStatus.loading
+                        ? null
+                        : cubit.nextPage();
                   },
-                  buttonChild: Text(
-                    LocaleKeys.next,
-                    style: AppTextTheme.buttonTextStyle,
-                  ),
+                  buttonChild:
+                      state.currentPageIndex == cubit.pages.length - 1 &&
+                              state.status == StateStatus.loading
+                          ? CircularProgressIndicator(color: Colors.white)
+                          : Text(
+                            LocaleKeys.next,
+                            style: AppTextTheme.buttonTextStyle,
+                          ),
                 ),
               ),
             ],

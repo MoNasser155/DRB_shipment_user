@@ -19,14 +19,17 @@ enum Languages {
     this.languageIndex,
   );
 
-  static List<Locale> get suppoerLocales =>
+  static List<Locale> get supportedLocales =>
       Languages.values.map((e) => e.locale).toList();
 
   static List<String> get titles =>
       Languages.values.map((e) => e.title).toList();
 
-  static void setLocaleWithContext(BuildContext context, Languages lang) {
-    context.setLocale(lang.locale);
+  static Future<void> setLocaleWithContext(
+    BuildContext context,
+    Languages lang,
+  ) async {
+    await context.setLocale(lang.locale);
   }
 
   static String getLanguageCode(Languages language) {
@@ -34,10 +37,13 @@ enum Languages {
   }
 
   static Languages get currentLanguage {
-    final currentLocale =
-        EasyLocalization.of(AppNavigator.navigatorKey.currentContext!)!.locale;
+    final context = AppNavigator.navigatorKey.currentContext;
+    if (context == null) return Languages.english;
+
+    final currentLocale = EasyLocalization.of(context)?.locale;
     return Languages.values.firstWhere(
       (element) => element.locale == currentLocale,
+      orElse: () => Languages.english,
     );
   }
 

@@ -1,8 +1,11 @@
 import 'package:drb_shipment_user/core/constants.dart';
 import 'package:drb_shipment_user/core/enums/state_status.dart';
+import 'package:drb_shipment_user/core/widgets/custom_snack_bar.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/color_helper.dart';
+import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/utils/navigator_helper.dart';
 import '../../../../main_view/presentation/screens/main_view_screen.dart';
 import '../../../data/models/signup_params.dart';
@@ -43,8 +46,19 @@ class SignupCubit extends Cubit<SignupState> {
     );
   }
 
+  void setIsTermsAccepted(bool value) {
+    emit(state.copyWith(isTermsAccepted: value));
+  }
+
   Future<void> signup() async {
     if (!formKey.currentState!.validate()) {
+      return;
+    }
+    if (state.isTermsAccepted == false) {
+      CustomSnackBar.top(
+        msg: LocaleKeys.pleaseAcceptTermsAndConditions,
+        color: ColorHelper.red,
+      );
       return;
     }
 

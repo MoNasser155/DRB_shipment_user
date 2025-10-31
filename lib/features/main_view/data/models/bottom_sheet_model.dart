@@ -1,9 +1,6 @@
 class BottomSheetModel {
-  final String icon;
-  final String label;
+  String icon;
+  String label;
 
-  BottomSheetModel({
-    required this.icon,
-    required this.label,
-  });
+  BottomSheetModel({required this.icon, required this.label});
 }

@@ -1,11 +1,14 @@
 import 'package:drb_shipment_user/core/enums/state_status.dart';
+import 'package:drb_shipment_user/core/utils/cashe_storage.dart';
 import 'package:drb_shipment_user/core/utils/navigator_helper.dart';
+import 'package:drb_shipment_user/core/widgets/custom_snack_bar.dart';
 import 'package:drb_shipment_user/features/main_view/presentation/screens/main_view_screen.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/constants.dart';
 import '../../../data/models/login_params.dart';
+import '../../../domain/entities/user_entity.dart';
 import '../../../domain/use_cases/login_usecase.dart';
 
 part 'login_state.dart';
@@ -35,6 +38,7 @@ class LoginCubit extends Cubit<LoginState> {
     );
     result.fold(
       (failure) {
+        CustomSnackBar.top(msg: failure.message);
         emit(
           state.copyWith(
             status: StateStatus.error,
@@ -42,8 +46,12 @@ class LoginCubit extends Cubit<LoginState> {
           ),
         );
       },
-      (user) {
+      (sucess) {
         emit(state.copyWith(status: StateStatus.success));
+
+        final user = UserEntity.fromMap(
+          CacheStorage.read(Constants.userKey, isDecoded: true),
+        );
         AppNavigator.pushAndRemoveAll(
           transitionBuilder: AppNavigator.cupertinoTransition,
           screen: MainViewScreen(user: user),

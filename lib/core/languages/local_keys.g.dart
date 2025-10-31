@@ -487,4 +487,7 @@ abstract class LocaleKeys {
   static const String _pleaseEnterAValidCvv = 'please_enter_a_valid_cvv';
   static String get pleaseEnterAValidCvv => _pleaseEnterAValidCvv.tr();
 
+  static const String _pleaseAcceptTermsAndConditions = 'please_accept_terms_and_conditions';
+  static String get pleaseAcceptTermsAndConditions => _pleaseAcceptTermsAndConditions.tr();
+
 }

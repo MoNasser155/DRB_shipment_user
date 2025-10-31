@@ -48,8 +48,8 @@ class LogoutBody extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    // CacheStorage.delete(Constants.userKey);
-                    // AppNavigator.pushAndRemoveAll(screen: LoginScreen());
+                    CacheStorage.delete(Constants.userKey);
+                    AppNavigator.pushAndRemoveAll(screen: LoginScreen());
                   },
                 ),
               ),

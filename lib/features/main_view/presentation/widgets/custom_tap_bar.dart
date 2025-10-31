@@ -27,6 +27,7 @@ class CustomTabBar extends StatelessWidget {
                 cubit.tabs.length,
                 (index) => Expanded(
                   child: TabItem(
+                
                     index: index,
                     config: cubit.tabs[index],
                     isSelected: cubit.isTabSelected(index),

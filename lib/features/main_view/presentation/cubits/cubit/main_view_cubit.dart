@@ -33,7 +33,7 @@ class MainViewCubit extends Cubit<MainViewState> {
     UserAccountScreen(),
   ];
 
-  final List<BottomSheetModel> tabs = [
+  List<BottomSheetModel> get tabs => [
     BottomSheetModel(icon: AppIcons.home, label: LocaleKeys.home),
     BottomSheetModel(icon: AppIcons.packages, label: LocaleKeys.packages),
     BottomSheetModel(icon: AppIcons.newPackages, label: LocaleKeys.newPackage),
