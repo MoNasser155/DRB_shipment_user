@@ -63,8 +63,8 @@ class PackageModel {
     data['price'] = 0.0;
     data['paymentMethod'] = paymentMethod.firebaseValue;
     data['status'] = status;
-    data['pickupLocation'] = '31.65498519,32.65498519';
-    data['dropoffLocation'] = '32.65498519,33.65498519';
+    data['pickupLocation'] = locationToString(pickupLocation);
+    data['dropoffLocation'] = locationToString(dropoffLocation);
     data['recieverName'] = receiverName;
     data['recieverPhone'] = recieverPhone;
     data['recieverEmail'] = receiverEmail;

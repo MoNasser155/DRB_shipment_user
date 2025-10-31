@@ -451,4 +451,10 @@ abstract class LocaleKeys {
   static const String _popularCompanies = 'popular_companies';
   static String get popularCompanies => _popularCompanies.tr();
 
+  static const String _pleasePickYourPickupLocation = 'please_pick_your_pickup_location';
+  static String get pleasePickYourPickupLocation => _pleasePickYourPickupLocation.tr();
+
+  static const String _pleasePickYourDeliveryLocation = 'please_pick_your_delivery_location';
+  static String get pleasePickYourDeliveryLocation => _pleasePickYourDeliveryLocation.tr();
+
 }

@@ -35,97 +35,104 @@ class PackageDetailsCourierSection extends StatelessWidget {
             state.status == StateStatus.loading
                 ? CompanyModel.skeleton()
                 : state.company;
-        return CustomSkeletonizer(
-          enabled: state.status == StateStatus.loading,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: SpacingHelper.kVertical8,
-            children: [
-              Text(
-                LocaleKeys.courierInfo,
-                style: AppTextTheme.text18W600grey100,
-              ),
+        return Visibility(
+          visible:
+              state.status == StateStatus.success ||
+              state.courier.id != '' ||
+              state.company.id != '',
+          child: CustomSkeletonizer(
+            enabled: state.status == StateStatus.loading,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: SpacingHelper.kVertical8,
+              children: [
+                Text(
+                  LocaleKeys.courierInfo,
+                  style: AppTextTheme.text18W600grey100,
+                ),
 
-              InkWell(
-                onTap: () {
-                  state.status == StateStatus.loading
-                      ? null
-                      : AppNavigator.push(
-                        transitionBuilder: AppNavigator.cupertinoTransition,
-                        screen: CourierDetailsScreen(couriersModel: courier),
-                      );
-                },
-                child: Row(
-                  children: [
-                    CustomCachedImage(
-                      radius: 24.r,
-                      width: 56,
-                      height: 56,
-                      imageUrl: courier.image,
-                    ),
-                    Gap(SpacingHelper.horizontal8),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              '${courier.name} - ',
-                              style: AppTextTheme.text16W500grey100,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                state.status == StateStatus.loading
-                                    ? null
-                                    : AppNavigator.push(
-                                      transitionBuilder:
-                                          AppNavigator.cupertinoTransition,
-                                      screen: CompanyDetailsScreen(
-                                        companyModel: company,
+                InkWell(
+                  onTap: () {
+                    state.status == StateStatus.loading
+                        ? null
+                        : AppNavigator.push(
+                          transitionBuilder: AppNavigator.cupertinoTransition,
+                          screen: CourierDetailsScreen(couriersModel: courier),
+                        );
+                  },
+                  child: Row(
+                    children: [
+                      CustomCachedImage(
+                        radius: 24.r,
+                        width: 56,
+                        height: 56,
+                        imageUrl: courier.image,
+                      ),
+                      Gap(SpacingHelper.horizontal8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                '${courier.name} - ',
+                                style: AppTextTheme.text16W500grey100,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  state.status == StateStatus.loading
+                                      ? null
+                                      : AppNavigator.push(
+                                        transitionBuilder:
+                                            AppNavigator.cupertinoTransition,
+                                        screen: CompanyDetailsScreen(
+                                          companyModel: company,
+                                        ),
+                                      );
+                                },
+                                child: Text(
+                                  company.name,
+                                  style: AppTextTheme.text16W500grey100
+                                      .copyWith(
+                                        color: ColorHelper.secondryOrange,
                                       ),
-                                    );
-                              },
-                              child: Text(
-                                company.name,
-                                style: AppTextTheme.text16W500grey100.copyWith(
-                                  color: ColorHelper.secondryOrange,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Gap(SpacingHelper.kVertical4),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.phone_android,
-                              color: ColorHelper.primaryGreen,
-                              size: 18,
-                            ),
-                            Gap(SpacingHelper.horizontal4),
-                            Text(
-                              courier.phone,
-                              style: AppTextTheme.text14W500grey400,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: ColorHelper.yellow, size: 18),
-                        Gap(SpacingHelper.horizontal4),
-                        Text(
-                          courier.rating.toString(),
-                          style: AppTextTheme.text16W500grey100,
-                        ),
-                      ],
-                    ),
-                  ],
+                            ],
+                          ),
+                          Gap(SpacingHelper.kVertical4),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.phone_android,
+                                color: ColorHelper.primaryGreen,
+                                size: 18,
+                              ),
+                              Gap(SpacingHelper.horizontal4),
+                              Text(
+                                courier.phone,
+                                style: AppTextTheme.text14W500grey400,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: ColorHelper.yellow, size: 18),
+                          Gap(SpacingHelper.horizontal4),
+                          Text(
+                            courier.rating.toString(),
+                            style: AppTextTheme.text16W500grey100,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

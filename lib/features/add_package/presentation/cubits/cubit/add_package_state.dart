@@ -6,7 +6,10 @@ class AddPackageState extends Equatable {
   final String? errorMessage;
   final int currentPageIndex;
   final bool isFragile;
-    final bool isLastPage;
+  final bool isLastPage;
+
+  final  Coordinates? pickupLocation;
+  final  Coordinates? dropoffLocation;
 
   const AddPackageState({
     required this.status,
@@ -15,6 +18,9 @@ class AddPackageState extends Equatable {
     required this.currentPageIndex,
     required this.isLastPage,
     this.errorMessage,
+
+     this.pickupLocation ,
+     this.dropoffLocation ,
   });
 
   factory AddPackageState.initial() => AddPackageState(
@@ -23,6 +29,8 @@ class AddPackageState extends Equatable {
     isFragile: true,
     currentPageIndex: 0,
     isLastPage: false,
+     pickupLocation: null,
+     dropoffLocation: null,
   );
 
   AddPackageState copyWith({
@@ -32,6 +40,9 @@ class AddPackageState extends Equatable {
     int? currentPageIndex,
     bool? isFragile,
     bool? isLastPage,
+
+    Coordinates? pickupLocation,
+    Coordinates? dropoffLocation,
   }) {
     return AddPackageState(
       status: status ?? this.status,
@@ -40,6 +51,9 @@ class AddPackageState extends Equatable {
       currentPageIndex: currentPageIndex ?? this.currentPageIndex,
       isFragile: isFragile ?? this.isFragile,
       isLastPage: isLastPage ?? this.isLastPage,
+
+      pickupLocation: pickupLocation ?? this.pickupLocation,
+      dropoffLocation: dropoffLocation ?? this.dropoffLocation,
     );
   }
 
@@ -50,6 +64,9 @@ class AddPackageState extends Equatable {
     currentPageIndex,
     errorMessage,
     isFragile,
-    isLastPage
+    isLastPage,
+
+    pickupLocation,
+    dropoffLocation,
   ];
 }

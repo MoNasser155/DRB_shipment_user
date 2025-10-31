@@ -24,12 +24,6 @@ class CourierCardItem extends StatelessWidget {
         );
       },
       child: Container(
-        constraints: BoxConstraints(
-          maxHeight: 84.h,
-          minHeight: 84.h,
-          maxWidth: 56.w,
-          minWidth: 56.w,
-        ),
         padding: EdgeInsets.all(4),
         decoration: BoxDecoration(
           color: ColorHelper.grey100.withValues(alpha: 0.05),
@@ -78,7 +72,6 @@ class CourierCardItem extends StatelessWidget {
                 ],
               ),
             ),
-
             Expanded(
               flex: 2,
               child: Column(

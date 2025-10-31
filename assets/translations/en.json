@@ -148,5 +148,7 @@
   "busy": "Busy",
   "vehicle_type": "Vehicle Type",
   "companies": "Companies",
-  "popular_companies": "popular Companies"
+  "popular_companies": "popular Companies",
+  "please_pick_your_pickup_location": "Please pick your pickup location",
+  "please_pick_your_delivery_location": "Please pick your delivery location"
 }

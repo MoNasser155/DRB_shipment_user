@@ -148,5 +148,7 @@
   "busy": "مشغول",
   "vehicle_type": "نوع المركبة",
   "companies": "الشركات",
-  "popular_companies": "الشركات المشهورة"
+  "popular_companies": "الشركات المشهورة",
+  "please_pick_your_pickup_location": "الرجاء اختيار موقع الاستلام الخاص بك",
+  "please_pick_your_delivery_location": "الرجاء اختيار موقع التسليم الخاص بك"
 }

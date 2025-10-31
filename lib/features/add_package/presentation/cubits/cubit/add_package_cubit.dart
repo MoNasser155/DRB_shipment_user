@@ -1,12 +1,16 @@
+// ignore_for_file: unused_field
+
 import 'dart:developer';
 
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/core/enums/payment.dart';
 import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
 import 'package:drb_shipment_user/core/widgets/custom_snack_bar.dart';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/color_helper.dart';
 import '../../../../../core/constants.dart';
 import '../../../../../core/enums/state_status.dart';
@@ -14,6 +18,7 @@ import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
 import '../../../../packages/data/models/packages_model.dart';
 import '../../../domain/usecases/add_package_usecase.dart';
+import '../../widgets/package_pages/location_info.dart';
 import '../../widgets/package_pages/pckage_info.dart';
 import '../../widgets/package_pages/sender_recierver_info.dart';
 
@@ -28,6 +33,9 @@ class AddPackageCubit extends Cubit<AddPackageState> {
 
   final PageController pageController = PageController(initialPage: 0);
 
+  GoogleMapController? _pickupcontroller;
+  GoogleMapController? _dropoffController;
+
   final TextEditingController contentController = TextEditingController();
   final TextEditingController weightController = TextEditingController();
   final TextEditingController recieverNameController = TextEditingController();
@@ -37,14 +45,27 @@ class AddPackageCubit extends Cubit<AddPackageState> {
 
   final GlobalKey<FormState> packageInfoFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> recieverInfoFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> locationInfoFormKey = GlobalKey<FormState>();
 
-  final List<Widget> pages = [PckageInfo(), SenderRecierverInfo()];
+  final List<Widget> pages = [
+    PckageInfo(),
+    SenderRecierverInfo(),
+    LocationInfo(),
+  ];
 
   Future<void> initAddPackage(UserEntity user) async {
     emit(state.copyWith(status: StateStatus.loading));
     setUser(user);
     await Future.wait([]);
     emit(state.copyWith(status: StateStatus.success));
+  }
+
+  void setPickupController(GoogleMapController pickupcontroller) {
+    _pickupcontroller = pickupcontroller;
+  }
+
+  void setDropoffController(GoogleMapController dropoffController) {
+    _dropoffController = dropoffController;
   }
 
   void setUser(UserEntity user) {
@@ -55,6 +76,22 @@ class AddPackageCubit extends Cubit<AddPackageState> {
     if (state.isFragile != isFragile) {
       emit(state.copyWith(isFragile: isFragile));
     }
+  }
+
+  void setPickupLocation(LatLng location) {
+    emit(
+      state.copyWith(
+        pickupLocation: Coordinates(location.latitude, location.longitude),
+      ),
+    );
+  }
+
+  void setDropoffLocation(LatLng location) {
+    emit(
+      state.copyWith(
+        dropoffLocation: Coordinates(location.latitude, location.longitude),
+      ),
+    );
   }
 
   PackageModel setData() {
@@ -69,8 +106,8 @@ class AddPackageCubit extends Cubit<AddPackageState> {
       price: 0.0,
       isFragile: state.isFragile,
       paymentMethod: Payment.cash,
-      pickupLocation: Coordinates(0, 0),
-      dropoffLocation: Coordinates(0, 0),
+      pickupLocation: state.pickupLocation ?? Coordinates(0.0, 0.0),
+      dropoffLocation: state.dropoffLocation ?? Coordinates(0.0, 0.0),
     );
   }
 
@@ -96,6 +133,21 @@ class AddPackageCubit extends Cubit<AddPackageState> {
       }
     } else if (state.currentPageIndex == 1) {
       if (!recieverInfoFormKey.currentState!.validate()) {
+        return;
+      }
+    } else if (state.currentPageIndex == 2) {
+      if (state.pickupLocation == null) {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleasePickYourPickupLocation,
+          color: ColorHelper.red,
+        );
+        return;
+      }
+      if (state.dropoffLocation == null) {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleasePickYourDeliveryLocation,
+          color: ColorHelper.red,
+        );
         return;
       }
     }
