@@ -150,5 +150,15 @@
   "companies": "Companies",
   "popular_companies": "popular Companies",
   "please_pick_your_pickup_location": "Please pick your pickup location",
-  "please_pick_your_delivery_location": "Please pick your delivery location"
+  "please_pick_your_delivery_location": "Please pick your delivery location",
+  "please_select_payment_method": "Please select payment method",
+  "visa_info": "Visa Info",
+  "card_number": "Card Number",
+  "card_holder_name": "Card Holder Name",
+  "expiry_date": "Expiry Date",
+  "c_v_v": "CVV",
+  "please_enter_your_card_number": "Please enter your card number",
+  "please_enter_your_card_holder_name": "Please enter your card holder name",
+  "please_enter_a_valid_card_number": "Please enter a valid card number",
+  "please_enter_a_valid_cvv": "Please enter a valid CVV"
 }

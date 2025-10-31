@@ -6,66 +6,29 @@ import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/core/enums/payment.dart';
 import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
 import 'package:drb_shipment_user/core/widgets/custom_snack_bar.dart';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/color_helper.dart';
-import '../../../../../core/constants.dart';
 import '../../../../../core/enums/state_status.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
 import '../../../../packages/data/models/packages_model.dart';
-import '../../../domain/usecases/add_package_usecase.dart';
-import '../../widgets/package_pages/location_info.dart';
-import '../../widgets/package_pages/pckage_info.dart';
-import '../../widgets/package_pages/sender_recierver_info.dart';
+import 'add_package_mixin.dart';
 
 part 'add_package_state.dart';
 
-class AddPackageCubit extends Cubit<AddPackageState> {
+class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
   AddPackageCubit() : super(AddPackageState.initial());
 
   static AddPackageCubit get(context) => BlocProvider.of(context);
-
-  final _addPackageUsecase = sl<AddPackageUsecase>();
-
-  final PageController pageController = PageController(initialPage: 0);
-
-  GoogleMapController? _pickupcontroller;
-  GoogleMapController? _dropoffController;
-
-  final TextEditingController contentController = TextEditingController();
-  final TextEditingController weightController = TextEditingController();
-  final TextEditingController recieverNameController = TextEditingController();
-  final TextEditingController recieverPhoneNumberController =
-      TextEditingController();
-  final TextEditingController recieverEmailController = TextEditingController();
-
-  final GlobalKey<FormState> packageInfoFormKey = GlobalKey<FormState>();
-  final GlobalKey<FormState> recieverInfoFormKey = GlobalKey<FormState>();
-  final GlobalKey<FormState> locationInfoFormKey = GlobalKey<FormState>();
-
-  final List<Widget> pages = [
-    PckageInfo(),
-    SenderRecierverInfo(),
-    LocationInfo(),
-  ];
 
   Future<void> initAddPackage(UserEntity user) async {
     emit(state.copyWith(status: StateStatus.loading));
     setUser(user);
     await Future.wait([]);
     emit(state.copyWith(status: StateStatus.success));
-  }
-
-  void setPickupController(GoogleMapController pickupcontroller) {
-    _pickupcontroller = pickupcontroller;
-  }
-
-  void setDropoffController(GoogleMapController dropoffController) {
-    _dropoffController = dropoffController;
   }
 
   void setUser(UserEntity user) {
@@ -94,6 +57,10 @@ class AddPackageCubit extends Cubit<AddPackageState> {
     );
   }
 
+  void setPaymentMethod(Payment paymentMethod) {
+    emit(state.copyWith(selectedPaymentMethod: paymentMethod));
+  }
+
   PackageModel setData() {
     return PackageModel(
       status: PackagesStatus.inProgress.firebaseValue,
@@ -105,7 +72,7 @@ class AddPackageCubit extends Cubit<AddPackageState> {
       receiverEmail: recieverEmailController.text,
       price: 0.0,
       isFragile: state.isFragile,
-      paymentMethod: Payment.cash,
+      paymentMethod: state.selectedPaymentMethod,
       pickupLocation: state.pickupLocation ?? Coordinates(0.0, 0.0),
       dropoffLocation: state.dropoffLocation ?? Coordinates(0.0, 0.0),
     );
@@ -150,6 +117,12 @@ class AddPackageCubit extends Cubit<AddPackageState> {
         );
         return;
       }
+    } else if (state.currentPageIndex == 3) {
+      if (state.selectedPaymentMethod == Payment.visa) {
+        if (!paymentInfoFormKey.currentState!.validate()) {
+          return;
+        }
+      }
     }
     if (state.currentPageIndex < pages.length - 1) {
       changePage(state.currentPageIndex + 1);
@@ -176,7 +149,7 @@ class AddPackageCubit extends Cubit<AddPackageState> {
   Future<void> addPackage() async {
     emit(state.copyWith(status: StateStatus.loading));
     log(setData().toJson().toString());
-    final result = await _addPackageUsecase(setData());
+    final result = await addPackageUsecase(setData());
     result.fold(
       (failure) {
         CustomSnackBar.top(msg: failure.message, color: ColorHelper.red);
@@ -199,22 +172,20 @@ class AddPackageCubit extends Cubit<AddPackageState> {
     );
   }
 
-  void clear() {
-    contentController.clear();
-    weightController.clear();
-    recieverNameController.clear();
-    recieverPhoneNumberController.clear();
-    recieverEmailController.clear();
-    setFragile(true);
-  }
-
   @override
   Future<void> close() {
-    contentController.dispose();
-    weightController.dispose();
-    recieverNameController.dispose();
-    recieverPhoneNumberController.dispose();
-    recieverEmailController.dispose();
+    disposeControllers();
     return super.close();
+  }
+
+  void clear() {
+    clearWithMixin();
+    emit(
+      state.copyWith(
+        pickupLocation: null,
+        dropoffLocation: null,
+        selectedPaymentMethod: Payment.cash,
+      ),
+    );
   }
 }

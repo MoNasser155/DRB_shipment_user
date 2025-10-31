@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../data/models/bottom_sheet_model.dart';
 import 'tap_icon.dart';
@@ -27,10 +26,10 @@ class TabItem extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: SpacingHelper.horizontal8),
         child: Column(
+          spacing: SpacingHelper.kVertical4,
           mainAxisSize: MainAxisSize.min,
           children: [
             TabIcon(icon: config.icon, isSelected: isSelected),
-            Gap(SpacingHelper.kVertical4),
             TabLabel(label: config.label, isSelected: isSelected),
           ],
         ),

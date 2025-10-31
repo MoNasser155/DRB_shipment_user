@@ -6,15 +6,17 @@ ThemeData get _dark {
     primaryColor: ColorHelper.primaryGreen,
     useMaterial3: true,
     canvasColor: ColorHelper.grey100,
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     appBarTheme: AppBarTheme(
       toolbarHeight: 0,
       backgroundColor: ColorHelper.backgroundBlack,
       systemOverlayStyle: SystemUiOverlayStyle(
+        systemNavigationBarDividerColor: Colors.transparent,
         statusBarBrightness: Brightness.dark,
         statusBarColor: ColorHelper.backgroundBlack,
         statusBarIconBrightness: Brightness.light,
         systemNavigationBarColor: ColorHelper.grey100,
+        systemNavigationBarIconBrightness: Brightness.dark,
       ),
     ),
     scaffoldBackgroundColor: ColorHelper.backgroundBlack,

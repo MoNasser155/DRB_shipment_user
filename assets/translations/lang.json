@@ -150,6 +150,16 @@
     "Companies":"الشركات",
     "popular Companies":"الشركات المشهورة",
     "Please pick your pickup location":"الرجاء اختيار موقع الاستلام الخاص بك",
-    "Please pick your delivery location":"الرجاء اختيار موقع التسليم الخاص بك"
+    "Please pick your delivery location":"الرجاء اختيار موقع التسليم الخاص بك",
+    "Please select payment method":"الرجاء اختيار طريقة الدفع",
+    "Visa Info":"معلومات الفيزا",
+    "Card Number":"رقم البطاقة",
+    "Card Holder Name":"اسم صاحب البطاقة",
+    "Expiry Date":"تاريخ الانتهاء",
+    "CVV":"CVV",
+    "Please enter your card number":"الرجاء ادخال رقم البطاقة",
+    "Please enter your card holder name":"الرجاء ادخال اسم صاحب البطاقة",
+    "Please enter a valid card number":"الرجاء ادخال رقم بطاقة صالح",
+    "Please enter a valid CVV":"الرجاء ادخال CVV صالح"
     
 }

@@ -150,5 +150,15 @@
   "companies": "الشركات",
   "popular_companies": "الشركات المشهورة",
   "please_pick_your_pickup_location": "الرجاء اختيار موقع الاستلام الخاص بك",
-  "please_pick_your_delivery_location": "الرجاء اختيار موقع التسليم الخاص بك"
+  "please_pick_your_delivery_location": "الرجاء اختيار موقع التسليم الخاص بك",
+  "please_select_payment_method": "الرجاء اختيار طريقة الدفع",
+  "visa_info": "معلومات الفيزا",
+  "card_number": "رقم البطاقة",
+  "card_holder_name": "اسم صاحب البطاقة",
+  "expiry_date": "تاريخ الانتهاء",
+  "c_v_v": "CVV",
+  "please_enter_your_card_number": "الرجاء ادخال رقم البطاقة",
+  "please_enter_your_card_holder_name": "الرجاء ادخال اسم صاحب البطاقة",
+  "please_enter_a_valid_card_number": "الرجاء ادخال رقم بطاقة صالح",
+  "please_enter_a_valid_cvv": "الرجاء ادخال CVV صالح"
 }

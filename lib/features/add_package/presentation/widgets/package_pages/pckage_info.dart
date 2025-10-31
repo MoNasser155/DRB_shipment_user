@@ -57,21 +57,25 @@ class PckageInfo extends StatelessWidget {
               Text(LocaleKeys.fragile, style: AppTextTheme.text10W500grey300),
               Row(
                 children: [
-                  CustomRadioButton<bool>(
-                    value: true,
-                    label: LocaleKeys.yes,
-                    groupValue: state.isFragile,
-                    onChanged: (val) {
-                      cubit.setFragile(true);
-                    },
+                  Expanded(
+                    child: CustomRadioButton<bool>(
+                      value: true,
+                      label: LocaleKeys.yes,
+                      groupValue: state.isFragile,
+                      onChanged: (val) {
+                        cubit.setFragile(true);
+                      },
+                    ),
                   ),
-                  CustomRadioButton<bool>(
-                    value: false,
-                    label: LocaleKeys.no,
-                    groupValue: state.isFragile,
-                    onChanged: (val) {
-                      cubit.setFragile(false);
-                    },
+                  Expanded(
+                    child: CustomRadioButton<bool>(
+                      value: false,
+                      label: LocaleKeys.no,
+                      groupValue: state.isFragile,
+                      onChanged: (val) {
+                        cubit.setFragile(false);
+                      },
+                    ),
                   ),
                 ],
               ),

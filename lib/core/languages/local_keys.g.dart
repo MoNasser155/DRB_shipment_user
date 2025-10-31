@@ -457,4 +457,34 @@ abstract class LocaleKeys {
   static const String _pleasePickYourDeliveryLocation = 'please_pick_your_delivery_location';
   static String get pleasePickYourDeliveryLocation => _pleasePickYourDeliveryLocation.tr();
 
+  static const String _pleaseSelectPaymentMethod = 'please_select_payment_method';
+  static String get pleaseSelectPaymentMethod => _pleaseSelectPaymentMethod.tr();
+
+  static const String _visaInfo = 'visa_info';
+  static String get visaInfo => _visaInfo.tr();
+
+  static const String _cardNumber = 'card_number';
+  static String get cardNumber => _cardNumber.tr();
+
+  static const String _cardHolderName = 'card_holder_name';
+  static String get cardHolderName => _cardHolderName.tr();
+
+  static const String _expiryDate = 'expiry_date';
+  static String get expiryDate => _expiryDate.tr();
+
+  static const String _cVV = 'c_v_v';
+  static String get cVV => _cVV.tr();
+
+  static const String _pleaseEnterYourCardNumber = 'please_enter_your_card_number';
+  static String get pleaseEnterYourCardNumber => _pleaseEnterYourCardNumber.tr();
+
+  static const String _pleaseEnterYourCardHolderName = 'please_enter_your_card_holder_name';
+  static String get pleaseEnterYourCardHolderName => _pleaseEnterYourCardHolderName.tr();
+
+  static const String _pleaseEnterAValidCardNumber = 'please_enter_a_valid_card_number';
+  static String get pleaseEnterAValidCardNumber => _pleaseEnterAValidCardNumber.tr();
+
+  static const String _pleaseEnterAValidCvv = 'please_enter_a_valid_cvv';
+  static String get pleaseEnterAValidCvv => _pleaseEnterAValidCvv.tr();
+
 }

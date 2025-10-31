@@ -2,8 +2,7 @@ import '../languages/local_keys.g.dart';
 
 enum Payment {
   cash,
-  visa,
-  onDelivery;
+  visa;
 
   String get firebaseValue {
     switch (this) {
@@ -11,8 +10,6 @@ enum Payment {
         return 'cash';
       case Payment.visa:
         return 'visa';
-      case Payment.onDelivery:
-        return 'onDelivery';
     }
   }
 
@@ -22,19 +19,15 @@ enum Payment {
         return LocaleKeys.cash;
       case Payment.visa:
         return LocaleKeys.visa;
-      case Payment.onDelivery:
-        return LocaleKeys.onDelivery;
     }
   }
-  
-   static Payment fromFirebaseValue(String value) {
+
+  static Payment fromFirebaseValue(String value) {
     switch (value) {
       case 'cash':
         return Payment.cash;
       case 'visa':
         return Payment.visa;
-      case 'onDelivery':
-        return Payment.onDelivery;
       default:
         throw ArgumentError('Invalid payment method: $value');
     }

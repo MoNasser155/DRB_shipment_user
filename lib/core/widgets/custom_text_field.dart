@@ -26,6 +26,8 @@ class CustomTextField extends StatelessWidget {
     this.scrollPhysics,
     this.enabeledBorder,
     this.inputFormatters,
+    this.textAlign,
+    this.maxLength,
   });
   final Function(String)? onChange;
   final TextInputAction? action;
@@ -41,6 +43,8 @@ class CustomTextField extends StatelessWidget {
   final ScrollPhysics? scrollPhysics;
   final Color? enabeledBorder;
   final List<TextInputFormatter>? inputFormatters;
+  final TextAlign? textAlign;
+  final int? maxLength;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -61,6 +65,12 @@ class CustomTextField extends StatelessWidget {
       keyboardType: inputType,
       cursorErrorColor: Colors.red,
       cursorColor: ColorHelper.primaryGreen,
+      textAlign: textAlign ?? TextAlign.start,
+      maxLength: maxLength,
+      buildCounter:
+          (context, {required currentLength, required isFocused, maxLength}) =>
+              null,
+      keyboardAppearance: Brightness.dark,
 
       decoration: InputDecoration(
         errorStyle: const TextStyle(color: Colors.red),

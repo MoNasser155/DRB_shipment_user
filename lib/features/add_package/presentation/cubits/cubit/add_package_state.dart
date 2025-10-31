@@ -8,8 +8,9 @@ class AddPackageState extends Equatable {
   final bool isFragile;
   final bool isLastPage;
 
-  final  Coordinates? pickupLocation;
-  final  Coordinates? dropoffLocation;
+  final Coordinates? pickupLocation;
+  final Coordinates? dropoffLocation;
+  final Payment selectedPaymentMethod;
 
   const AddPackageState({
     required this.status,
@@ -19,8 +20,9 @@ class AddPackageState extends Equatable {
     required this.isLastPage,
     this.errorMessage,
 
-     this.pickupLocation ,
-     this.dropoffLocation ,
+    this.pickupLocation,
+    this.dropoffLocation,
+    required this.selectedPaymentMethod,
   });
 
   factory AddPackageState.initial() => AddPackageState(
@@ -29,8 +31,9 @@ class AddPackageState extends Equatable {
     isFragile: true,
     currentPageIndex: 0,
     isLastPage: false,
-     pickupLocation: null,
-     dropoffLocation: null,
+    pickupLocation: null,
+    dropoffLocation: null,
+    selectedPaymentMethod: Payment.cash,
   );
 
   AddPackageState copyWith({
@@ -43,6 +46,7 @@ class AddPackageState extends Equatable {
 
     Coordinates? pickupLocation,
     Coordinates? dropoffLocation,
+    Payment? selectedPaymentMethod,
   }) {
     return AddPackageState(
       status: status ?? this.status,
@@ -54,6 +58,7 @@ class AddPackageState extends Equatable {
 
       pickupLocation: pickupLocation ?? this.pickupLocation,
       dropoffLocation: dropoffLocation ?? this.dropoffLocation,
+      selectedPaymentMethod: selectedPaymentMethod ?? this .selectedPaymentMethod,
     );
   }
 
@@ -68,5 +73,6 @@ class AddPackageState extends Equatable {
 
     pickupLocation,
     dropoffLocation,
+    selectedPaymentMethod,
   ];
 }

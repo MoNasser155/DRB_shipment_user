@@ -21,6 +21,27 @@ class Validations {
     return null;
   }
 
+  static String? validateVisa(String? value) {
+    if (value == null || value.isEmpty) {
+      return LocaleKeys.thisFieldIsRequired;
+    }
+    final visaRegex = RegExp(r'^\d{16}$');
+    if (!visaRegex.hasMatch(value)) {
+      return LocaleKeys.pleaseEnterAValidCardNumber;
+    }
+    return null;
+  }
+
+  static String? validateCvv(String? value) {
+    if (value == null || value.isEmpty) {
+      return LocaleKeys.thisFieldIsRequired;
+    }
+    final cvvRegex = RegExp(r'^\d{3}$');
+    if (!cvvRegex.hasMatch(value)) {
+      return LocaleKeys.pleaseEnterAValidCvv;
+    }
+    return null;
+  }
 
   static String? validateEmpty(String? value) {
     if (value == null || value.isEmpty) {

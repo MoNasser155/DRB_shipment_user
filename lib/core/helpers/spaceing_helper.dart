@@ -18,6 +18,6 @@ class SpacingHelper {
   static double horizontal20 = 20.w;
   static double kVertical20 = 20.h;
 
-  static double kHorizontalPadding = 20.w;
-  static double kVerticalPadding = 16.h;
+  static const double kHorizontalPadding = 20;
+  static const double kVerticalPadding = 16;
 }

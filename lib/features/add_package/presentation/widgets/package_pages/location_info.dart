@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -16,90 +15,87 @@ class LocationInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddPackageCubit, AddPackageState>(
+      buildWhen:
+          (previous, current) =>
+              previous.status != current.status ||
+              previous.pickupLocation != current.pickupLocation,
       builder: (context, state) {
         final cubit = AddPackageCubit.get(context);
-        return Form(
-          key: cubit.locationInfoFormKey,
-          child: CustomPackageColumn(
-            children: [
-              Gap(0),
-              Center(
-                child: Text(
-                  LocaleKeys.pickupLocation,
-                  style: AppTextTheme.text18W600grey100,
-                ),
+        return CustomPackageColumn(
+          children: [
+            Gap(0),
+            Center(
+              child: Text(
+                LocaleKeys.pickupLocation,
+                style: AppTextTheme.text18W600grey100,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(RadiusHelper.kRadius8),
-                child: AspectRatio(
-                  aspectRatio: 1.7,
-                  child: GoogleMap(
-                    initialCameraPosition: const CameraPosition(
-                      target: LatLng(30.04652587682479, 31.226533111935872),
-                      zoom: 10,
-                    ),
-                    markers: {
-                      Marker(
-                        markerId: MarkerId('pickup'),
-                        infoWindow: InfoWindow(
-                          title: LocaleKeys.pickupLocation,
-                        ),
-                        position: LatLng(
-                          state.pickupLocation?.latitude??0.0,
-                          state.pickupLocation?.longitude??0.0,
-                        ),
-                      ),
-                    },
-                    onTap: (coords) {
-                      cubit.setPickupLocation(coords);
-                    },
-                    onMapCreated: (controller) {
-                      cubit.setPickupController(controller);
-                    },
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(RadiusHelper.kRadius8),
+              child: AspectRatio(
+                aspectRatio: 1.7,
+                child: GoogleMap(
+                  initialCameraPosition: const CameraPosition(
+                    target: LatLng(30.04652587682479, 31.226533111935872),
+                    zoom: 10,
                   ),
-                ),
-              ),
-
-              Gap(SpacingHelper.kVertical4),
-              Center(
-                child: Text(
-                  LocaleKeys.pickupLocation,
-                  style: AppTextTheme.text18W600grey100,
-                ),
-              ),
-
-              ClipRRect(
-                borderRadius: BorderRadius.circular(RadiusHelper.kRadius8),
-                child: AspectRatio(
-                  aspectRatio: 1.7,
-                  child: GoogleMap(
-                    initialCameraPosition: const CameraPosition(
-                      target: LatLng(30.04652587682479, 31.226533111935872),
-                      zoom: 10,
-                    ),
-                    markers: {
-                      Marker(
-                        markerId: MarkerId('dropoff'),
-                        infoWindow: InfoWindow(
-                          title: LocaleKeys.dropoffLocation,
-                        ),
-                        position: LatLng(
-                          state.dropoffLocation?.latitude??0.0,
-                          state.dropoffLocation?.longitude??0.0,
-                        ),
+                  markers: {
+                    Marker(
+                      markerId: MarkerId('pickup'),
+                      infoWindow: InfoWindow(title: LocaleKeys.pickupLocation),
+                      position: LatLng(
+                        state.pickupLocation?.latitude ?? 0.0,
+                        state.pickupLocation?.longitude ?? 0.0,
                       ),
-                    },
-                    onTap: (coords) {
-                      cubit.setDropoffLocation(coords);
-                    },
-                    onMapCreated: (controller) {
-                      cubit.setDropoffController(controller);
-                    },
-                  ),
+                    ),
+                  },
+                  onTap: (coords) {
+                    cubit.setPickupLocation(coords);
+                  },
+                  onMapCreated: (controller) {
+                    cubit.setPickupController(controller);
+                  },
                 ),
               ),
-            ],
-          ),
+            ),
+
+            Gap(SpacingHelper.kVertical4),
+            Center(
+              child: Text(
+                LocaleKeys.pickupLocation,
+                style: AppTextTheme.text18W600grey100,
+              ),
+            ),
+
+            ClipRRect(
+              borderRadius: BorderRadius.circular(RadiusHelper.kRadius8),
+              child: AspectRatio(
+                aspectRatio: 1.7,
+                child: GoogleMap(
+                  initialCameraPosition: const CameraPosition(
+                    target: LatLng(30.04652587682479, 31.226533111935872),
+                    zoom: 10,
+                  ),
+                  markers: {
+                    Marker(
+                      markerId: MarkerId('dropoff'),
+                      infoWindow: InfoWindow(title: LocaleKeys.dropoffLocation),
+                      position: LatLng(
+                        state.dropoffLocation?.latitude ?? 0.0,
+                        state.dropoffLocation?.longitude ?? 0.0,
+                      ),
+                    ),
+                  },
+                  onTap: (coords) {
+                    cubit.setDropoffLocation(coords);
+                  },
+                  onMapCreated: (controller) {
+                    cubit.setDropoffController(controller);
+                  },
+                ),
+              ),
+            ),
+          ],
         );
       },
     );

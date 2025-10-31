@@ -12,6 +12,7 @@ class TabLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       label,
+      overflow: TextOverflow.ellipsis,
       style:
           isSelected ? AppTextTheme.selectedTap : AppTextTheme.nonSelectedTap,
     );

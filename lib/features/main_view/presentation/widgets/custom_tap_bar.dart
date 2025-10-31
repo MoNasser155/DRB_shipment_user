@@ -25,11 +25,13 @@ class CustomTabBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(
                 cubit.tabs.length,
-                (index) => TabItem(
-                  index: index,
-                  config: cubit.tabs[index],
-                  isSelected: cubit.isTabSelected(index),
-                  onTap: () => cubit.onTabPressed(index),
+                (index) => Expanded(
+                  child: TabItem(
+                    index: index,
+                    config: cubit.tabs[index],
+                    isSelected: cubit.isTabSelected(index),
+                    onTap: () => cubit.onTabPressed(index),
+                  ),
                 ),
               ),
             ),
