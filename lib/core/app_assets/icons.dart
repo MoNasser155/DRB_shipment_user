@@ -10,4 +10,7 @@ class AppIcons {
   static const String settings = 'assets/icons/settings.svg';
   static const String language = 'assets/icons/language.svg';
   static const String helpCenter = 'assets/icons/help_center.svg';
+  static const String deleteAccount = 'assets/icons/deleteAccount.svg';
+  static const String notificationColored =
+      'assets/icons/notification-color.svg';
 }

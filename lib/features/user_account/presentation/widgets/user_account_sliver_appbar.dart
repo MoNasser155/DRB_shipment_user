@@ -1,4 +1,13 @@
-part of '../imports/user_account_imports.dart';
+
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
+
+import '../../../../core/color_helper.dart';
+import '../../../../core/widgets/choose_image_source_sheet.dart';
 
 class UserAccountSliverAppbar extends StatelessWidget {
   const UserAccountSliverAppbar({super.key});

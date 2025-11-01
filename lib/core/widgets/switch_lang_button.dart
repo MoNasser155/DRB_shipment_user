@@ -3,8 +3,8 @@ import 'package:drb_shipment_user/core/languages/languages.dart';
 import 'package:flutter/material.dart';
 
 class SwitchLangButton extends StatefulWidget {
-  const SwitchLangButton({super.key});
-
+  const SwitchLangButton({super.key, this.isShorten = false});
+  final bool? isShorten;
   @override
   State<SwitchLangButton> createState() => _SwitchLangButtonState();
 }
@@ -26,7 +26,13 @@ class _SwitchLangButtonState extends State<SwitchLangButton> {
                   (e) => DropdownMenuItem(
                     value: e,
                     child: Text(
-                      e.languageCode == 'en' ? 'English' : 'العربية',
+                      e.languageCode == 'en'
+                          ? widget.isShorten == false
+                              ? 'English'
+                              : 'En'
+                          : widget.isShorten == false
+                          ? 'العربية'
+                          : 'عربى',
                       style: TextStyle(color: ColorHelper.grey100),
                     ),
                   ),

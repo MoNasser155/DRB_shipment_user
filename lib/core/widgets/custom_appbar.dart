@@ -28,7 +28,10 @@ class CustomAppbar extends StatelessWidget {
             onTap: () {
               AppNavigator.pop();
             },
-            child: const Icon(Icons.arrow_back_ios, color: ColorHelper.grey100),
+            child: const Icon(
+              Icons.arrow_back_ios_rounded,
+              color: ColorHelper.grey100,
+            ),
           ),
           Spacer(),
           Text(

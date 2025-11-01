@@ -1,4 +1,16 @@
-part of '../imports/user_account_imports.dart';
+import 'package:drb_shipment_user/core/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+import '../../../../core/color_helper.dart';
+import '../../../../core/helpers/spaceing_helper.dart';
+import '../../../../core/languages/local_keys.g.dart';
+import '../../../../core/themes/text_theme.dart';
+import '../../../../core/utils/cashe_storage.dart';
+import '../../../../core/utils/navigator_helper.dart';
+import '../../../../core/widgets/cutsom_button.dart';
+import '../../../../core/widgets/default_sheet_body.dart';
+import '../../../auth/presentation/screens/login_screen.dart';
 
 class LogoutBody extends StatelessWidget {
   const LogoutBody({super.key});
@@ -7,19 +19,20 @@ class LogoutBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultSheetBody(
       child: Column(
+        spacing: SpacingHelper.kVertical20,
         children: [
-          Gap(20.h),
+          Gap(0),
           Center(
             child: Icon(Icons.logout_rounded, color: ColorHelper.red, size: 64),
           ),
-          Gap(SpacingHelper.kVertical20),
+
           Text(LocaleKeys.logout, style: AppTextTheme.text28W700White),
-          Gap(20.h),
+
           Text(
             LocaleKeys.areYouSureYouWantToLogout,
             style: AppTextTheme.text16W500grey300,
           ),
-          Gap(20.h),
+
           Row(
             children: [
               Expanded(
@@ -37,7 +50,7 @@ class LogoutBody extends StatelessWidget {
                   },
                 ),
               ),
-              Gap(12.w),
+              Gap(SpacingHelper.horizontal12),
               Expanded(
                 child: CustomButton(
                   backgroundColor: ColorHelper.red,
@@ -49,7 +62,10 @@ class LogoutBody extends StatelessWidget {
                   ),
                   onTap: () {
                     CacheStorage.delete(Constants.userKey);
-                    AppNavigator.pushAndRemoveAll(screen: LoginScreen());
+                    AppNavigator.pushAndRemoveAll(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: LoginScreen(),
+                    );
                   },
                 ),
               ),

@@ -1,4 +1,21 @@
-part of '../imports/user_account_imports.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
+
+import '../../../../core/app_assets/icons.dart';
+import '../../../../core/color_helper.dart';
+import '../../../../core/languages/local_keys.g.dart';
+import '../../../../core/themes/text_theme.dart';
+import '../../../../core/utils/navigator_helper.dart';
+import '../../../../core/widgets/switch_lang_button.dart';
+import '../pages/about_us_screen.dart';
+import '../pages/privacy_policy_screen.dart';
+import '../pages/settings/settings_screen.dart';
+import '../pages/terms_condition_screen.dart';
+import 'account_option_row.dart';
+import 'logout_body.dart';
+import 'user_account_sliver_appbar.dart';
 
 class UserAccountBody extends StatelessWidget {
   const UserAccountBody({super.key});
@@ -38,7 +55,10 @@ class UserAccountBody extends StatelessWidget {
                     ),
                   ),
                   nextScreenRoute: () {
-                    // AppNavigator.push(screen: SettingsScreen());
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: SettingsScreen(),
+                    );
                   },
                 ),
 
@@ -70,39 +90,39 @@ class UserAccountBody extends StatelessWidget {
                   nextScreenRoute: () {},
                 ),
                 Gap(20.h),
-                // AccountoptionRow(
-                //   option: LocaleKeys.about,
-                //   withSuffix: false,
-                //   withPrefix: false,
-                //   nextScreenRoute: () {
-                //     AppNavigator.push(
-                //       transitionBuilder: AppNavigator.cupertinoTransition,
-                //       screen: AboutUsScreen(),
-                //     );
-                //   },
-                // ),
-                // AccountoptionRow(
-                //   option: '${LocaleKeys.terms} & ${LocaleKeys.conditions}',
-                //   withSuffix: false,
-                //   withPrefix: false,
-                //   nextScreenRoute: () {
-                //     AppNavigator.push(
-                //       transitionBuilder: AppNavigator.cupertinoTransition,
-                //       screen: TermsConditionScreen(),
-                //     );
-                //   },
-                // ),
-                // AccountoptionRow(
-                //   option: LocaleKeys.privacyPolicy,
-                //   withSuffix: false,
-                //   withPrefix: false,
-                //   nextScreenRoute: () {
-                //     AppNavigator.push(
-                //       transitionBuilder: AppNavigator.cupertinoTransition,
-                //       screen: PrivacyPolicyScreen(),
-                //     );
-                //   },
-                // ),
+                AccountoptionRow(
+                  option: LocaleKeys.about,
+                  withSuffix: false,
+                  withPrefix: false,
+                  nextScreenRoute: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: AboutUsScreen(),
+                    );
+                  },
+                ),
+                AccountoptionRow(
+                  option: '${LocaleKeys.terms} & ${LocaleKeys.conditions}',
+                  withSuffix: false,
+                  withPrefix: false,
+                  nextScreenRoute: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: TermsConditionScreen(),
+                    );
+                  },
+                ),
+                AccountoptionRow(
+                  option: LocaleKeys.privacyPolicy,
+                  withSuffix: false,
+                  withPrefix: false,
+                  nextScreenRoute: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: PrivacyPolicyScreen(),
+                    );
+                  },
+                ),
                 Gap(20.h),
                 AccountoptionRow(
                   option: LocaleKeys.logout,

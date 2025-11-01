@@ -1,17 +1,18 @@
-import 'package:drb_shipment_user/core/app_assets/icons.dart';
-import 'package:drb_shipment_user/core/enums/state_status.dart';
-import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
-import 'package:drb_shipment_user/features/auth/domain/entities/user_entity.dart';
-import 'package:drb_shipment_user/features/companies/presentation/screens/companies_screen.dart';
-import 'package:drb_shipment_user/features/main_view/data/models/bottom_sheet_model.dart';
-import 'package:drb_shipment_user/features/user_account/presentation/imports/user_account_imports.dart';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/app_assets/icons.dart';
+import '../../../../../core/enums/state_status.dart';
+import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../add_package/presentation/screens/add_new_package_screen.dart';
+import '../../../../auth/domain/entities/user_entity.dart';
+import '../../../../companies/presentation/screens/companies_screen.dart';
 import '../../../../home/presentation/screens/home_screen.dart';
 import '../../../../packages/presentation/screens/packages_screen.dart';
+import '../../../../user_account/presentation/pages/user_account_screen.dart';
+import '../../../data/models/bottom_sheet_model.dart';
 
 part 'main_view_state.dart';
 

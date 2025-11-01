@@ -1,19 +1,18 @@
 import 'package:drb_shipment_user/core/extensions/buildcontext_extensions.dart';
-import 'package:drb_shipment_user/core/helpers/spaceing_helper.dart';
-import 'package:drb_shipment_user/core/languages/local_keys.g.dart';
-import 'package:drb_shipment_user/core/themes/text_theme.dart';
-import 'package:drb_shipment_user/core/widgets/textfield_withlabel.dart';
-import 'package:drb_shipment_user/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
-import 'package:drb_shipment_user/features/auth/presentation/widgets/custom_passfiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import '../../../../../core/app_assets/images.dart';
+import '../../../../../core/helpers/spaceing_helper.dart';
+import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/shared/validations.dart';
+import '../../../../../core/themes/text_theme.dart';
 import '../../../../../core/utils/navigator_helper.dart';
 import '../../../../../core/widgets/switch_lang_button.dart';
+import '../../../../../core/widgets/textfield_withlabel.dart';
+import '../../cubits/login_cubit/login_cubit.dart';
 import '../../screens/forget_password_screen.dart';
-
+import '../custom_passfiled.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -112,4 +111,3 @@ class LoginBody extends StatelessWidget {
     );
   }
 }
-

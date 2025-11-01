@@ -1,9 +1,11 @@
 import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
+import 'package:drb_shipment_user/features/user_account/presentation/pages/terms_condition_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/languages/local_keys.g.dart';
+import '../../../../core/utils/navigator_helper.dart';
 
 class TermsCondCheckBox extends StatefulWidget {
   const TermsCondCheckBox({super.key, required this.onChanged});
@@ -53,7 +55,14 @@ class _TermsCondCheckBoxState extends State<TermsCondCheckBox> {
             TextSpan(
               text: LocaleKeys.termsAndConditions,
               style: AppTextTheme.nonlineText14Primary,
-              recognizer: TapGestureRecognizer()..onTap = () {},
+              recognizer:
+                  TapGestureRecognizer()
+                    ..onTap = () {
+                      AppNavigator.push(
+                        transitionBuilder: AppNavigator.cupertinoTransition,
+                        screen: TermsConditionScreen(),
+                      );
+                    },
             ),
           ],
         ),

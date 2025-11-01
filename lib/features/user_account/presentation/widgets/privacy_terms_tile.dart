@@ -1,4 +1,9 @@
-part of '../imports/user_account_imports.dart';
+
+import 'package:drb_shipment_user/core/color_helper.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import '../../../../core/helpers/spaceing_helper.dart';
+import '../../../../core/themes/text_theme.dart';
 
 class TermsConditionTile extends StatelessWidget {
   const TermsConditionTile(
@@ -12,15 +17,15 @@ class TermsConditionTile extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.start,
-          style: Theme.of(context).textTheme.headlineMedium,
+          style:AppTextTheme.text16W500grey100,
         ),
-        Gap(4.h),
+        Gap(SpacingHelper.kVertical4),
         Text(
           description,
           textAlign: TextAlign.start,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: ColorHelper.grey500,
-              ),
+          style: AppTextTheme.text14W500grey400.copyWith(
+            color: ColorHelper.grey500,
+          ),
         )
       ],
     );

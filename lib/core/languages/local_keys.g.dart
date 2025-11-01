@@ -475,6 +475,9 @@ abstract class LocaleKeys {
   static const String _cVV = 'c_v_v';
   static String get cVV => _cVV.tr();
 
+  static const String _sHIPIFY = 's_h_i_p_i_f_y';
+  static String get sHIPIFY => _sHIPIFY.tr();
+
   static const String _pleaseEnterYourCardNumber = 'please_enter_your_card_number';
   static String get pleaseEnterYourCardNumber => _pleaseEnterYourCardNumber.tr();
 
@@ -489,5 +492,251 @@ abstract class LocaleKeys {
 
   static const String _pleaseAcceptTermsAndConditions = 'please_accept_terms_and_conditions';
   static String get pleaseAcceptTermsAndConditions => _pleaseAcceptTermsAndConditions.tr();
+
+  static const String _pT1 = 'p_t_1';
+  static String get pT1 => _pT1.tr();
+
+  static const String _pD11 = 'p_d_1_1';
+  static String get pD11 => _pD11.tr();
+
+  static const String _pD12 = 'p_d_1_2';
+  static String get pD12 => _pD12.tr();
+
+  static const String _pD13 = 'p_d_1_3';
+  static String get pD13 => _pD13.tr();
+
+  static const String _pT2 = 'p_t_2';
+  static String get pT2 => _pT2.tr();
+
+  static const String _pD21 = 'p_d_2_1';
+  static String get pD21 => _pD21.tr();
+
+  static const String _pD22 = 'p_d_2_2';
+  static String get pD22 => _pD22.tr();
+
+  static const String _pD23 = 'p_d_2_3';
+  static String get pD23 => _pD23.tr();
+
+  static const String _pT3 = 'p_t_3';
+  static String get pT3 => _pT3.tr();
+
+  static const String _pD31 = 'p_d_3_1';
+  static String get pD31 => _pD31.tr();
+
+  static const String _pT4 = 'p_t_4';
+  static String get pT4 => _pT4.tr();
+
+  static const String _pD41 = 'p_d_4_1';
+  static String get pD41 => _pD41.tr();
+
+  static const String _pD42 = 'p_d_4_2';
+  static String get pD42 => _pD42.tr();
+
+  static const String _pT5 = 'p_t_5';
+  static String get pT5 => _pT5.tr();
+
+  static const String _pD51 = 'p_d_5_1';
+  static String get pD51 => _pD51.tr();
+
+  static const String _pD52 = 'p_d_5_2';
+  static String get pD52 => _pD52.tr();
+
+  static const String _or = 'or';
+  static String get or => _or.tr();
+
+  static const String _tCT1 = 't_c_t_1';
+  static String get tCT1 => _tCT1.tr();
+
+  static const String _tCD11 = 't_c_d_1_1';
+  static String get tCD11 => _tCD11.tr();
+
+  static const String _tCD12 = 't_c_d_1_2';
+  static String get tCD12 => _tCD12.tr();
+
+  static const String _tCD13 = 't_c_d_1_3';
+  static String get tCD13 => _tCD13.tr();
+
+  static const String _tCD14 = 't_c_d_1_4';
+  static String get tCD14 => _tCD14.tr();
+
+  static const String _tCT2 = 't_c_t_2';
+  static String get tCT2 => _tCT2.tr();
+
+  static const String _tCD21 = 't_c_d_2_1';
+  static String get tCD21 => _tCD21.tr();
+
+  static const String _tCD22 = 't_c_d_2_2';
+  static String get tCD22 => _tCD22.tr();
+
+  static const String _tCD23 = 't_c_d_2_3';
+  static String get tCD23 => _tCD23.tr();
+
+  static const String _tCD24 = 't_c_d_2_4';
+  static String get tCD24 => _tCD24.tr();
+
+  static const String _tCD25 = 't_c_d_2_5';
+  static String get tCD25 => _tCD25.tr();
+
+  static const String _tCT3 = 't_c_t_3';
+  static String get tCT3 => _tCT3.tr();
+
+  static const String _tCD31 = 't_c_d_3_1';
+  static String get tCD31 => _tCD31.tr();
+
+  static const String _tCT4 = 't_c_t_4';
+  static String get tCT4 => _tCT4.tr();
+
+  static const String _tCD41 = 't_c_d_4_1';
+  static String get tCD41 => _tCD41.tr();
+
+  static const String _tCD42 = 't_c_d_4_2';
+  static String get tCD42 => _tCD42.tr();
+
+  static const String _tCD43 = 't_c_d_4_3';
+  static String get tCD43 => _tCD43.tr();
+
+  static const String _tCD44 = 't_c_d_4_4';
+  static String get tCD44 => _tCD44.tr();
+
+  static const String _tCT5 = 't_c_t_5';
+  static String get tCT5 => _tCT5.tr();
+
+  static const String _tCD51 = 't_c_d_5_1';
+  static String get tCD51 => _tCD51.tr();
+
+  static const String _tCD52 = 't_c_d_5_2';
+  static String get tCD52 => _tCD52.tr();
+
+  static const String _tCT6 = 't_c_t_6';
+  static String get tCT6 => _tCT6.tr();
+
+  static const String _tCD61 = 't_c_d_6_1';
+  static String get tCD61 => _tCD61.tr();
+
+  static const String _tCT7 = 't_c_t_7';
+  static String get tCT7 => _tCT7.tr();
+
+  static const String _tCD71 = 't_c_d_7_1';
+  static String get tCD71 => _tCD71.tr();
+
+  static const String _tCD72 = 't_c_d_7_2';
+  static String get tCD72 => _tCD72.tr();
+
+  static const String _tCD73 = 't_c_d_7_3';
+  static String get tCD73 => _tCD73.tr();
+
+  static const String _tCD74 = 't_c_d_7_4';
+  static String get tCD74 => _tCD74.tr();
+
+  static const String _tCD75 = 't_c_d_7_5';
+  static String get tCD75 => _tCD75.tr();
+
+  static const String _at = 'at';
+  static String get at => _at.tr();
+
+  static const String _aboutD1 = 'about_d_1';
+  static String get aboutD1 => _aboutD1.tr();
+
+  static const String _aboutD2 = 'about_d_2';
+  static String get aboutD2 => _aboutD2.tr();
+
+  static const String _aboutD3 = 'about_d_3';
+  static String get aboutD3 => _aboutD3.tr();
+
+  static const String _aboutD4 = 'about_d_4';
+  static String get aboutD4 => _aboutD4.tr();
+
+  static const String _aboutD5 = 'about_d_5';
+  static String get aboutD5 => _aboutD5.tr();
+
+  static const String _aboutD6 = 'about_d_6';
+  static String get aboutD6 => _aboutD6.tr();
+
+  static const String _aboutD7 = 'about_d_7';
+  static String get aboutD7 => _aboutD7.tr();
+
+  static const String _aboutD8 = 'about_d_8';
+  static String get aboutD8 => _aboutD8.tr();
+
+  static const String _aboutD9 = 'about_d_9';
+  static String get aboutD9 => _aboutD9.tr();
+
+  static const String _aboutD10 = 'about_d_1_0';
+  static String get aboutD10 => _aboutD10.tr();
+
+  static const String _aboutD11 = 'about_d_1_1';
+  static String get aboutD11 => _aboutD11.tr();
+
+  static const String _aboutD12 = 'about_d_1_2';
+  static String get aboutD12 => _aboutD12.tr();
+
+  static const String _deleteAccountWarningTitle = 'delete_account_warning_title';
+  static String get deleteAccountWarningTitle => _deleteAccountWarningTitle.tr();
+
+  static const String _deleteAccountWarningSubtitle = 'delete_account_warning_subtitle';
+  static String get deleteAccountWarningSubtitle => _deleteAccountWarningSubtitle.tr();
+
+  static const String _deleteAccountWarningSubtitle1 = 'delete_account_warning_subtitle_1';
+  static String get deleteAccountWarningSubtitle1 => _deleteAccountWarningSubtitle1.tr();
+
+  static const String _byDeletingAccount = 'by_deleting_account';
+  static String get byDeletingAccount => _byDeletingAccount.tr();
+
+  static const String _deleteAccountPoint1 = 'delete_account_point_1';
+  static String get deleteAccountPoint1 => _deleteAccountPoint1.tr();
+
+  static const String _deleteAccountPoint2 = 'delete_account_point_2';
+  static String get deleteAccountPoint2 => _deleteAccountPoint2.tr();
+
+  static const String _deleteAccountPoint3 = 'delete_account_point_3';
+  static String get deleteAccountPoint3 => _deleteAccountPoint3.tr();
+
+  static const String _deleteAccountPoint4 = 'delete_account_point_4';
+  static String get deleteAccountPoint4 => _deleteAccountPoint4.tr();
+
+  static const String _deleteAccountPoint5 = 'delete_account_point_5';
+  static String get deleteAccountPoint5 => _deleteAccountPoint5.tr();
+
+  static const String _deleteAccountFinalWarning = 'delete_account_final_warning';
+  static String get deleteAccountFinalWarning => _deleteAccountFinalWarning.tr();
+
+  static const String _onceDeleted = 'once_deleted';
+  static String get onceDeleted => _onceDeleted.tr();
+
+  static const String _yourAccountAndAllAssociatedDataWillBePermanentlyRemoved = 'your_account_and_all_associated_data_will_be_permanently_removed';
+  static String get yourAccountAndAllAssociatedDataWillBePermanentlyRemoved => _yourAccountAndAllAssociatedDataWillBePermanentlyRemoved.tr();
+
+  static const String _about = 'about';
+  static String get about => _about.tr();
+
+  static const String _terms = 'terms';
+  static String get terms => _terms.tr();
+
+  static const String _conditions = 'conditions';
+  static String get conditions => _conditions.tr();
+
+  static const String _aboutUs = 'about_us';
+  static String get aboutUs => _aboutUs.tr();
+
+  static const String _contactUs = 'contact_us';
+  static String get contactUs => _contactUs.tr();
+
+  static const String _login = 'login';
+  static String get login => _login.tr();
+
+  static const String _privacy = 'privacy';
+  static String get privacy => _privacy.tr();
+
+  static const String _manageAccount = 'manage_account';
+  static String get manageAccount => _manageAccount.tr();
+
+  static const String _deleteAccount = 'delete_account';
+  static String get deleteAccount => _deleteAccount.tr();
+
+  static const String _currentPassword = 'current_password';
+  static String get currentPassword => _currentPassword.tr();
+
+  static const String _notifications = 'notifications';
+  static String get notifications => _notifications.tr();
 
 }

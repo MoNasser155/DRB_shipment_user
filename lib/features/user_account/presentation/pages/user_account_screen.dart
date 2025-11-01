@@ -1,4 +1,8 @@
-part of '../imports/user_account_imports.dart';
+
+
+import 'package:flutter/material.dart';
+
+import '../widgets/user_account_body.dart';
 
 class UserAccountScreen extends StatelessWidget {
   const UserAccountScreen({super.key});

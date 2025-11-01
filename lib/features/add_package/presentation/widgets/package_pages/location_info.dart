@@ -18,7 +18,8 @@ class LocationInfo extends StatelessWidget {
       buildWhen:
           (previous, current) =>
               previous.status != current.status ||
-              previous.pickupLocation != current.pickupLocation,
+              previous.pickupLocation != current.pickupLocation ||
+              previous.dropoffLocation != current.dropoffLocation,
       builder: (context, state) {
         final cubit = AddPackageCubit.get(context);
         return CustomPackageColumn(
