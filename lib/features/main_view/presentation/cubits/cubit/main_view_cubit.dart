@@ -11,7 +11,7 @@ import '../../../../auth/domain/entities/user_entity.dart';
 import '../../../../companies/presentation/screens/companies_screen.dart';
 import '../../../../home/presentation/screens/home_screen.dart';
 import '../../../../packages/presentation/screens/packages_screen.dart';
-import '../../../../user_account/presentation/pages/user_account_screen.dart';
+import '../../../../user_account/presentation/screens/user_account_screen.dart';
 import '../../../data/models/bottom_sheet_model.dart';
 
 part 'main_view_state.dart';

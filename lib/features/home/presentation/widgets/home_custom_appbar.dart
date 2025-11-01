@@ -9,7 +9,9 @@ import '../../../../core/color_helper.dart';
 import '../../../../core/helpers/redius_helper.dart';
 import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/themes/text_theme.dart';
+import '../../../../core/utils/navigator_helper.dart';
 import '../../../../core/widgets/custom_cached_image.dart';
+import '../../../notifications/presentation/screens/notifications_screen.dart';
 
 class HomeCustomAppbar extends StatelessWidget {
   const HomeCustomAppbar({super.key});
@@ -67,22 +69,32 @@ class HomeCustomAppbar extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: SpacingHelper.horizontal8,
-                    vertical: SpacingHelper.kVertical8,
-                  ),
-                  height: 40.h,
-                  width: 40.h,
-                  decoration: BoxDecoration(
-                    color: ColorHelper.grey100.withValues(alpha: 0.05),
-                    borderRadius: BorderRadius.circular(RadiusHelper.kRadius6),
-                  ),
-                  child: SvgPicture.asset(
-                    AppIcons.notifications,
-                    colorFilter: ColorFilter.mode(
-                      ColorHelper.primaryGreen,
-                      BlendMode.srcIn,
+                InkWell(
+                  onTap: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: NotificationsScreen(),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: SpacingHelper.horizontal8,
+                      vertical: SpacingHelper.kVertical8,
+                    ),
+                    height: 40.h,
+                    width: 40.h,
+                    decoration: BoxDecoration(
+                      color: ColorHelper.grey100.withValues(alpha: 0.05),
+                      borderRadius: BorderRadius.circular(
+                        RadiusHelper.kRadius6,
+                      ),
+                    ),
+                    child: SvgPicture.asset(
+                      AppIcons.notifications,
+                      colorFilter: ColorFilter.mode(
+                        ColorHelper.primaryGreen,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),

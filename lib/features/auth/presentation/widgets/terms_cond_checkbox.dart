@@ -1,6 +1,6 @@
 import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
-import 'package:drb_shipment_user/features/user_account/presentation/pages/terms_condition_screen.dart';
+import 'package:drb_shipment_user/features/user_account/presentation/screens/terms_condition_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
