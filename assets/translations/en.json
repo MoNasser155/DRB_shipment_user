@@ -273,5 +273,6 @@
   "manage_account": "Manage Account",
   "delete_account": "Delete Account",
   "current_password": "Current Password",
-  "notifications": "Notifications"
+  "notifications": "Notifications",
+  "edit_profile": "Edit Profile"
 }

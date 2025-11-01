@@ -5,12 +5,14 @@ import 'package:gap/gap.dart';
 
 import '../../../../core/app_assets/icons.dart';
 import '../../../../core/color_helper.dart';
+import '../../../../core/helpers/spaceing_helper.dart';
 import '../../../../core/languages/local_keys.g.dart';
 import '../../../../core/themes/text_theme.dart';
 import '../../../../core/utils/navigator_helper.dart';
 import '../../../../core/widgets/switch_lang_button.dart';
 import '../screens/about_us_screen.dart';
 import '../screens/privacy_policy_screen.dart';
+import '../screens/profile/profile_screen.dart';
 import '../screens/settings/settings_screen.dart';
 import '../screens/terms_condition_screen.dart';
 import 'account_option_row.dart';
@@ -29,7 +31,9 @@ class UserAccountBody extends StatelessWidget {
       slivers: [
         UserAccountSliverAppbar(),
         SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: SpacingHelper.kHorizontalPadding,
+          ),
           sliver: SliverToBoxAdapter(
             child: Column(
               children: [
@@ -41,7 +45,12 @@ class UserAccountBody extends StatelessWidget {
                     Icons.account_circle,
                     color: ColorHelper.primaryGreen,
                   ),
-                  nextScreenRoute: () {},
+                  nextScreenRoute: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: const ProfileScreen(),
+                    );
+                  },
                 ),
                 AccountoptionRow(
                   option: LocaleKeys.settings,
@@ -61,7 +70,19 @@ class UserAccountBody extends StatelessWidget {
                     );
                   },
                 ),
-
+                AccountoptionRow(
+                  option: LocaleKeys.helpCenter,
+                  withPrefix: true,
+                  withSuffix: true,
+                  prefixIcon: SvgPicture.asset(
+                    AppIcons.helpCenter,
+                    colorFilter: ColorFilter.mode(
+                      ColorHelper.primaryGreen,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                  nextScreenRoute: () {},
+                ),
                 AccountoptionRow(
                   option: LocaleKeys.language,
                   withSuffix: true,
@@ -75,19 +96,6 @@ class UserAccountBody extends StatelessWidget {
                     ),
                   ),
                   nextScreenRoute: null,
-                ),
-                AccountoptionRow(
-                  option: LocaleKeys.helpCenter,
-                  withPrefix: true,
-                  withSuffix: true,
-                  prefixIcon: SvgPicture.asset(
-                    AppIcons.helpCenter,
-                    colorFilter: ColorFilter.mode(
-                      ColorHelper.primaryGreen,
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                  nextScreenRoute: () {},
                 ),
                 Gap(20.h),
                 AccountoptionRow(

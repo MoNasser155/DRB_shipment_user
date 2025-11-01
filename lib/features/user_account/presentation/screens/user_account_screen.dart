@@ -1,7 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
 import '../widgets/user_account_body.dart';
 
 class UserAccountScreen extends StatelessWidget {

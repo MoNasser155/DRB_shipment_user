@@ -273,5 +273,6 @@
   "manage_account": "إدارة الحساب",
   "delete_account": "حذف الحساب",
   "current_password": "كلمة المرور الحالية",
-  "notifications": "الاشعارات"
+  "notifications": "الاشعارات",
+  "edit_profile": "تعديل الملف الشخصي"
 }

@@ -739,4 +739,7 @@ abstract class LocaleKeys {
   static const String _notifications = 'notifications';
   static String get notifications => _notifications.tr();
 
+  static const String _editProfile = 'edit_profile';
+  static String get editProfile => _editProfile.tr();
+
 }

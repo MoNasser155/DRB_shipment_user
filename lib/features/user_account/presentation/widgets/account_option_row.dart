@@ -1,6 +1,6 @@
+import 'package:drb_shipment_user/core/helpers/spaceing_helper.dart';
 import 'package:drb_shipment_user/core/themes/text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/color_helper.dart';
@@ -28,7 +28,7 @@ class AccountoptionRow extends StatelessWidget {
     return InkWell(
       onTap: nextScreenRoute,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 12.h),
+        padding: EdgeInsets.symmetric(vertical: SpacingHelper.kVertical8),
         child: Row(
           children: [
             if (withPrefix == true) ...[

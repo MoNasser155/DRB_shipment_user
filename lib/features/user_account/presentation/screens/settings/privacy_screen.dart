@@ -41,7 +41,7 @@ class PrivacyScreen extends StatelessWidget {
                 leading: IconButton(
                   icon: Icon(
                     Icons.arrow_back_ios_rounded,
-                    color: ColorHelper.primaryGreen,
+                    color: ColorHelper.grey100,
                   ),
                   onPressed: () {
                     privacyCubit.changePassword

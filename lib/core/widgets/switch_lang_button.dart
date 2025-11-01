@@ -2,6 +2,8 @@ import 'package:drb_shipment_user/core/color_helper.dart';
 import 'package:drb_shipment_user/core/languages/languages.dart';
 import 'package:flutter/material.dart';
 
+import '../helpers/redius_helper.dart';
+
 class SwitchLangButton extends StatefulWidget {
   const SwitchLangButton({super.key, this.isShorten = false});
   final bool? isShorten;
@@ -19,7 +21,7 @@ class _SwitchLangButtonState extends State<SwitchLangButton> {
       child: DropdownButton<Languages>(
         value: _currentLanguage,
         dropdownColor: ColorHelper.grey800,
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(RadiusHelper.kRadius4),
         items:
             Languages.values
                 .map(
