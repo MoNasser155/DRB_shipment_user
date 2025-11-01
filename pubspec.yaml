@@ -54,6 +54,13 @@ dependencies:
   flutter_secure_storage: ^9.2.4
   google_maps_flutter: ^2.13.1
 
+flutter_native_splash:
+  image: assets/images/background_splash.png
+  # andriod: true
+  ios: true
+  web: true
+  color: "#171717"  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
