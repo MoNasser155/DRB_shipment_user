@@ -6,6 +6,7 @@ import '../../features/couriers/di.dart';
 import '../../features/home/di.dart';
 import '../../features/main_view/presentation/cubits/cubit/main_view_cubit.dart';
 import '../../features/packages/di.dart';
+import '../../features/user_account/di.dart';
 
 setupAppDebendencies() {
   initSharedDebendencies();
@@ -15,6 +16,7 @@ setupAppDebendencies() {
   initAddPackageDebendencies();
   initCompaniesDebendencies();
   initCouriersDebendencies();
+  initUserAccountDebendencies();
 }
 
 void initSharedDebendencies() {

@@ -742,4 +742,7 @@ abstract class LocaleKeys {
   static const String _editProfile = 'edit_profile';
   static String get editProfile => _editProfile.tr();
 
+  static const String _fAQ = 'f_a_q';
+  static String get fAQ => _fAQ.tr();
+
 }

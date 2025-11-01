@@ -11,6 +11,7 @@ import '../../../../core/themes/text_theme.dart';
 import '../../../../core/utils/navigator_helper.dart';
 import '../../../../core/widgets/switch_lang_button.dart';
 import '../screens/about_us_screen.dart';
+import '../screens/help_center/help_center_screen.dart';
 import '../screens/privacy_policy_screen.dart';
 import '../screens/profile/profile_screen.dart';
 import '../screens/settings/settings_screen.dart';
@@ -81,7 +82,12 @@ class UserAccountBody extends StatelessWidget {
                       BlendMode.srcIn,
                     ),
                   ),
-                  nextScreenRoute: () {},
+                  nextScreenRoute: () {
+                    AppNavigator.push(
+                      transitionBuilder: AppNavigator.cupertinoTransition,
+                      screen: const HelpCenterScreen(),
+                    );
+                  },
                 ),
                 AccountoptionRow(
                   option: LocaleKeys.language,
