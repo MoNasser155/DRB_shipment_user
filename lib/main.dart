@@ -22,16 +22,17 @@ void main() async {
     ScreenUtil.ensureScreenSize(),
     Prefs.init(),
     CacheStorage.init(),
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
   ]);
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   runApp(
-      EasyLocalization(
-        supportedLocales: Languages.supportedLocales,
-        path: 'assets/translations',
-        fallbackLocale: const Locale('ar'),
-        startLocale: const Locale('en'),
-        child: const ShipifyApp(),
-      ),
+    EasyLocalization(
+      supportedLocales: Languages.supportedLocales,
+      path: 'assets/translations',
+      fallbackLocale: const Locale('ar'),
+      startLocale: const Locale('en'),
+      child: const ShipifyApp(),
+    ),
   );
 }

@@ -277,5 +277,6 @@
   "edit_profile": "Edit Profile",
   "f_a_q": "FAQ",
   "ask": "Ask",
-  "splash_key": "Welecome to our app"
+  "splash_key": "Welecome to our app",
+  "reset_password_email_has_been_sent_successfully": "Reset password email has been sent successfully"
 }

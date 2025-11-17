@@ -45,7 +45,7 @@ class UserEntity {
     phone: map['phone'],
     createdAt: map['created_at'],
     fcmToken: map['fcmToken'],
-    role: map['role'],
+    role: UserType.fromFirbaseValue(map['role']),
     imageUrl: map['imageUrl'],
     name: map['name'],
   );

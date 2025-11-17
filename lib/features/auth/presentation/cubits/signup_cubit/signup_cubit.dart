@@ -73,6 +73,7 @@ class SignupCubit extends Cubit<SignupState> {
 
     result.fold(
       (failure) {
+        CustomSnackBar.top(msg: failure.message);
         emit(
           state.copyWith(
             status: StateStatus.error,

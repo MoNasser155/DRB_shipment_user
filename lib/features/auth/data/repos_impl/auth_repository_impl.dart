@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:drb_shipment_user/core/constants.dart';
 import 'package:drb_shipment_user/features/auth/data/data_sources/auth_data_source.dart';
@@ -12,35 +14,45 @@ class AuthRepositoryImpl extends AuthRepository {
   final _authDataSource = sl<AuthDataSource>();
 
   @override
-  Future<Either<Failure, UserEntity>> login({required LoginParams params}) async {
+  Future<Either<Failure, UserEntity>> login({
+    required LoginParams params,
+  }) async {
     try {
       final user = await _authDataSource.login(params: params);
+      log(user.toMap().toString());
       return Right(user);
     } catch (e, stack) {
+      log(e.toString());
       return Left(FirebaseFailure.from(e, stack));
     }
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signup({required SignupParams params}) async {
+  Future<Either<Failure, UserEntity>> signup({
+    required SignupParams params,
+  }) async {
     try {
       final user = await _authDataSource.signUp(params: params);
-      return Right(UserEntity(
-        id: user.uid,
-        usreName: params.username,
-        email: params.email,
-        phone: params.phoneNumber,
-        fcmToken: 'fcmToken',
-        imageUrl: params.imageUrl,
-        name: '${params.firstName} ${params.lastName}',
-      ));
+      return Right(
+        UserEntity(
+          id: user.uid,
+          usreName: params.username,
+          email: params.email,
+          phone: params.phoneNumber,
+          fcmToken: 'fcmToken',
+          imageUrl: params.imageUrl,
+          name: '${params.firstName} ${params.lastName}',
+        ),
+      );
     } catch (e, stack) {
       return Left(FirebaseFailure.from(e, stack));
     }
   }
 
   @override
-  Future<Either<Failure, void>> sendPasswordResetEmail({required String email}) async {
+  Future<Either<Failure, void>> sendPasswordResetEmail({
+    required String email,
+  }) async {
     try {
       await _authDataSource.sendPasswordResetEmail(email: email);
       return const Right(null);

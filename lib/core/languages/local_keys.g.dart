@@ -751,4 +751,7 @@ abstract class LocaleKeys {
   static const String _splashKey = 'splash_key';
   static String get splashKey => _splashKey.tr();
 
+  static const String _resetPasswordEmailHasBeenSentSuccessfully = 'reset_password_email_has_been_sent_successfully';
+  static String get resetPasswordEmailHasBeenSentSuccessfully => _resetPasswordEmailHasBeenSentSuccessfully.tr();
+
 }
