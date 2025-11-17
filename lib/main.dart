@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'core/languages/languages.dart';
 import 'core/shared/di.dart';
 import 'core/utils/cashe_storage.dart';
@@ -27,12 +26,12 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
-    EasyLocalization(
-      supportedLocales: Languages.supportedLocales,
-      path: 'assets/translations',
-      fallbackLocale: const Locale('ar'),
-      startLocale: const Locale('en'),
-      child: const ShipifyApp(),
-    ),
+      EasyLocalization(
+        supportedLocales: Languages.supportedLocales,
+        path: 'assets/translations',
+        fallbackLocale: const Locale('ar'),
+        startLocale: const Locale('en'),
+        child: const ShipifyApp(),
+      ),
   );
 }

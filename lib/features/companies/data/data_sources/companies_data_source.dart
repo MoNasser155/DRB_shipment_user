@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../../core/constants.dart';
 import '../models/company_model.dart';
 
 abstract class CompaniesDataSource {
@@ -11,7 +12,7 @@ class CompaniesDataSourceImpl implements CompaniesDataSource {
 
   @override
   Future<List<CompanyModel>> getCompanies() async {
-    final couriersList = await _firestore.collection('couriersCompany').get();
+    final couriersList = await _firestore.collection(Collections.companies).get();
     return couriersList.docs.map((doc) {
       final data = doc.data();
       data['id'] = doc.id;

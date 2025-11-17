@@ -1,16 +1,13 @@
 import 'package:dartz/dartz.dart';
-
-import 'package:drb_shipment_user/core/error/failures.dart';
-
-import 'package:drb_shipment_user/features/auth/domain/entities/user_entity.dart';
-import 'package:drb_shipment_user/features/packages/data/data_source/packages_data_source.dart';
-
-import 'package:drb_shipment_user/features/packages/data/models/packages_model.dart';
-
 import '../../../../core/constants.dart';
+import '../../../../core/errors/failures.dart';
+import '../../../../core/errors/firebase_failuer.dart';
+import '../../../auth/domain/entities/user_entity.dart';
 import '../../../companies/data/models/company_model.dart';
 import '../../../couriers/data/models/courier_model.dart';
 import '../../domain/repository/packages_repository.dart';
+import '../data_source/packages_data_source.dart';
+import '../models/packages_model.dart';
 
 class PackageRepositoryImpl extends PackagesRepository {
   final _packagesDataSource = sl<PackagesDataSource>();
@@ -25,8 +22,8 @@ class PackageRepositoryImpl extends PackagesRepository {
         status: status,
       );
       return Right(packagesList);
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 
@@ -35,8 +32,8 @@ class PackageRepositoryImpl extends PackagesRepository {
     try {
       final user = await _packagesDataSource.getSenderById(senderId);
       return Right(user);
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 
@@ -45,8 +42,8 @@ class PackageRepositoryImpl extends PackagesRepository {
     try {
       final courier = await _packagesDataSource.getCourierById(courierId);
       return Right(courier);
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 
@@ -55,8 +52,8 @@ class PackageRepositoryImpl extends PackagesRepository {
     try {
       final company = await _packagesDataSource.getCompanyById(companyId);
       return Right(company);
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 }

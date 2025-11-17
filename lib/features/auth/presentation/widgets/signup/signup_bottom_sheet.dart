@@ -51,7 +51,7 @@ class SignupBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '${LocaleKeys.alreadyHaveAnAccount}${Constants.question} ',
+                  '${LocaleKeys.alreadyHaveAnAccount}${Constants.questionMark} ',
                   style: AppTextTheme.nonlineText14White,
                 ),
                 TextButton(

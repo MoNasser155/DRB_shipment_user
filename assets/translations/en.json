@@ -275,5 +275,7 @@
   "current_password": "Current Password",
   "notifications": "Notifications",
   "edit_profile": "Edit Profile",
-  "f_a_q": "FAQ"
+  "f_a_q": "FAQ",
+  "ask": "Ask",
+  "splash_key": "Welecome to our app"
 }

@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD70OTr_Yz5aAHRufPxgAwE25mdQ7vPt1I',
-    appId: '1:249547916455:android:40972fde40703d0d7dc782',
-    messagingSenderId: '249547916455',
-    projectId: 'drb-shipment-training',
-    storageBucket: 'drb-shipment-training.firebasestorage.app',
+    apiKey: 'AIzaSyBz3WneitnaABQAuepvvDLy-_zxz-gLiRk',
+    appId: '1:433288976185:android:dcd7a48afa42dc123afae8',
+    messagingSenderId: '433288976185',
+    projectId: 'drb-group-project',
+    storageBucket: 'drb-group-project.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDvMiCOrxcrbR322nBgjIqLx-UH_q2YzRo',
-    appId: '1:249547916455:ios:a91e13026057cdcc7dc782',
-    messagingSenderId: '249547916455',
-    projectId: 'drb-shipment-training',
-    storageBucket: 'drb-shipment-training.firebasestorage.app',
+    apiKey: 'AIzaSyDdLRHMqLp15RLewVOr8W9XPgvBEeAdbyI',
+    appId: '1:433288976185:ios:2fec13fa603b2aab3afae8',
+    messagingSenderId: '433288976185',
+    projectId: 'drb-group-project',
+    storageBucket: 'drb-group-project.firebasestorage.app',
     iosBundleId: 'com.example.drbShipmentUser',
   );
 

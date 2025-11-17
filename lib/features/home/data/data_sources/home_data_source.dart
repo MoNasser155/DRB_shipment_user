@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/features/home/data/models/ads_banner_model.dart';
+import '../../../../core/constants.dart';
 import '../../../companies/data/models/company_model.dart';
 import '../../../packages/data/models/packages_model.dart';
 
@@ -16,7 +17,7 @@ class HomeDataSourceImpl implements HomeDataSource {
   Future<List<AdsBannerModel>> getAds() async {
     final adsList =
         await _firestore
-            .collection('ads')
+            .collection(Collections.ads)
             .where('toDate', isGreaterThanOrEqualTo: DateTime.now())
             .get();
     return adsList.docs.map((e) => AdsBannerModel.fromMap(e.data())).toList();
@@ -26,7 +27,7 @@ class HomeDataSourceImpl implements HomeDataSource {
   Future<List<PackageModel>> getHomePackages(String uId) async {
     final packagesList =
         await _firestore
-            .collection('packages')
+            .collection(Collections.packages)
             .where('senderId', isEqualTo: uId)
             .where('status', isEqualTo: PackagesStatus.inProgress.firebaseValue)
             .limit(3)
@@ -41,7 +42,7 @@ class HomeDataSourceImpl implements HomeDataSource {
   @override
   Future<List<CompanyModel>> getHomeCouriersCompanies() async {
     final couriersList =
-        await _firestore.collection('couriersCompany').limit(5).get();
+        await _firestore.collection(Collections.companies).limit(5).get();
     return couriersList.docs.map((doc) {
       final data = doc.data();
       data['id'] = doc.id;

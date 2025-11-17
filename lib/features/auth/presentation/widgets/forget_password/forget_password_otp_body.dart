@@ -29,7 +29,7 @@ class ForgetPasswordOTPBody extends StatelessWidget {
               Text.rich(
                 TextSpan(
                   text:
-                      '${LocaleKeys.didntReceiveTheCode}${Constants.question} ',
+                      '${LocaleKeys.didntReceiveTheCode}${Constants.questionMark} ',
                   style: AppTextTheme.text10W500grey300,
                   children: [
                     TextSpan(

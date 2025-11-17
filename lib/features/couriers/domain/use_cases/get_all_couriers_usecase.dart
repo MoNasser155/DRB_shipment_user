@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:drb_shipment_user/features/couriers/domain/repository/couriers_repository.dart';
 
 import '../../../../core/constants.dart';
-import '../../../../core/error/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../../data/models/courier_model.dart';
 
 class GetAllCouriersUsecase {

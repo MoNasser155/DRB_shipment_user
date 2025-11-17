@@ -745,4 +745,10 @@ abstract class LocaleKeys {
   static const String _fAQ = 'f_a_q';
   static String get fAQ => _fAQ.tr();
 
+  static const String _ask = 'ask';
+  static String get ask => _ask.tr();
+
+  static const String _splashKey = 'splash_key';
+  static String get splashKey => _splashKey.tr();
+
 }

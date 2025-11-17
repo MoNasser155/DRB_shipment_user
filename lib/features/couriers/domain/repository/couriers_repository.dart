@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/error/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../../data/models/courier_model.dart';
 
 abstract class CouriersRepository {

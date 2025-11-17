@@ -24,7 +24,7 @@ class PackagesCubit extends Cubit<PackagesState> {
         packages: [],
       ),
     );
-    _getPackages(uId: state.user.uId!);
+    _getPackages(uId: state.user.id!);
   }
 
   setUser(UserEntity user) {
@@ -34,7 +34,7 @@ class PackagesCubit extends Cubit<PackagesState> {
   Future<void> initPackages(UserEntity user) async {
     emit(state.copyWith(status: StateStatus.loading));
     setUser(user);
-    await Future.wait([_getPackages(uId: user.uId!)]);
+    await Future.wait([_getPackages(uId: user.id!)]);
     emit(state.copyWith(status: StateStatus.success));
   }
 

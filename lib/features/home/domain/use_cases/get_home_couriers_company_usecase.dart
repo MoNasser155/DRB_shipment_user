@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import '../../../../core/constants.dart';
-import '../../../../core/error/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../../../companies/data/models/company_model.dart';
 import '../repos/home_repository.dart';
 

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:drb_shipment_user/core/constants.dart';
 
-import '../../../../core/error/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../../data/models/packages_model.dart';
 import '../repository/packages_repository.dart';
 

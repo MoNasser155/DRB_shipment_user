@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:drb_shipment_user/features/add_package/data/data_sources/add_package_data_source.dart';
-
 import '../../../../core/constants.dart';
-import '../../../../core/error/failures.dart';
+import '../../../../core/errors/failures.dart';
+import '../../../../core/errors/firebase_failuer.dart';
 import '../../../packages/data/models/packages_model.dart';
 import '../../domain/repository/add_package_repository.dart';
+import '../data_sources/add_package_data_source.dart';
 
 class AddPackageRepositoryImpl extends AddPackageRepository {
   final addPackageDataSource = sl<AddPackageDataSource>();
@@ -15,8 +15,8 @@ class AddPackageRepositoryImpl extends AddPackageRepository {
     try {
       final package = await addPackageDataSource.addPackage(packagesModel);
       return Right(package);
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 }

@@ -5,8 +5,18 @@ GetIt sl = GetIt.instance;
 
 class Constants {
   static const String kIsOnboardingViewed = 'isOnboardingViewed';
-  static String get question =>
+  static String get questionMark =>
       Languages.currentLanguage.languageCode == 'ar' ? '؟' : '?';
 
   static String userKey = 'user';
+}
+
+class Collections{
+  static const String users = 'user';
+  static const String packages = 'packages';
+  static const String companies = 'companies';
+  static const String couriers = 'courier';
+  static const String reviews = 'reviews';
+  static const String ads = 'ads';
+  static const String faqs = 'faqs';
 }

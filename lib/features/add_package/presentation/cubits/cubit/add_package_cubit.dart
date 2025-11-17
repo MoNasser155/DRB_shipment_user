@@ -64,7 +64,7 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
   PackageModel setData() {
     return PackageModel(
       status: PackagesStatus.inProgress.firebaseValue,
-      senderId: state.user.uId!,
+      senderId: state.user.id!,
       packageContent: contentController.text,
       weight: double.parse(weightController.text),
       receiverName: recieverNameController.text,
