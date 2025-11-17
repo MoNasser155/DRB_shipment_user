@@ -42,4 +42,10 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
       },
     );
   }
+
+   @override
+  Future<void> close() {
+    emailController.dispose();
+    return super.close();
+  }
 }

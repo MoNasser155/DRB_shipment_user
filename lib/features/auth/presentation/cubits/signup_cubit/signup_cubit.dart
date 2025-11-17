@@ -91,6 +91,8 @@ class SignupCubit extends Cubit<SignupState> {
   @override
   Future<void> close() {
     userNameController.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
     emailController.dispose();
     phoneController.dispose();
     passwordController.dispose();
