@@ -127,6 +127,9 @@ abstract class LocaleKeys {
   static const String _and = 'and';
   static String get and => _and.tr();
 
+  static const String _select = 'select';
+  static String get select => _select.tr();
+
   static const String _privacyPolicy = 'privacy_policy';
   static String get privacyPolicy => _privacyPolicy.tr();
 

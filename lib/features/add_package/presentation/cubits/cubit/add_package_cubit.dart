@@ -15,6 +15,7 @@ import '../../../../../core/enums/state_status.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
 import '../../../../packages/data/models/packages_model.dart';
+import '../../../data/models/governments_model.dart';
 import 'add_package_mixin.dart';
 
 part 'add_package_state.dart';
@@ -47,6 +48,22 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
         pickupLocation: Coordinates(location.latitude, location.longitude),
       ),
     );
+  }
+
+  void setPickUpGov(GovernmentsData government) {
+    emit(state.copyWith(pickUpGovernorate: government));
+  }
+
+  void setPickUpCity(Cities city) {
+    emit(state.copyWith(pickUpCity: city));
+  }
+
+  void setDropOffGov(GovernmentsData government) {
+    emit(state.copyWith(dropOffGovernorate: government));
+  }
+
+  void setDropOffCity(Cities city) {
+    emit(state.copyWith(dropOffCity: city));
   }
 
   void setDropoffLocation(LatLng location) {
@@ -109,15 +126,16 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
           color: ColorHelper.red,
         );
         return;
+      } else if (state.currentPageIndex == 3) {
+        if (state.dropoffLocation == null) {
+          CustomSnackBar.top(
+            msg: LocaleKeys.pleasePickYourDeliveryLocation,
+            color: ColorHelper.red,
+          );
+          return;
+        }
       }
-      if (state.dropoffLocation == null) {
-        CustomSnackBar.top(
-          msg: LocaleKeys.pleasePickYourDeliveryLocation,
-          color: ColorHelper.red,
-        );
-        return;
-      }
-    } else if (state.currentPageIndex == 3) {
+    } else if (state.currentPageIndex == 4) {
       if (state.selectedPaymentMethod == Payment.visa) {
         if (!paymentInfoFormKey.currentState!.validate()) {
           return;

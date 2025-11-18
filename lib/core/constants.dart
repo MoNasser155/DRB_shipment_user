@@ -9,9 +9,10 @@ class Constants {
       Languages.currentLanguage.languageCode == 'ar' ? '؟' : '?';
 
   static String userKey = 'user';
+  static const String governmentData = 'assets/governoments/governorates.json';
 }
 
-class Collections{
+class Collections {
   static const String users = 'user';
   static const String packages = 'packages';
   static const String companies = 'companies';

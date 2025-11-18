@@ -3,14 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/helpers/redius_helper.dart';
-import '../../../../../core/helpers/spaceing_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
 import '../../cubits/cubit/add_package_cubit.dart';
 import '../custom_package_column.dart';
 
-class LocationInfo extends StatelessWidget {
-  const LocationInfo({super.key});
+class PickUpLocationInfo extends StatelessWidget {
+  const PickUpLocationInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,52 +17,16 @@ class LocationInfo extends StatelessWidget {
       buildWhen:
           (previous, current) =>
               previous.status != current.status ||
-              previous.pickupLocation != current.pickupLocation ||
-              previous.dropoffLocation != current.dropoffLocation,
+              previous.pickupLocation != current.pickupLocation,
       builder: (context, state) {
         final cubit = AddPackageCubit.get(context);
         return CustomPackageColumn(
           children: [
             Gap(0),
-            Center(
-              child: Text(
-                LocaleKeys.pickupLocation,
-                style: AppTextTheme.text18W600grey100,
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(RadiusHelper.kRadius8),
-              child: AspectRatio(
-                aspectRatio: 1.7,
-                child: GoogleMap(
-                  initialCameraPosition: const CameraPosition(
-                    target: LatLng(30.04652587682479, 31.226533111935872),
-                    zoom: 10,
-                  ),
-                  markers: {
-                    Marker(
-                      markerId: MarkerId('pickup'),
-                      infoWindow: InfoWindow(title: LocaleKeys.pickupLocation),
-                      position: LatLng(
-                        state.pickupLocation?.latitude ?? 0.0,
-                        state.pickupLocation?.longitude ?? 0.0,
-                      ),
-                    ),
-                  },
-                  onTap: (coords) {
-                    cubit.setPickupLocation(coords);
-                  },
-                  onMapCreated: (controller) {
-                    cubit.setPickupController(controller);
-                  },
-                ),
-              ),
-            ),
 
-            Gap(SpacingHelper.kVertical4),
             Center(
               child: Text(
-                LocaleKeys.pickupLocation,
+                LocaleKeys.dropoffLocation,
                 style: AppTextTheme.text18W600grey100,
               ),
             ),

@@ -11,6 +11,11 @@ class AddPackageState extends Equatable {
   final Coordinates? pickupLocation;
   final Coordinates? dropoffLocation;
   final Payment selectedPaymentMethod;
+  final BaseGovernmentsModel governmentsModel;
+  final GovernmentsData pickUpGovernorate;
+  final Cities pickUpCity;
+  final GovernmentsData dropOffGovernorate;
+  final Cities dropOffCity;
 
   const AddPackageState({
     required this.status,
@@ -19,10 +24,16 @@ class AddPackageState extends Equatable {
     required this.currentPageIndex,
     required this.isLastPage,
     this.errorMessage,
+    required this.governmentsModel,
 
     this.pickupLocation,
     this.dropoffLocation,
     required this.selectedPaymentMethod,
+
+    required this.pickUpGovernorate,
+    required this.pickUpCity,
+    required this.dropOffGovernorate,
+    required this.dropOffCity,
   });
 
   factory AddPackageState.initial() => AddPackageState(
@@ -34,6 +45,11 @@ class AddPackageState extends Equatable {
     pickupLocation: null,
     dropoffLocation: null,
     selectedPaymentMethod: Payment.cash,
+    governmentsModel: BaseGovernmentsModel.initial(),
+    pickUpGovernorate: GovernmentsData.initial(),
+    pickUpCity: Cities.initial(),
+    dropOffGovernorate: GovernmentsData.initial(),
+    dropOffCity: Cities.initial(),
   );
 
   AddPackageState copyWith({
@@ -46,7 +62,13 @@ class AddPackageState extends Equatable {
 
     Coordinates? pickupLocation,
     Coordinates? dropoffLocation,
+    BaseGovernmentsModel? governmentsModel,
     Payment? selectedPaymentMethod,
+
+    GovernmentsData? pickUpGovernorate,
+    Cities? pickUpCity,
+    GovernmentsData? dropOffGovernorate,
+    Cities? dropOffCity,
   }) {
     return AddPackageState(
       status: status ?? this.status,
@@ -58,7 +80,14 @@ class AddPackageState extends Equatable {
 
       pickupLocation: pickupLocation ?? this.pickupLocation,
       dropoffLocation: dropoffLocation ?? this.dropoffLocation,
-      selectedPaymentMethod: selectedPaymentMethod ?? this .selectedPaymentMethod,
+      governmentsModel: governmentsModel ?? this.governmentsModel,
+      selectedPaymentMethod:
+          selectedPaymentMethod ?? this.selectedPaymentMethod,
+
+      pickUpGovernorate: pickUpGovernorate ?? this.pickUpGovernorate,
+      pickUpCity: pickUpCity ?? this.pickUpCity,
+      dropOffGovernorate: dropOffGovernorate ?? this.dropOffGovernorate,
+      dropOffCity: dropOffCity ?? this.dropOffCity,
     );
   }
 
@@ -74,5 +103,11 @@ class AddPackageState extends Equatable {
     pickupLocation,
     dropoffLocation,
     selectedPaymentMethod,
+    governmentsModel,
+
+    pickUpGovernorate,
+    pickUpCity,
+    dropOffGovernorate,
+    dropOffCity,
   ];
 }
