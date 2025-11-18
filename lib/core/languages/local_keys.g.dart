@@ -496,6 +496,12 @@ abstract class LocaleKeys {
   static const String _pleaseAcceptTermsAndConditions = 'please_accept_terms_and_conditions';
   static String get pleaseAcceptTermsAndConditions => _pleaseAcceptTermsAndConditions.tr();
 
+  static const String _pleaseSelectGovernmentFirst = 'please_select_government_first';
+  static String get pleaseSelectGovernmentFirst => _pleaseSelectGovernmentFirst.tr();
+
+  static const String _pleaseSelectGovernmentAndCity = 'please_select_government_and_city';
+  static String get pleaseSelectGovernmentAndCity => _pleaseSelectGovernmentAndCity.tr();
+
   static const String _pT1 = 'p_t_1';
   static String get pT1 => _pT1.tr();
 

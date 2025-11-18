@@ -164,7 +164,8 @@
     "Please enter a valid card number":"الرجاء ادخال رقم بطاقة صالح",
     "Please enter a valid CVV":"الرجاء ادخال CVV صالح",
     "Please Accept Terms and Conditions":"الرجاء قبول الشروط والاحكام",
-   
+    "Please select Government first":"الرجاء اختيار المحافظة اولا",
+    "Please select Government and City":"الرجاء اختيار المحافظة والمدينة",
     "PT1 #$ Information We Collect":"المعلومات التي نجمعها",
     "PD1-1 #$ When you register with the SHIPIFY App":"عند التسجيل في تطبيق SHIPIFY",
     "PD1-2 #$ we collect basic details such as your name":"نقوم بجمع التفاصيل الأساسية مثل اسمك",

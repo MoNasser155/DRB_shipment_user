@@ -8,7 +8,7 @@ import '../themes/text_theme.dart';
 class ExpandedDropdown<T> extends StatelessWidget {
   final String hint;
   final List<T> items;
-  final T? selectedValue;
+  final String? selectedValue;
   final String Function(T) itemLabelBuilder;
   final ValueChanged<T?>? onChanged;
   final bool isEnabled;
@@ -75,8 +75,8 @@ class ExpandedDropdown<T> extends StatelessWidget {
               );
             }).toList(),
         onChanged: isEnabled ? onChanged : null,
-        value: selectedValue,
-        hint: Text(hint),
+        // value: selectedValue,
+        hint: Text(selectedValue ?? hint),
       ),
     );
   }

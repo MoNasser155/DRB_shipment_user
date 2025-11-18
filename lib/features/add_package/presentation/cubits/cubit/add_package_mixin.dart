@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../../../core/constants.dart';
 import '../../../domain/usecases/add_package_usecase.dart';
+import '../../../domain/usecases/get_governoments_usecase.dart';
 import '../../widgets/package_pages/drop_off_location.dart';
 import '../../widgets/package_pages/pick_up_location_info.dart';
 import '../../widgets/package_pages/payment_method.dart';
@@ -11,6 +12,7 @@ import '../../widgets/package_pages/sender_recierver_info.dart';
 
 mixin AddPackageMixin {
   final addPackageUsecase = sl<AddPackageUsecase>();
+  final getGovernomentsUsecase = sl<GetGovernomentsUsecase>();
 
   final PageController pageController = PageController(initialPage: 0);
 

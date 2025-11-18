@@ -164,6 +164,8 @@
   "please_enter_a_valid_card_number": "الرجاء ادخال رقم بطاقة صالح",
   "please_enter_a_valid_cvv": "الرجاء ادخال CVV صالح",
   "please_accept_terms_and_conditions": "الرجاء قبول الشروط والاحكام",
+  "please_select_government_first": "الرجاء اختيار المحافظة اولا",
+  "please_select_government_and_city": "الرجاء اختيار المحافظة والمدينة",
   "p_t_1": "المعلومات التي نجمعها",
   "p_d_1_1": "عند التسجيل في تطبيق SHIPIFY",
   "p_d_1_2": "نقوم بجمع التفاصيل الأساسية مثل اسمك",

@@ -164,6 +164,8 @@
   "please_enter_a_valid_card_number": "Please enter a valid card number",
   "please_enter_a_valid_cvv": "Please enter a valid CVV",
   "please_accept_terms_and_conditions": "Please Accept Terms and Conditions",
+  "please_select_government_first": "Please select Government first",
+  "please_select_government_and_city": "Please select Government and City",
   "p_t_1": "Information We Collect",
   "p_d_1_1": "When you register with the SHIPIFY App",
   "p_d_1_2": "we collect basic details such as your name",

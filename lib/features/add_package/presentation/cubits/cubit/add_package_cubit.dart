@@ -1,7 +1,5 @@
 // ignore_for_file: unused_field
 
-import 'dart:developer';
-
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/core/enums/payment.dart';
 import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
@@ -28,6 +26,7 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
   Future<void> initAddPackage(UserEntity user) async {
     emit(state.copyWith(status: StateStatus.loading));
     setUser(user);
+    _fetchGovData();
     await Future.wait([]);
     emit(state.copyWith(status: StateStatus.success));
   }
@@ -125,17 +124,40 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
           msg: LocaleKeys.pleasePickYourPickupLocation,
           color: ColorHelper.red,
         );
+
         return;
-      } else if (state.currentPageIndex == 3) {
-        if (state.dropoffLocation == null) {
-          CustomSnackBar.top(
-            msg: LocaleKeys.pleasePickYourDeliveryLocation,
-            color: ColorHelper.red,
-          );
+      }
+      if (state.pickUpGovernorate.governmentEn == '' ||
+          state.pickUpCity.cityEn == '') {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleaseSelectGovernmentAndCity,
+          color: ColorHelper.red,
+        );
+        return;
+      }
+    } else if (state.currentPageIndex == 3) {
+      if (state.dropoffLocation == null) {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleasePickYourDeliveryLocation,
+          color: ColorHelper.red,
+        );
+        return;
+      }
+      if (state.dropOffGovernorate.governmentEn == '' ||
+          state.dropOffCity.cityEn == '') {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleaseSelectGovernmentAndCity,
+          color: ColorHelper.red,
+        );
+        return;
+      }
+    } else if (state.currentPageIndex == 4) {
+      if (state.selectedPaymentMethod == Payment.visa) {
+        if (!paymentInfoFormKey.currentState!.validate()) {
           return;
         }
       }
-    } else if (state.currentPageIndex == 4) {
+    } else if (state.currentPageIndex == 5) {
       if (state.selectedPaymentMethod == Payment.visa) {
         if (!paymentInfoFormKey.currentState!.validate()) {
           return;
@@ -164,9 +186,18 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
     );
   }
 
+  Future<void> _fetchGovData() async {
+    emit(state.copyWith(status: StateStatus.loading));
+    final result = await getGovernomentsUsecase.call();
+    emit(state.copyWith(governmentsModel: result, status: StateStatus.success));
+  }
+
+  Future<void> _fetchCompanies() async {
+    emit(state.copyWith(status: StateStatus.loading));
+  }
+
   Future<void> addPackage() async {
     emit(state.copyWith(status: StateStatus.loading));
-    log(setData().toJson().toString());
     final result = await addPackageUsecase(setData());
     result.fold(
       (failure) {
