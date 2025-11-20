@@ -25,19 +25,19 @@ class PackageDetailsRecieverSection extends StatelessWidget {
                 PackageDetailsRow(
                   icon: Icons.person,
                   title: LocaleKeys.name,
-                  data: state.packagesModel.receiverName,
+                  data: state.packagesModel.receiverInfo.name,
                 ),
                 Gap(SpacingHelper.kVertical4),
                 PackageDetailsRow(
                   icon: Icons.phone_android,
                   title: LocaleKeys.phoneNumber,
-                  data: state.packagesModel.recieverPhone,
+                  data: state.packagesModel.receiverInfo.phone,
                 ),
                 Gap(SpacingHelper.kVertical4),
                 PackageDetailsRow(
                   icon: Icons.email,
                   title: LocaleKeys.email,
-                  data: state.packagesModel.receiverEmail,
+                  data: state.packagesModel.receiverInfo.email,
                 ),
               ],
             );

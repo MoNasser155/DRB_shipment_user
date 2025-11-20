@@ -27,7 +27,7 @@ class PackageDetailsPriceSection extends StatelessWidget {
                 PackageDetailsRow(
                   icon: Icons.attach_money,
                   title: LocaleKeys.paymentMethod,
-                  data: state.packagesModel.paymentMethod.name,
+                  data: state.packagesModel.paymentDetails.paymentMethod.name,
                 ),
                 Gap(SpacingHelper.kVertical4),
                 PackageDetailsRow(

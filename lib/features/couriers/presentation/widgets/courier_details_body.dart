@@ -52,11 +52,11 @@ class CourierDetailsBody extends StatelessWidget {
             applyPadding: true,
           ),
         ),
-        CourierImageAppbar(imageUrl: couriersModel.image),
+        CourierImageAppbar(imageUrl: couriersModel.imageUrl),
         SliverGap(SpacingHelper.kVertical12),
         CourierInfoCard(couriersModel: couriersModel),
         SliverGap(SpacingHelper.kVertical12),
-        VehicleInfoCard(couriersModel: couriersModel)
+        VehicleInfoCard(couriersModel: couriersModel),
       ],
     );
   }

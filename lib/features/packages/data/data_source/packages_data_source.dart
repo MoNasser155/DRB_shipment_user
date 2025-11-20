@@ -19,13 +19,13 @@ class PackagesDataSourceImpl implements PackagesDataSource {
     final packagesList =
         await _firestore
             .collection(Collections.packages)
-            .where('senderId', isEqualTo: uId)
+            .where('user_id', isEqualTo: uId)
             .where('status', isEqualTo: status)
             .get();
     return packagesList.docs.map((doc) {
       final data = doc.data();
-      data['id'] = doc.id;
-      return PackageModel.fromJson(data);
+      data['package_id'] = doc.id;
+      return PackageModel.fromFirestore(data);
     }).toList();
   }
 
@@ -41,7 +41,7 @@ class PackagesDataSourceImpl implements PackagesDataSource {
     final courier =
         await _firestore.collection(Collections.couriers).doc(courierId).get();
 
-    return CourierModel.fromMap({...courier.data()!, 'id': courier.id});
+    return CourierModel.fromFireStore({...courier.data()!, 'id': courier.id});
   }
 
   @override

@@ -35,7 +35,7 @@ class CourierCardItem extends StatelessWidget {
             Expanded(
               flex: 2,
               child: CustomCachedImage(
-                imageUrl: couriersModel.image,
+                imageUrl: couriersModel.imageUrl,
                 width: double.infinity,
                 height: 84.h,
               ),

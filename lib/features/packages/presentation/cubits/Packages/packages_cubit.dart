@@ -41,11 +41,11 @@ class PackagesCubit extends Cubit<PackagesState> {
   String _setPackageStatus() {
     switch (state.selectedTabIndex) {
       case 0:
-        return PackagesStatus.inProgress.firebaseValue;
+        return PackagesStatus.pending.firebaseValue;
       case 1:
-        return PackagesStatus.completed.firebaseValue;
+        return PackagesStatus.inProgress.firebaseValue;
       case 2:
-        return PackagesStatus.canceled.firebaseValue;
+        return PackagesStatus.completed.firebaseValue;
       default:
         return PackagesStatus.inProgress.firebaseValue;
     }

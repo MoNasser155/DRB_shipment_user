@@ -14,7 +14,7 @@ class CompanyDetailsCubit extends Cubit<CompanyDetailsState> {
 
   static CompanyDetailsCubit get(context) => BlocProvider.of(context);
 
-  final _getLinitedCouriersUsecase = sl<GetLimitedCouriersUsecase>();
+  final _getLimitedCouriersUsecase = sl<GetLimitedCouriersUsecase>();
 
   Future<void> initCompanyDetails(CompanyModel company) async {
     emit(state.copyWith(status: StateStatus.loading));
@@ -33,7 +33,7 @@ class CompanyDetailsCubit extends Cubit<CompanyDetailsState> {
 
   Future<void> _fetchTopCouriers() async {
     emit(state.copyWith(status: StateStatus.loading));
-    final result = await _getLinitedCouriersUsecase.call(state.companyModel.id);
+    final result = await _getLimitedCouriersUsecase.call(state.companyModel.id);
     result.fold(
       (failure) => emit(state.copyWith(errorMessage: failure.message)),
       (couriers) =>

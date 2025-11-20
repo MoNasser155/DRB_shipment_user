@@ -36,13 +36,13 @@ class PackageDetailsPackageSection extends StatelessWidget {
                 PackageDetailsRow(
                   icon: Icons.details_outlined,
                   title: LocaleKeys.packageContents,
-                  data: state.packagesModel.packageContent,
+                  data: state.packagesModel.packageDetails.content,
                 ),
                 Gap(SpacingHelper.kVertical4),
                 PackageDetailsRow(
                   icon: Icons.balance_outlined,
                   title: LocaleKeys.weight,
-                  data: state.packagesModel.weight.toString(),
+                  data: state.packagesModel.packageDetails.weight.toString(),
                 ),
                 Gap(SpacingHelper.kVertical4),
                 PackageDetailsRow(
@@ -55,7 +55,7 @@ class PackageDetailsPackageSection extends StatelessWidget {
                   icon: Icons.dangerous,
                   title: LocaleKeys.fragile,
                   data:
-                      state.packagesModel.isFragile
+                      state.packagesModel.packageDetails.isFragile
                           ? LocaleKeys.yes
                           : LocaleKeys.no,
                 ),

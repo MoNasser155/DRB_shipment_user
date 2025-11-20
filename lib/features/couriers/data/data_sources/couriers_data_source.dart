@@ -16,13 +16,13 @@ class CouriersDataSourceImpl implements CouriersDataSource {
     final allCouriers =
         await _firestore
             .collection(Collections.couriers)
-            .where('companyId', isEqualTo: companyId)
+            .where('company_id', isEqualTo: companyId)
             .get();
     log(allCouriers.docs.length.toString());
     return allCouriers.docs.map((doc) {
       final data = doc.data();
       data['id'] = doc.id;
-      return CourierModel.fromMap(data);
+      return CourierModel.fromFireStore(data);
     }).toList();
   }
 
@@ -30,14 +30,14 @@ class CouriersDataSourceImpl implements CouriersDataSource {
   Future<List<CourierModel>> getLimitedCouriers(String companyId) async {
     final allCouriers =
         await _firestore
-            .collection('couriers')
-            .where('companyId', isEqualTo: companyId)
+            .collection(Collections.couriers)
+            .where('company_id', isEqualTo: companyId)
             .limit(3)
             .get();
     return allCouriers.docs.map((doc) {
       final data = doc.data();
       data['id'] = doc.id;
-      return CourierModel.fromMap(data);
+      return CourierModel.fromFireStore(data);
     }).toList();
   }
 }

@@ -4,6 +4,7 @@ class ColorHelper {
   static const Color primaryGreen = Color(0xff38bd55);
   static const Color secondryOrange = Color(0xffe07c34);
   static const Color backgroundBlack = Color(0xff171717);
+  static const Color dropMenuColor = Color(0xFF092325);
 
   static const Color white = Color(0xffffffff);
   static const Color black = Color(0xff000000);

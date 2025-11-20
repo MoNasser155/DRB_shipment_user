@@ -28,14 +28,14 @@ class HomeDataSourceImpl implements HomeDataSource {
     final packagesList =
         await _firestore
             .collection(Collections.packages)
-            .where('senderId', isEqualTo: uId)
+            .where('user_id', isEqualTo: uId)
             .where('status', isEqualTo: PackagesStatus.inProgress.firebaseValue)
             .limit(3)
             .get();
     return packagesList.docs.map((doc) {
       final data = doc.data();
-      data['id'] = doc.id;
-      return PackageModel.fromJson(data);
+      data['package_id'] = doc.id;
+      return PackageModel.fromFirestore(data);
     }).toList();
   }
 

@@ -47,7 +47,7 @@ class ExpandedDropdown<T> extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-        dropdownColor: ColorHelper.primaryGreen,
+        dropdownColor: ColorHelper.dropMenuColor,
         menuMaxHeight: context.height / 2,
         isExpanded: true,
         elevation: 8,
@@ -75,8 +75,10 @@ class ExpandedDropdown<T> extends StatelessWidget {
               );
             }).toList(),
         onChanged: isEnabled ? onChanged : null,
-        // value: selectedValue,
-        hint: Text(selectedValue ?? hint),
+        hint:
+            selectedValue == null || selectedValue == ''
+                ? Text(hint)
+                : Text(selectedValue!),
       ),
     );
   }

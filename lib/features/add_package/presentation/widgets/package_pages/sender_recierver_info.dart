@@ -8,8 +8,8 @@ import '../../../../../core/widgets/textfield_withlabel.dart';
 import '../../cubits/cubit/add_package_cubit.dart';
 import '../custom_package_column.dart';
 
-class SenderRecierverInfo extends StatelessWidget {
-  const SenderRecierverInfo({super.key});
+class RecierverInfo extends StatelessWidget {
+  const RecierverInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -41,7 +41,7 @@ class PackagesItem extends StatelessWidget {
                 SizedBox(
                   width: context.width * 0.15,
                   child: Text(
-                    packageData.id ?? '',
+                    packageData.id ??'',
                     style: AppTextTheme.text16W500grey100,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -69,7 +69,7 @@ class PackagesItem extends StatelessWidget {
                   ),
                   Gap(SpacingHelper.kVertical4),
                   Text(
-                    packageData.packageContent,
+                    packageData.packageDetails.content,
                     style: AppTextTheme.text16W500grey100,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -93,7 +93,7 @@ class PackagesItem extends StatelessWidget {
                 Text(LocaleKeys.fragile, style: AppTextTheme.text14W500grey400),
                 Gap(SpacingHelper.kVertical4),
                 Text(
-                  packageData.isFragile.toString(),
+                  packageData.packageDetails.isFragile.toString(),
                   style: AppTextTheme.text16W500grey100,
                 ),
               ],

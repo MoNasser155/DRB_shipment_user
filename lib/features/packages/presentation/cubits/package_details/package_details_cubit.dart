@@ -36,8 +36,8 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
     _generatePolylinePoints(packagesModel);
     await Future.wait([
       _fetchSenderById(packagesModel.senderId),
-      _fetchCompanyById(packagesModel.companyId ?? ''),
-      _fetchCourierById(packagesModel.courierId ?? ''),
+      _fetchCompanyById(packagesModel.companyId),
+      _fetchCourierById(packagesModel.courierId),
     ]);
     emit(state.copyWith(status: StateStatus.success));
   }
@@ -53,8 +53,8 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
   void _setCamerPosition(PackageModel packagesModel) {
     final pickup = packagesModel.pickupLocation;
     final dropoff = packagesModel.dropoffLocation;
-    final centerLat = (pickup.latitude + dropoff.latitude) / 2;
-    final centerLng = (pickup.longitude + dropoff.longitude) / 2;
+    final centerLat = (pickup.location.latitude + dropoff.location.latitude) / 2;
+    final centerLng = (pickup.location.longitude + dropoff.location.longitude) / 2;
     final cameraPosition = CameraPosition(
       target: LatLng(centerLat, centerLng),
       zoom: calculateZoom(),
@@ -64,8 +64,8 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
 
   double calculateZoom() {
     final zoom = DistanceCalculatorHelper.calculateZoom(
-      state.packagesModel.pickupLocation,
-      state.packagesModel.dropoffLocation,
+      state.packagesModel.pickupLocation.location,
+      state.packagesModel.dropoffLocation.location,
     );
     return zoom;
   }
@@ -73,12 +73,12 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
   void _generatePolylinePoints(PackageModel packagesModel) {
     final List<LatLng> polylinePoints = [
       LatLng(
-        packagesModel.pickupLocation.latitude,
-        packagesModel.pickupLocation.longitude,
+        packagesModel.pickupLocation.location.latitude,
+        packagesModel.pickupLocation.location.longitude,
       ),
       LatLng(
-        packagesModel.dropoffLocation.latitude,
-        packagesModel.dropoffLocation.longitude,
+        packagesModel.dropoffLocation.location.latitude,
+        packagesModel.dropoffLocation.location.longitude,
       ),
     ];
     final polyline = Polyline(
@@ -92,8 +92,8 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
       Marker(
         markerId: MarkerId(LocaleKeys.pickupLocation),
         position: LatLng(
-          packagesModel.pickupLocation.latitude,
-          packagesModel.pickupLocation.longitude,
+          packagesModel.pickupLocation.location.latitude,
+          packagesModel.pickupLocation.location.longitude,
         ),
         icon: BitmapDescriptor.defaultMarker,
         infoWindow: InfoWindow(title: LocaleKeys.pickupLocation),
@@ -101,8 +101,8 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
       Marker(
         markerId: MarkerId(LocaleKeys.dropoffLocation),
         position: LatLng(
-          packagesModel.dropoffLocation.latitude,
-          packagesModel.dropoffLocation.longitude,
+          packagesModel.dropoffLocation.location.latitude,
+          packagesModel.dropoffLocation.location.longitude,
         ),
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
         infoWindow: InfoWindow(title: LocaleKeys.dropoffLocation),

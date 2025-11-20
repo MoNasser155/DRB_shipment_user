@@ -481,6 +481,36 @@ abstract class LocaleKeys {
   static const String _sHIPIFY = 's_h_i_p_i_f_y';
   static String get sHIPIFY => _sHIPIFY.tr();
 
+  static const String _regularDelivery = 'regular_delivery';
+  static String get regularDelivery => _regularDelivery.tr();
+
+  static const String _expressDelivery = 'express_delivery';
+  static String get expressDelivery => _expressDelivery.tr();
+
+  static const String _pending = 'pending';
+  static String get pending => _pending.tr();
+
+  static const String _pickupAddress = 'pickup_address';
+  static String get pickupAddress => _pickupAddress.tr();
+
+  static const String _deliveryAddress = 'delivery_address';
+  static String get deliveryAddress => _deliveryAddress.tr();
+
+  static const String _selectCompanyFirst = 'select_company_first';
+  static String get selectCompanyFirst => _selectCompanyFirst.tr();
+
+  static const String _notes = 'notes';
+  static String get notes => _notes.tr();
+
+  static const String _optional = 'optional';
+  static String get optional => _optional.tr();
+
+  static const String _pleaseSelectCompanyFirst = 'please_select_company_first';
+  static String get pleaseSelectCompanyFirst => _pleaseSelectCompanyFirst.tr();
+
+  static const String _pleaseSelectCourier = 'please_select_courier';
+  static String get pleaseSelectCourier => _pleaseSelectCourier.tr();
+
   static const String _pleaseEnterYourCardNumber = 'please_enter_your_card_number';
   static String get pleaseEnterYourCardNumber => _pleaseEnterYourCardNumber.tr();
 

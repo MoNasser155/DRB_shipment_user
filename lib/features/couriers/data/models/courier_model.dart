@@ -5,7 +5,7 @@ class CourierModel {
   final String id;
   final String companyId;
   final String email;
-  final String image;
+  final String imageUrl;
   final String name;
   final String phone;
   final num rating;
@@ -18,7 +18,7 @@ class CourierModel {
     required this.id,
     required this.name,
     required this.phone,
-    required this.image,
+    required this.imageUrl,
     required this.rating,
     required this.email,
     required this.companyId,
@@ -28,25 +28,25 @@ class CourierModel {
     required this.licenceNum,
   });
 
-  factory CourierModel.fromMap(Map<String, dynamic> map) => CourierModel(
+  factory CourierModel.fromFireStore(Map<String, dynamic> map) => CourierModel(
     id: map['id'],
-    companyId: map['companyId'],
-    email: map['courierEmail'],
-    image: map['courierImage'],
-    name: map['courierName'],
-    phone: map['courierPhoneNum'],
+    companyId: map['company_id'],
+    email: map['email'],
+    imageUrl: map['imageUrl'],
+    name: map['username'],
+    phone: map['phone'],
     rating: map['rating'],
     status: CourierStatus.fromString(map['status']),
     vehicleType: VehicleType.fromFirebaseValue(map['vehicleType']),
-    vehicleNum: map['vehicleNum'],
-    licenceNum: map['licenceNum'],
+    vehicleNum: map['vehicleNumber'],
+    licenceNum: map['licenseNumber'],
   );
 
   factory CourierModel.skeleton() => CourierModel(
     id: '',
     companyId: '',
     email: '',
-    image: '',
+    imageUrl: '',
     name: '',
     phone: '',
     rating: 0.0,
@@ -58,5 +58,5 @@ class CourierModel {
 
   @override
   toString() =>
-      'CourierModel(id: $id, name: $name, phone: $phone, image: $image, rating: $rating, status: $status, vehicleType: $vehicleType, vehicleNum: $vehicleNum, licenceNum: $licenceNum)';
+      'CourierModel(id: $id, name: $name, phone: $phone, image: $imageUrl, rating: $rating, status: $status, vehicleType: $vehicleType, vehicleNum: $vehicleNum, licenceNum: $licenceNum)';
 }

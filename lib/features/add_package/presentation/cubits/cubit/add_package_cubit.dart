@@ -1,5 +1,4 @@
-// ignore_for_file: unused_field
-
+import 'package:drb_shipment_user/core/enums/delivery_type.dart';
 import 'package:drb_shipment_user/core/enums/packages_status.dart';
 import 'package:drb_shipment_user/core/enums/payment.dart';
 import 'package:drb_shipment_user/core/shared/models/coordinates.dart';
@@ -12,6 +11,8 @@ import '../../../../../core/color_helper.dart';
 import '../../../../../core/enums/state_status.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
+import '../../../../companies/data/models/company_model.dart';
+import '../../../../couriers/data/models/courier_model.dart';
 import '../../../../packages/data/models/packages_model.dart';
 import '../../../data/models/governments_model.dart';
 import 'add_package_mixin.dart';
@@ -27,7 +28,7 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
     emit(state.copyWith(status: StateStatus.loading));
     setUser(user);
     _fetchGovData();
-    await Future.wait([]);
+    await Future.wait([_fetchCompanies()]);
     emit(state.copyWith(status: StateStatus.success));
   }
 
@@ -77,20 +78,58 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
     emit(state.copyWith(selectedPaymentMethod: paymentMethod));
   }
 
+  void setDeliveryType(DeliveryType deliveryType) {
+    emit(state.copyWith(selectedDeliveryType: deliveryType));
+  }
+
+  void setSelectedCompany(CompanyModel company) {
+    emit(state.copyWith(selectedCompany: company, couriers: []));
+    _fetchCouriers();
+  }
+
+  void setSelectedCourier(CourierModel courier) {
+    emit(state.copyWith(selectedCourier: courier));
+  }
+
   PackageModel setData() {
     return PackageModel(
-      status: PackagesStatus.inProgress.firebaseValue,
+      status: PackagesStatus.pending,
       senderId: state.user.id!,
-      packageContent: contentController.text,
-      weight: double.parse(weightController.text),
-      receiverName: recieverNameController.text,
-      recieverPhone: recieverPhoneNumberController.text,
-      receiverEmail: recieverEmailController.text,
+      courierId: state.selectedCourier.id,
+      companyId: state.selectedCompany.id,
+      createdAt: DateTime.now().toUtc().toString(),
+      deliveredAt: '',
+      isAccepted: false,
       price: 0.0,
-      isFragile: state.isFragile,
-      paymentMethod: state.selectedPaymentMethod,
-      pickupLocation: state.pickupLocation ?? Coordinates(0.0, 0.0),
-      dropoffLocation: state.dropoffLocation ?? Coordinates(0.0, 0.0),
+      deliveryType: state.selectedDeliveryType,
+      pickupLocation: LocationInfo(
+        location: state.pickupLocation ?? Coordinates(0, 0),
+        address: pickUpAddressController.text,
+        government: state.pickUpGovernorate.governmentEn,
+        city: state.pickUpCity.cityEn,
+      ),
+      dropoffLocation: LocationInfo(
+        location: state.dropoffLocation ?? Coordinates(0, 0),
+        address: dropOffAddressController.text,
+        government: state.dropOffGovernorate.governmentEn,
+        city: state.dropOffCity.cityEn,
+      ),
+      packageDetails: PackageDetails(
+        content: contentController.text,
+        notes: packageNotesController.text,
+        weight: double.parse(weightController.text),
+        isFragile: state.isFragile,
+      ),
+      receiverInfo: ReveiverInfo(
+        name: recieverNameController.text,
+        phone: recieverPhoneNumberController.text,
+        email: recieverEmailController.text,
+      ),
+      paymentDetails: PaymentDetails(
+        id: '123',
+        paymentMethod: state.selectedPaymentMethod,
+        status: PaymentStatus.pending.firebaseValue,
+      ),
     );
   }
 
@@ -119,12 +158,12 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
         return;
       }
     } else if (state.currentPageIndex == 2) {
+      if (!pickupInfoFormKey.currentState!.validate()) return;
       if (state.pickupLocation == null) {
         CustomSnackBar.top(
           msg: LocaleKeys.pleasePickYourPickupLocation,
           color: ColorHelper.red,
         );
-
         return;
       }
       if (state.pickUpGovernorate.governmentEn == '' ||
@@ -136,6 +175,7 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
         return;
       }
     } else if (state.currentPageIndex == 3) {
+      if (!dropoffInfoFormKey.currentState!.validate()) return;
       if (state.dropoffLocation == null) {
         CustomSnackBar.top(
           msg: LocaleKeys.pleasePickYourDeliveryLocation,
@@ -152,10 +192,19 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
         return;
       }
     } else if (state.currentPageIndex == 4) {
-      if (state.selectedPaymentMethod == Payment.visa) {
-        if (!paymentInfoFormKey.currentState!.validate()) {
-          return;
-        }
+      if (state.selectedCompany.name == '') {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleaseSelectCompanyFirst,
+          color: ColorHelper.red,
+        );
+        return;
+      }
+      if (state.selectedCourier.name == '') {
+        CustomSnackBar.top(
+          msg: LocaleKeys.pleaseSelectCourier,
+          color: ColorHelper.red,
+        );
+        return;
       }
     } else if (state.currentPageIndex == 5) {
       if (state.selectedPaymentMethod == Payment.visa) {
@@ -194,6 +243,23 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
 
   Future<void> _fetchCompanies() async {
     emit(state.copyWith(status: StateStatus.loading));
+    final result = await getCompaniesUsecase.call();
+    result.fold(
+      (failure) => emit(state.copyWith(errorMessage: failure.message)),
+      (companies) => emit(
+        state.copyWith(companies: companies, status: StateStatus.success),
+      ),
+    );
+  }
+
+  Future<void> _fetchCouriers() async {
+    emit(state.copyWith(status: StateStatus.loading));
+    final result = await getAllCouriersUsecase.call(state.selectedCompany.id);
+    result.fold(
+      (failure) => emit(state.copyWith(errorMessage: failure.message)),
+      (couriers) =>
+          emit(state.copyWith(couriers: couriers, status: StateStatus.success)),
+    );
   }
 
   Future<void> addPackage() async {
@@ -234,6 +300,13 @@ class AddPackageCubit extends Cubit<AddPackageState> with AddPackageMixin {
         pickupLocation: null,
         dropoffLocation: null,
         selectedPaymentMethod: Payment.cash,
+        selectedDeliveryType: DeliveryType.regular,
+        pickUpCity: Cities.initial(),
+        pickUpGovernorate: GovernmentsData.initial(),
+        dropOffCity: Cities.initial(),
+        dropOffGovernorate: GovernmentsData.initial(),
+        selectedCompany: null,
+        selectedCourier: null,
       ),
     );
   }
