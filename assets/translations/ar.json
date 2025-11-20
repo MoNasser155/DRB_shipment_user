@@ -167,6 +167,7 @@
   "select_company_first": "اختر الشركة اولا",
   "notes": "ملاحظات",
   "optional": "اختياري",
+  "delivery_type": "نوع التوصيل",
   "please_select_company_first": "الرجاء اختيار الشركة اولا",
   "please_select_courier": "الرجاء اختيار المندوب",
   "please_enter_your_card_number": "الرجاء ادخال رقم البطاقة",

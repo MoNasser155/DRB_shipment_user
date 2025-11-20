@@ -505,6 +505,9 @@ abstract class LocaleKeys {
   static const String _optional = 'optional';
   static String get optional => _optional.tr();
 
+  static const String _deliveryType = 'delivery_type';
+  static String get deliveryType => _deliveryType.tr();
+
   static const String _pleaseSelectCompanyFirst = 'please_select_company_first';
   static String get pleaseSelectCompanyFirst => _pleaseSelectCompanyFirst.tr();
 

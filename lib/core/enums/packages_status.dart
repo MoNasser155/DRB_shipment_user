@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../color_helper.dart';
 
 enum PackagesStatus {
+  pending,
   inProgress,
-  completed,
-  pending;
+  completed;
 
   String get firebaseValue {
     switch (this) {

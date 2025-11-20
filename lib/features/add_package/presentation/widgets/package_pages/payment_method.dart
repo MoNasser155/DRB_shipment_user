@@ -1,6 +1,8 @@
 import 'package:drb_shipment_user/core/enums/payment.dart';
+import 'package:drb_shipment_user/core/widgets/expanded_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/enums/delivery_type.dart';
 import '../../../../../core/languages/local_keys.g.dart';
 import '../../../../../core/themes/text_theme.dart';
 import '../../cubits/cubit/add_package_cubit.dart';
@@ -32,6 +34,15 @@ class PaymentMethod extends StatelessWidget {
               ...List.generate(Payment.values.length, (index) {
                 return PaymentTypeCardItem(index: index);
               }),
+              ExpandedDropdown(
+                hint: LocaleKeys.deliveryType,
+                items: DeliveryType.values,
+                itemLabelBuilder: (item) => item.name,
+                onChanged: (value) {
+                  cubit.setDeliveryType(value!);
+                },
+                selectedValue: state.selectedDeliveryType.name,
+              ),
               VisaInfoItem(),
             ],
           ),
