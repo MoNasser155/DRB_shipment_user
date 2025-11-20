@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../color_helper.dart';
 
 class CustomToggle extends StatefulWidget {

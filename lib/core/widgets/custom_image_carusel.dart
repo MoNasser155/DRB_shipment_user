@@ -218,9 +218,15 @@ class CustomCaruselContent extends StatelessWidget {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(widget.title[index], style: AppTextTheme.text28W700White),
-                Gap(SpacingHelper.kVertical8),
+                Text(
+                  widget.title[index],
+                  style: AppTextTheme.text28W700White,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Gap(SpacingHelper.kVertical4),
                 Text(
                   widget.subtitle[index],
                   style: AppTextTheme.text20W600grey100,

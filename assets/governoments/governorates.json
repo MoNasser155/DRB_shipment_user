@@ -1,0 +1,590 @@
+{
+  "data":[
+  {
+    "governorateNameEn": "Cairo",
+    "governorateNameAr": "القاهرة",
+    "citiesName": [
+      {
+        "arabic": "وسط القاهرة",
+        "english": "Downtown Cairo"
+      },
+      {
+        "arabic": "مدينة نصر",
+        "english": "Nasr City"
+      },
+      {
+        "arabic": "المعادي",
+        "english": "Maadi"
+      },
+      {
+        "arabic": "مصر الجديدة",
+        "english": "Heliopolis"
+      },
+      {
+        "arabic": "الزمالك",
+        "english": "Zamalek"
+      },
+      {
+        "arabic": "شبرا الخيمه",
+        "english": "Shubra El Kheima"
+      },
+      {
+        "arabic": "مدينة السادس من أكتوبر",
+        "english": "6th of October City"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Alexandria",
+    "governorateNameAr": "الإسكندرية",
+    "citiesName": [
+      {
+        "arabic": "المنتزه",
+        "english": "Montaza"
+      },
+      {
+        "arabic": "سموحة",
+        "english": "Smouha"
+      },
+      {
+        "arabic": "ميامي",
+        "english": "Miami"
+      },
+      {
+        "arabic": "سيدي جابر",
+        "english": "Sidi Gaber"
+      },
+      {
+        "arabic": "ستانلي",
+        "english": "Stanley"
+      },
+      {
+        "arabic": "الرمل",
+        "english": "El Raml"
+      },
+      {
+        "arabic": "بحري",
+        "english": "Bahary"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Giza",
+    "governorateNameAr": "الجيزة",
+    "citiesName": [
+      {
+        "arabic": "الهرم",
+        "english": "Haram"
+      },
+      {
+        "arabic": "الدقي",
+        "english": "Dokki"
+      },
+      {
+        "arabic": "فيصل",
+        "english": "Faisal"
+      },
+      {
+        "arabic": "إمبابة",
+        "english": "Imbaba"
+      },
+      {
+        "arabic": "العجوزة",
+        "english": "Agouza"
+      },
+      {
+        "arabic": "مدينة الشيخ زايد",
+        "english": "Sheikh Zayed City"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Luxor",
+    "governorateNameAr": "الأقصر",
+    "citiesName": [
+      {
+        "arabic": "مدينة الأقصر",
+        "english": "Luxor City"
+      },
+      {
+        "arabic": "الكرنك",
+        "english": "Karnak"
+      },
+      {
+        "arabic": "إسنا",
+        "english": "Esna"
+      },
+      {
+        "arabic": "أرمنت",
+        "english": "Armant"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Aswan",
+    "governorateNameAr": "أسوان",
+    "citiesName": [
+      {
+        "arabic": "مدينة أسوان",
+        "english": "Aswan City"
+      },
+      {
+        "arabic": "أبو سمبل",
+        "english": "Abu Simbel"
+      },
+      {
+        "arabic": "كوم أمبو",
+        "english": "Kom Ombo"
+      },
+      {
+        "arabic": "إدفو",
+        "english": "Edfu"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Port Said",
+    "governorateNameAr": "بورسعيد",
+    "citiesName": [
+      {
+        "arabic": "بور فؤاد",
+        "english": "Port Fouad"
+      },
+      {
+        "arabic": "حي الزهور",
+        "english": "Al Zohour District"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Suez",
+    "governorateNameAr": "السويس",
+    "citiesName": [
+      {
+        "arabic": "مدينة السويس",
+        "english": "Suez City"
+      },
+      {
+        "arabic": "حي الأربعين",
+        "english": "Al Arbaeen District"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Damietta",
+    "governorateNameAr": "دمياط",
+    "citiesName": [
+      {
+        "arabic": "مدينة دمياط",
+        "english": "Damietta City"
+      },
+      {
+        "arabic": "رأس البر",
+        "english": "Ras El Bar"
+      },
+      {
+        "arabic": "كفر سعد",
+        "english": "Kafr Saad"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Dakahlia",
+    "governorateNameAr": "الدقهلية",
+    "citiesName": [
+      {
+        "arabic": "المنصورة",
+        "english": "Mansoura"
+      },
+      {
+        "arabic": "طلخا",
+        "english": "Talkha"
+      },
+      {
+        "arabic": "ميت غمر",
+        "english": "Mit Ghamr"
+      },
+      {
+        "arabic": "بلقاس",
+        "english": "Belqas"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Sharqia",
+    "governorateNameAr": "الشرقية",
+    "citiesName": [
+      {
+        "arabic": "الزقازيق",
+        "english": "Zagazig"
+      },
+      {
+        "arabic": "بلبيس",
+        "english": "Belbeis"
+      },
+      {
+        "arabic": "أبو حماد",
+        "english": "Abu Hammad"
+      },
+      {
+        "arabic": "منيا القمح",
+        "english": "Minya Al Qamh"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Qalyubia",
+    "governorateNameAr": "القليوبية",
+    "citiesName": [
+      {
+        "arabic": "بنها",
+        "english": "Banha"
+      },
+      {
+        "arabic": "شبرا الخيمة",
+        "english": "Shubra El Kheima"
+      },
+      {
+        "arabic": "قليوب",
+        "english": "Qalyub"
+      },
+      {
+        "arabic": "الخانكة",
+        "english": "Khanka"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Kafr El Sheikh",
+    "governorateNameAr": "كفر الشيخ",
+    "citiesName": [
+      {
+        "arabic": "مدينة كفر الشيخ",
+        "english": "Kafr El Sheikh City"
+      },
+      {
+        "arabic": "دسوق",
+        "english": "Desouk"
+      },
+      {
+        "arabic": "فوة",
+        "english": "Fuwwah"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Gharbia",
+    "governorateNameAr": "الغربية",
+    "citiesName": [
+      {
+        "arabic": "طنطا",
+        "english": "Tanta"
+      },
+      {
+        "arabic": "المحلة الكبرى",
+        "english": "El Mahalla El Kubra"
+      },
+      {
+        "arabic": "زفتى",
+        "english": "Zifta"
+      },
+      {
+        "arabic": "كفر الزيات",
+        "english": "Kafr El Zayat"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Monufia",
+    "governorateNameAr": "المنوفية",
+    "citiesName": [
+      {
+        "arabic": "شبين الكوم",
+        "english": "Shibin El Kom"
+      },
+      {
+        "arabic": "منوف",
+        "english": "Menouf"
+      },
+      {
+        "arabic": "مدينة السادات",
+        "english": "Sadat City"
+      },
+      {
+        "arabic": "تلا",
+        "english": "Tala"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Beheira",
+    "governorateNameAr": "البحيرة",
+    "citiesName": [
+      {
+        "arabic": "دمنهور",
+        "english": "Damanhur"
+      },
+      {
+        "arabic": "كفر الدوار",
+        "english": "Kafr El Dawwar"
+      },
+      {
+        "arabic": "رشيد",
+        "english": "Rosetta"
+      },
+      {
+        "arabic": "أبو المطامير",
+        "english": "Abu El Matamir"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Ismailia",
+    "governorateNameAr": "الإسماعيلية",
+    "citiesName": [
+      {
+        "arabic": "مدينة الإسماعيلية",
+        "english": "Ismailia City"
+      },
+      {
+        "arabic": "فايد",
+        "english": "Fayed"
+      },
+      {
+        "arabic": "أبو صوير",
+        "english": "Abu Suwir"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "North Sinai",
+    "governorateNameAr": "شمال سيناء",
+    "citiesName": [
+      {
+        "arabic": "العريش",
+        "english": "Arish"
+      },
+      {
+        "arabic": "الشيخ زويد",
+        "english": "Sheikh Zuweid"
+      },
+      {
+        "arabic": "رفح",
+        "english": "Rafah"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "South Sinai",
+    "governorateNameAr": "جنوب سيناء",
+    "citiesName": [
+      {
+        "arabic": "شرم الشيخ",
+        "english": "Sharm El Sheikh"
+      },
+      {
+        "arabic": "دهب",
+        "english": "Dahab"
+      },
+      {
+        "arabic": "سانت كاترين",
+        "english": "Saint Catherine"
+      },
+      {
+        "arabic": "طابا",
+        "english": "Taba"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Red Sea",
+    "governorateNameAr": "البحر الأحمر",
+    "citiesName": [
+      {
+        "arabic": "الغردقة",
+        "english": "Hurghada"
+      },
+      {
+        "arabic": "الجونة",
+        "english": "El Gouna"
+      },
+      {
+        "arabic": "سفاجا",
+        "english": "Safaga"
+      },
+      {
+        "arabic": "مرسى علم",
+        "english": "Marsa Alam"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Matrouh",
+    "governorateNameAr": "مطروح",
+    "citiesName": [
+      {
+        "arabic": "مرسى مطروح",
+        "english": "Marsa Matrouh"
+      },
+      {
+        "arabic": "العلمين",
+        "english": "El Alamein"
+      },
+      {
+        "arabic": "واحة سيوة",
+        "english": "Siwa Oasis"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "New Valley",
+    "governorateNameAr": "الوادي الجديد",
+    "citiesName": [
+      {
+        "arabic": "الخارجة",
+        "english": "Kharga"
+      },
+      {
+        "arabic": "الداخلة",
+        "english": "Dakhla"
+      },
+      {
+        "arabic": "الفرافرة",
+        "english": "Farafra"
+      },
+      {
+        "arabic": "باريس",
+        "english": "Baris"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Faiyum",
+    "governorateNameAr": "الفيوم",
+    "citiesName": [
+      {
+        "arabic": "مدينة الفيوم",
+        "english": "Faiyum City"
+      },
+      {
+        "arabic": "سنورس",
+        "english": "Sinnuris"
+      },
+      {
+        "arabic": "إبشواي",
+        "english": "Ibsheway"
+      },
+      {
+        "arabic": "طامية",
+        "english": "Tamiya"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Beni Suef",
+    "governorateNameAr": "بني سويف",
+    "citiesName": [
+      {
+        "arabic": "مدينة بني سويف",
+        "english": "Beni Suef City"
+      },
+      {
+        "arabic": "الواسطى",
+        "english": "Al Wasta"
+      },
+      {
+        "arabic": "ناصر",
+        "english": "Nasser"
+      },
+      {
+        "arabic": "ببا",
+        "english": "Biba"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Minya",
+    "governorateNameAr": "المنيا",
+    "citiesName": [
+      {
+        "arabic": "مدينة المنيا",
+        "english": "Minya City"
+      },
+      {
+        "arabic": "ملوي",
+        "english": "Mallawi"
+      },
+      {
+        "arabic": "بني مزار",
+        "english": "Beni Mazar"
+      },
+      {
+        "arabic": "مغاغة",
+        "english": "Maghagha"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Asyut",
+    "governorateNameAr": "أسيوط",
+    "citiesName": [
+      {
+        "arabic": "مدينة أسيوط",
+        "english": "Asyut City"
+      },
+      {
+        "arabic": "أبو تيج",
+        "english": "Abu Tig"
+      },
+      {
+        "arabic": "القوصية",
+        "english": "El Qusiya"
+      },
+      {
+        "arabic": "البداري",
+        "english": "El Badari"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Sohag",
+    "governorateNameAr": "سوهاج",
+    "citiesName": [
+      {
+        "arabic": "مدينة سوهاج",
+        "english": "Sohag City"
+      },
+      {
+        "arabic": "أخميم",
+        "english": "Akhmim"
+      },
+      {
+        "arabic": "البلينا",
+        "english": "El Balyana"
+      },
+      {
+        "arabic": "جرجا",
+        "english": "Girga"
+      }
+    ]
+  },
+  {
+    "governorateNameEn": "Qena",
+    "governorateNameAr": "قنا",
+    "citiesName": [
+      {
+        "arabic": "مدينة قنا",
+        "english": "Qena City"
+      },
+      {
+        "arabic": "نجع حمادي",
+        "english": "Nag Hammadi"
+      },
+      {
+        "arabic": "إسنا",
+        "english": "Esna"
+      }
+    ]
+  }
+]
+}

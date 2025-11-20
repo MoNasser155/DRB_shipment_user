@@ -127,6 +127,9 @@ abstract class LocaleKeys {
   static const String _and = 'and';
   static String get and => _and.tr();
 
+  static const String _select = 'select';
+  static String get select => _select.tr();
+
   static const String _privacyPolicy = 'privacy_policy';
   static String get privacyPolicy => _privacyPolicy.tr();
 
@@ -478,6 +481,36 @@ abstract class LocaleKeys {
   static const String _sHIPIFY = 's_h_i_p_i_f_y';
   static String get sHIPIFY => _sHIPIFY.tr();
 
+  static const String _regularDelivery = 'regular_delivery';
+  static String get regularDelivery => _regularDelivery.tr();
+
+  static const String _expressDelivery = 'express_delivery';
+  static String get expressDelivery => _expressDelivery.tr();
+
+  static const String _pending = 'pending';
+  static String get pending => _pending.tr();
+
+  static const String _pickupAddress = 'pickup_address';
+  static String get pickupAddress => _pickupAddress.tr();
+
+  static const String _deliveryAddress = 'delivery_address';
+  static String get deliveryAddress => _deliveryAddress.tr();
+
+  static const String _selectCompanyFirst = 'select_company_first';
+  static String get selectCompanyFirst => _selectCompanyFirst.tr();
+
+  static const String _notes = 'notes';
+  static String get notes => _notes.tr();
+
+  static const String _optional = 'optional';
+  static String get optional => _optional.tr();
+
+  static const String _pleaseSelectCompanyFirst = 'please_select_company_first';
+  static String get pleaseSelectCompanyFirst => _pleaseSelectCompanyFirst.tr();
+
+  static const String _pleaseSelectCourier = 'please_select_courier';
+  static String get pleaseSelectCourier => _pleaseSelectCourier.tr();
+
   static const String _pleaseEnterYourCardNumber = 'please_enter_your_card_number';
   static String get pleaseEnterYourCardNumber => _pleaseEnterYourCardNumber.tr();
 
@@ -492,6 +525,12 @@ abstract class LocaleKeys {
 
   static const String _pleaseAcceptTermsAndConditions = 'please_accept_terms_and_conditions';
   static String get pleaseAcceptTermsAndConditions => _pleaseAcceptTermsAndConditions.tr();
+
+  static const String _pleaseSelectGovernmentFirst = 'please_select_government_first';
+  static String get pleaseSelectGovernmentFirst => _pleaseSelectGovernmentFirst.tr();
+
+  static const String _pleaseSelectGovernmentAndCity = 'please_select_government_and_city';
+  static String get pleaseSelectGovernmentAndCity => _pleaseSelectGovernmentAndCity.tr();
 
   static const String _pT1 = 'p_t_1';
   static String get pT1 => _pT1.tr();
@@ -744,5 +783,14 @@ abstract class LocaleKeys {
 
   static const String _fAQ = 'f_a_q';
   static String get fAQ => _fAQ.tr();
+
+  static const String _ask = 'ask';
+  static String get ask => _ask.tr();
+
+  static const String _splashKey = 'splash_key';
+  static String get splashKey => _splashKey.tr();
+
+  static const String _resetPasswordEmailHasBeenSentSuccessfully = 'reset_password_email_has_been_sent_successfully';
+  static String get resetPasswordEmailHasBeenSentSuccessfully => _resetPasswordEmailHasBeenSentSuccessfully.tr();
 
 }

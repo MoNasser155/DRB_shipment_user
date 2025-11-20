@@ -66,7 +66,7 @@ class PackageDetailsCourierSection extends StatelessWidget {
                         radius: 24.r,
                         width: 56,
                         height: 56,
-                        imageUrl: courier.image,
+                        imageUrl: courier.imageUrl,
                       ),
                       Gap(SpacingHelper.horizontal8),
                       Column(

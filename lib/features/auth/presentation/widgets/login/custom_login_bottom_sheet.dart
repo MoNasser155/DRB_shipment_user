@@ -46,7 +46,7 @@ class CustomLoginBottomSheet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      '${LocaleKeys.dontHaveAnAccount}${Constants.question} ',
+                      '${LocaleKeys.dontHaveAnAccount}${Constants.questionMark} ',
                       style: AppTextTheme.nonlineText14White,
                     ),
                     TextButton(

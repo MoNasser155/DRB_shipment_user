@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "249547916455",
-    "project_id": "drb-shipment-training",
-    "storage_bucket": "drb-shipment-training.firebasestorage.app"
+    "project_number": "433288976185",
+    "project_id": "drb-group-project",
+    "storage_bucket": "drb-group-project.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:249547916455:android:40972fde40703d0d7dc782",
+        "mobilesdk_app_id": "1:433288976185:android:8266d25a9c05e6b33afae8",
+        "android_client_info": {
+          "package_name": "com.example.courier_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz3WneitnaABQAuepvvDLy-_zxz-gLiRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433288976185:android:dcd7a48afa42dc123afae8",
         "android_client_info": {
           "package_name": "com.example.drb_shipment_user"
         }
@@ -15,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD70OTr_Yz5aAHRufPxgAwE25mdQ7vPt1I"
+          "current_key": "AIzaSyBz3WneitnaABQAuepvvDLy-_zxz-gLiRk"
         }
       ],
       "services": {

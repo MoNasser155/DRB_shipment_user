@@ -54,6 +54,17 @@ class PckageInfo extends StatelessWidget {
                   return Validations.validateEmpty(val);
                 },
               ),
+              TextFieldWithLabel(
+                label: LocaleKeys.notes,
+                hint: LocaleKeys.optional,
+                scrollPhysics: const AlwaysScrollableScrollPhysics(
+                  parent: BouncingScrollPhysics(),
+                ),
+                minLines: 1,
+                maxLines: 5,
+                controller: cubit.packageNotesController,
+                inputType: const TextInputType.numberWithOptions(decimal: true),
+              ),
               Text(LocaleKeys.fragile, style: AppTextTheme.text10W500grey300),
               Row(
                 children: [

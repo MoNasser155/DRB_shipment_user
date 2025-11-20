@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:drb_shipment_user/features/user_account/data/models/faq_model.dart';
-
-import '../../../../core/error/exceptions.dart';
+import '../../../../core/constants.dart';
 import '../../../auth/domain/entities/user_entity.dart';
+import '../models/faq_model.dart';
 
 abstract class UserAccountDataSource {
   Future<void> updateUserProfile(UserEntity user);
@@ -16,11 +15,8 @@ class UserAccountDataSourceImpl implements UserAccountDataSource {
 
   @override
   Future<List<FaqModel>> getFaqs() async {
-    try {
-      final faqList = await _firestore.collection('faqs').get();
+      final faqList = await _firestore.collection(Collections.faqs).get();
       return faqList.docs.map((e) => FaqModel.fromJson(e.data())).toList();
-    } catch (e) {
-      throw CustomException(message: e.toString());
-    }
+   
   }
 }

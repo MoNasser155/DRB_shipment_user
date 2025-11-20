@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/constants.dart';
-import '../../../../core/error/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../../data/models/login_params.dart';
 import '../entities/user_entity.dart';
 import '../repos/auth_repository.dart';
@@ -12,6 +12,6 @@ class LoginUsecase {
   Future<Either<Failure, UserEntity>> call({
     required LoginParams params,
   }) async {
-    return _repository.login(params: params);
+    return await _repository.login(params: params);
   }
 }

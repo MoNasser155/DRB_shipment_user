@@ -6,7 +6,7 @@ import '../color_helper.dart';
 enum PackagesStatus {
   inProgress,
   completed,
-  canceled;
+  pending;
 
   String get firebaseValue {
     switch (this) {
@@ -14,8 +14,8 @@ enum PackagesStatus {
         return 'inProgress';
       case PackagesStatus.completed:
         return 'completed';
-      case PackagesStatus.canceled:
-        return 'canceled';
+      case PackagesStatus.pending:
+        return 'pending';
     }
   }
 
@@ -25,21 +25,21 @@ enum PackagesStatus {
         return LocaleKeys.inProgress;
       case PackagesStatus.completed:
         return LocaleKeys.completed;
-      case PackagesStatus.canceled:
-        return LocaleKeys.canceled;
+      case PackagesStatus.pending:
+        return LocaleKeys.pending;
     }
   }
 
-  static String setPackageStatusTitle(String title) {
+  static PackagesStatus fromFirebaseValue(String title) {
     switch (title) {
       case 'inProgress':
-        return PackagesStatus.inProgress.title;
+        return PackagesStatus.inProgress;
       case 'completed':
-        return PackagesStatus.completed.title;
-      case 'canceled':
-        return PackagesStatus.canceled.title;
+        return PackagesStatus.completed;
+      case 'pending':
+        return PackagesStatus.pending;
     }
-    return '';
+    return PackagesStatus.inProgress;
   }
 
   Color get color {
@@ -48,8 +48,8 @@ enum PackagesStatus {
         return ColorHelper.yellow;
       case PackagesStatus.completed:
         return ColorHelper.primaryGreen;
-      case PackagesStatus.canceled:
-        return ColorHelper.red;
+      case PackagesStatus.pending:
+        return ColorHelper.grey500;
     }
   }
 }

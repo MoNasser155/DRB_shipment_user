@@ -1,5 +1,3 @@
-
-
 import 'package:drb_shipment_user/core/constants.dart';
 import 'package:drb_shipment_user/features/home/data/models/ads_banner_model.dart';
 import 'package:drb_shipment_user/features/home/domain/use_cases/get_home_packages.dart';
@@ -27,8 +25,8 @@ class HomeCubit extends Cubit<HomeState> {
     setUserData(user);
     await Future.wait([
       _fetchAds(),
-      _fetchHomePackages(user.uId!),
-      _fetchHomeCouriersCompany(),
+      _fetchHomePackages(user.id!),
+      _fetchHomeCompanies(),
     ]);
     emit(state.copyWith(status: StateStatus.success));
   }
@@ -68,7 +66,7 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  Future<void> _fetchHomeCouriersCompany() async {
+  Future<void> _fetchHomeCompanies() async {
     emit(state.copyWith(status: StateStatus.loading));
     final result = await _getHomeCouriersCompanyUsecase.call();
     result.fold(

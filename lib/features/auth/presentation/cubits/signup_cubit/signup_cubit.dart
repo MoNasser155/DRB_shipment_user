@@ -22,6 +22,8 @@ class SignupCubit extends Cubit<SignupState> {
   final _signupUsecase = sl<SignupUsecase>();
 
   final TextEditingController userNameController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -36,6 +38,9 @@ class SignupCubit extends Cubit<SignupState> {
       email: emailController.text,
       phoneNumber: phoneController.text,
       password: passwordController.text,
+      imageUrl: '',
+      firstName: firstNameController.text,
+      lastName: lastNameController.text,
     );
   }
 
@@ -68,6 +73,7 @@ class SignupCubit extends Cubit<SignupState> {
 
     result.fold(
       (failure) {
+        CustomSnackBar.top(msg: failure.message);
         emit(
           state.copyWith(
             status: StateStatus.error,
@@ -85,6 +91,8 @@ class SignupCubit extends Cubit<SignupState> {
   @override
   Future<void> close() {
     userNameController.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
     emailController.dispose();
     phoneController.dispose();
     passwordController.dispose();

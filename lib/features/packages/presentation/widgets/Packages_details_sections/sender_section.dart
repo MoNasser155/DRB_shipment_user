@@ -33,7 +33,7 @@ class PackageDetailsSenderSection extends StatelessWidget {
                 PackageDetailsRow(
                   icon: Icons.phone_android,
                   title: LocaleKeys.phoneNumber,
-                  data: state.user.phoneNumber,
+                  data: state.user.phone,
                 ),
                 Gap(SpacingHelper.kVertical4),
 

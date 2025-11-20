@@ -20,6 +20,33 @@ class SignupInfoContainers extends StatelessWidget {
           child: Column(
             spacing: SpacingHelper.kVertical8,
             children: [
+              Row(
+                spacing: SpacingHelper.horizontal8,
+                children: [
+                  Expanded(
+                    child: TextFieldWithLabel(
+                      label: LocaleKeys.firstName,
+                      removeInit: true,
+                      hint: LocaleKeys.firstName,
+                      controller: cubit.firstNameController,
+                      validate: (val) {
+                        return Validations.validateEmpty(val);
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: TextFieldWithLabel(
+                      label: LocaleKeys.lastName,
+                      removeInit: true,
+                      hint: LocaleKeys.lastName,
+                      controller: cubit.lastNameController,
+                      validate: (val) {
+                        return Validations.validateEmpty(val);
+                      },
+                    ),
+                  ),
+                ],
+              ),
               TextFieldWithLabel(
                 label: LocaleKeys.email,
                 removeInit: true,

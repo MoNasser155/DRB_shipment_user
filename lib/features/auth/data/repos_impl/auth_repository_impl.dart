@@ -1,34 +1,29 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:drb_shipment_user/core/constants.dart';
-import 'package:drb_shipment_user/core/error/failures.dart';
-import 'package:drb_shipment_user/core/utils/cashe_storage.dart';
 import 'package:drb_shipment_user/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:drb_shipment_user/features/auth/data/models/login_params.dart';
 import 'package:drb_shipment_user/features/auth/data/models/signup_params.dart';
 import 'package:drb_shipment_user/features/auth/domain/entities/user_entity.dart';
-import '../../../../core/error/exceptions.dart';
-import '../../../../core/languages/local_keys.g.dart';
+import '../../../../core/errors/failures.dart';
+import '../../../../core/errors/firebase_failuer.dart';
 import '../../domain/repos/auth_repository.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   final _authDataSource = sl<AuthDataSource>();
+
   @override
   Future<Either<Failure, UserEntity>> login({
     required LoginParams params,
   }) async {
     try {
-      var user = await _authDataSource.login(params: params);
-      final userEntity = UserEntity(
-        uId: user.uid,
-        usreName: user.displayName ?? '',
-        email: user.email ?? '',
-        phoneNumber: user.phoneNumber ?? '',
-      );
-      return Right(userEntity);
-    } on CustomException catch (e) {
-      return Left(ServerFailure(e.message));
-    } catch (e) {
-      return Left(ServerFailure(LocaleKeys.anErrorHasOccurred));
+      final user = await _authDataSource.login(params: params);
+      log(user.toMap().toString());
+      return Right(user);
+    } catch (e, stack) {
+      log(e.toString());
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 
@@ -37,24 +32,37 @@ class AuthRepositoryImpl extends AuthRepository {
     required SignupParams params,
   }) async {
     try {
-      var user = await _authDataSource.signup(params: params);
-      final userEntity = UserEntity(
-        uId: user.uid,
-        usreName: params.username,
-        email: params.email,
-        phoneNumber: params.phoneNumber,
+      final user = await _authDataSource.signUp(params: params);
+      return Right(
+        UserEntity(
+          id: user.uid,
+          usreName: params.username,
+          email: params.email,
+          phone: params.phoneNumber,
+          fcmToken: 'fcmToken',
+          imageUrl: params.imageUrl,
+          name: '${params.firstName} ${params.lastName}',
+        ),
       );
-      await _authDataSource.addUser(user: userEntity);
-      return Right(userEntity);
-    } on CustomException catch (e) {
-      return Left(ServerFailure(e.message));
-    } catch (e) {
-      return Left(ServerFailure(LocaleKeys.anErrorHasOccurred));
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
     }
   }
 
   @override
-  Future<UserEntity> getUserFromStorage() async {
-    return await CacheStorage.read(Constants.userKey);
+  Future<Either<Failure, void>> sendPasswordResetEmail({
+    required String email,
+  }) async {
+    try {
+      await _authDataSource.sendPasswordResetEmail(email: email);
+      return const Right(null);
+    } catch (e, stack) {
+      return Left(FirebaseFailure.from(e, stack));
+    }
+  }
+
+  @override
+  UserEntity? getUserFromStorage() {
+    return _authDataSource.getCurrentUser();
   }
 }
