@@ -10,7 +10,7 @@ import 'presentation/cubits/login_cubit/login_cubit.dart';
 import 'presentation/cubits/reset_password_cubit/reset_password_cubit.dart';
 import 'presentation/cubits/signup_cubit/signup_cubit.dart';
 
-initAuthDebendencies() {
+initAuthDI() {
   //data sources
   sl.registerLazySingleton<AuthDataSource>(() => AuthDataSourceImpl());
 

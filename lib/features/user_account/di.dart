@@ -7,7 +7,7 @@ import 'domain/repo/user_account_repository.dart';
 import 'domain/usecases/get_faqs_usecase.dart';
 import 'presentation/cubits/edit_profile/edit_profile_cubit.dart';
 
-initUserAccountDebendencies() {
+initUserAccountDI() {
   //data sources
   sl.registerLazySingleton<UserAccountDataSource>(
     () => UserAccountDataSourceImpl(),

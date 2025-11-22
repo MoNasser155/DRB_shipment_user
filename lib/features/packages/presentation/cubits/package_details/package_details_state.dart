@@ -11,6 +11,9 @@ class PackageDetailsState extends Equatable {
   final Set<Polyline> polylines;
   final Set<Marker> markers;
 
+  final double rating;
+  final ReviewModel review;
+
   const PackageDetailsState({
     required this.status,
     required this.user,
@@ -21,6 +24,8 @@ class PackageDetailsState extends Equatable {
     this.cameraPosition,
     required this.polylines,
     required this.markers,
+    required this.rating,
+    required this.review,
   });
 
   factory PackageDetailsState.initial() => PackageDetailsState(
@@ -33,6 +38,8 @@ class PackageDetailsState extends Equatable {
     cameraPosition: null,
     polylines: const {},
     markers: const {},
+    rating: 0,
+    review: ReviewModel.skeleton(),
   );
 
   PackageDetailsState copyWith({
@@ -45,6 +52,8 @@ class PackageDetailsState extends Equatable {
     CameraPosition? cameraPosition,
     Set<Polyline>? polylines,
     Set<Marker>? markers,
+    double? rating,
+    ReviewModel? review,
   }) {
     return PackageDetailsState(
       status: status ?? this.status,
@@ -56,6 +65,8 @@ class PackageDetailsState extends Equatable {
       cameraPosition: cameraPosition ?? this.cameraPosition,
       polylines: polylines ?? this.polylines,
       markers: markers ?? this.markers,
+      rating: rating ?? this.rating,
+      review: review ?? this.review,
     );
   }
 
@@ -66,9 +77,11 @@ class PackageDetailsState extends Equatable {
     courier,
     company,
     packagesModel,
-    errorMessage,
     cameraPosition,
     polylines,
     markers,
+    errorMessage,
+    rating,
+    '=========================${packagesModel.reviewId}',
   ];
 }

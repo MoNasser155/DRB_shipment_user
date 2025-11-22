@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import '../../../../core/color_helper.dart';
 import '../../../../core/helpers/redius_helper.dart';
@@ -11,6 +12,7 @@ class VehicleInfoCard extends StatelessWidget {
   final CourierModel couriersModel;
   @override
   Widget build(BuildContext context) {
+    log(couriersModel.vehicleType.toString());
     return SliverToBoxAdapter(
       child: Padding(
         padding: EdgeInsets.symmetric(

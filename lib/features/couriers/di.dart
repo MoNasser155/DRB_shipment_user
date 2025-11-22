@@ -6,7 +6,7 @@ import 'domain/use_cases/get_all_couriers_usecase.dart';
 import 'domain/use_cases/get_limited_couriers_usecase.dart';
 import 'presentation/cubits/couriers/couriers_cubit.dart';
 
-initCouriersDebendencies() {
+initCouriersDI() {
   //data sources
   sl.registerLazySingleton<CouriersDataSource>(() => CouriersDataSourceImpl());
 

@@ -1,6 +1,6 @@
 import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../../core/color_helper.dart';
@@ -8,9 +8,14 @@ import '../../../../../core/constants.dart';
 import '../../../../../core/enums/state_status.dart';
 import '../../../../../core/helpers/distance_calculator_helper.dart';
 import '../../../../../core/languages/local_keys.g.dart';
+import '../../../../../core/utils/navigator_helper.dart';
+import '../../../../../core/widgets/custom_snack_bar.dart';
 import '../../../../auth/domain/entities/user_entity.dart';
 import '../../../../companies/data/models/company_model.dart';
 import '../../../../couriers/data/models/courier_model.dart';
+import '../../../../reviews/data/models/review_model.dart';
+import '../../../../reviews/domain/usecases/add_review_usecase.dart';
+import '../../../../reviews/domain/usecases/get_review_usecase.dart';
 import '../../../data/models/packages_model.dart';
 import '../../../domain/use_cases/get_company_by_id_usecase.dart';
 import '../../../domain/use_cases/get_courier_by_id_usecase.dart';
@@ -26,8 +31,13 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
   final _getSenderByIdUsecase = sl<GetSenderByIdUsecase>();
   final _getCourierByIdUsecase = sl<GetCourierByIdUsecase>();
   final _getCompanyByIdUsecase = sl<GetCompanyByIdUsecase>();
+  final _addReviewUsecase = sl<AddReviewUsecase>();
+  final _getReviewUsecase = sl<GetReviewUsecase>();
 
   GoogleMapController? _mapController;
+
+  final TextEditingController reviewController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   Future<void> initPackageDetails(PackageModel packagesModel) async {
     emit(state.copyWith(status: StateStatus.loading));
@@ -38,6 +48,9 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
       _fetchSenderById(packagesModel.senderId),
       _fetchCompanyById(packagesModel.companyId),
       _fetchCourierById(packagesModel.courierId),
+      if (state.packagesModel.reviewId != null ||
+          state.packagesModel.reviewId != '')
+        getReviews(),
     ]);
     emit(state.copyWith(status: StateStatus.success));
   }
@@ -53,8 +66,10 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
   void _setCamerPosition(PackageModel packagesModel) {
     final pickup = packagesModel.pickupLocation;
     final dropoff = packagesModel.dropoffLocation;
-    final centerLat = (pickup.location.latitude + dropoff.location.latitude) / 2;
-    final centerLng = (pickup.location.longitude + dropoff.location.longitude) / 2;
+    final centerLat =
+        (pickup.location.latitude + dropoff.location.latitude) / 2;
+    final centerLng =
+        (pickup.location.longitude + dropoff.location.longitude) / 2;
     final cameraPosition = CameraPosition(
       target: LatLng(centerLat, centerLng),
       zoom: calculateZoom(),
@@ -138,9 +153,54 @@ class PackageDetailsCubit extends Cubit<PackageDetailsState> {
     );
   }
 
+  Future<void> getReviews() async {
+    emit(state.copyWith(status: StateStatus.loading));
+    final result = await _getReviewUsecase.call(
+      reviewId: state.packagesModel.reviewId ?? '',
+    );
+    result.fold((failure) => emit(state.copyWith(status: StateStatus.error)), (
+      reviews,
+    ) {
+      emit(state.copyWith(review: reviews, status: StateStatus.success));
+    });
+  }
+
+  void setRating(double rating) {
+    emit(state.copyWith(rating: rating));
+  }
+
+  ReviewModel setReviewData() {
+    return ReviewModel(
+      useId: state.user.id ?? '',
+      packageId: state.packagesModel.id ?? '',
+      createdAt: DateTime.now().toUtc().toString(),
+      courierId: state.courier.id,
+      rating: state.rating,
+      comment: reviewController.text,
+    );
+  }
+
+  Future<void> addReview() async {
+    if (!formKey.currentState!.validate()) return;
+    emit(state.copyWith(status: StateStatus.loading));
+    final result = await _addReviewUsecase.call(review: setReviewData());
+    result.fold((failure) => emit(state.copyWith(status: StateStatus.error)), (
+      _,
+    ) {
+      CustomSnackBar.top(
+        msg: LocaleKeys.reviewAddedSuccessfully,
+        color: Colors.green,
+      );
+      AppNavigator.pop();
+      reviewController.clear();
+      emit(state.copyWith(status: StateStatus.success, rating: 0));
+    });
+  }
+
   @override
   Future<void> close() {
     _mapController?.dispose();
+    reviewController.dispose();
     return super.close();
   }
 }

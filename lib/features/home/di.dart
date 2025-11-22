@@ -8,18 +8,18 @@ import 'domain/use_cases/get_home_couriers_company_usecase.dart';
 import 'domain/use_cases/get_home_packages.dart';
 import 'presentation/cubits/cubit/home_cubit.dart';
 
-initHomeDebendencies() {
+initHomeDI() {
   //data sources
-  sl.registerLazySingleton<HomeDataSource>(()=> HomeDataSourceImpl());
+  sl.registerLazySingleton<HomeDataSource>(() => HomeDataSourceImpl());
 
   //repositories
-  sl.registerLazySingleton<HomeRepository>(()=> HomeRepositoryImpl());
+  sl.registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl());
 
   //usecases
   sl.registerLazySingleton(() => GetAdsUsecase());
   sl.registerLazySingleton(() => GetHomePackages());
   sl.registerLazySingleton(() => GetHomeCouriersCompanyUsecase());
 
-  //cubits 
+  //cubits
   sl.registerFactory<HomeCubit>(() => HomeCubit());
 }

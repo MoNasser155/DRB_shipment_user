@@ -6,7 +6,7 @@ import 'domain/usecases/get_companies_usecase.dart';
 import 'presentation/cubits/companies/couriers_cubit.dart';
 import 'presentation/cubits/company_details/company_details_cubit.dart';
 
-initCompaniesDebendencies() {
+initCompaniesDI() {
   //data sources
   sl.registerLazySingleton<CompaniesDataSource>(
     () => CompaniesDataSourceImpl(),

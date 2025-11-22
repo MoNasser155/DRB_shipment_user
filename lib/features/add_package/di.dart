@@ -6,17 +6,21 @@ import 'domain/usecases/add_package_usecase.dart';
 import 'domain/usecases/get_governoments_usecase.dart';
 import 'presentation/cubits/cubit/add_package_cubit.dart';
 
-initAddPackageDebendencies() {
+initAddPackageDI() {
   //data sources
-  sl.registerLazySingleton<AddPackageDataSource>(()=> AddPackageDataSourceImpl());
+  sl.registerLazySingleton<AddPackageDataSource>(
+    () => AddPackageDataSourceImpl(),
+  );
 
   //repositories
-  sl.registerLazySingleton<AddPackageRepository>(()=> AddPackageRepositoryImpl());
+  sl.registerLazySingleton<AddPackageRepository>(
+    () => AddPackageRepositoryImpl(),
+  );
 
   //usecases
-  sl.registerLazySingleton(()=> AddPackageUsecase()); 
-  sl.registerLazySingleton(()=> GetGovernomentsUsecase());
-  
+  sl.registerLazySingleton(() => AddPackageUsecase());
+  sl.registerLazySingleton(() => GetGovernomentsUsecase());
+
   //cubits
   sl.registerFactory<AddPackageCubit>(() => AddPackageCubit());
 }

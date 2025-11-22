@@ -286,6 +286,21 @@ abstract class LocaleKeys {
   static const String _van = 'van';
   static String get van => _van.tr();
 
+  static const String _review = 'review';
+  static String get review => _review.tr();
+
+  static const String _addReview = 'add_review';
+  static String get addReview => _addReview.tr();
+
+  static const String _comment = 'comment';
+  static String get comment => _comment.tr();
+
+  static const String _rate = 'rate';
+  static String get rate => _rate.tr();
+
+  static const String _reviewAddedSuccessfully = 'review_added_successfully';
+  static String get reviewAddedSuccessfully => _reviewAddedSuccessfully.tr();
+
   static const String _car = 'car';
   static String get car => _car.tr();
 

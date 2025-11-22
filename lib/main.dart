@@ -15,7 +15,7 @@ import 'core/utils/cashe_storage.dart';
 void main() async {
   Bloc.observer = AppBlocObserver();
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  setupAppDebendencies();
+  setupAppDI();
   await Future.wait([
     Firebase.initializeApp(),
     EasyLocalization.ensureInitialized(),
